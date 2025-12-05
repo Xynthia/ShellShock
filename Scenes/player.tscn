@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd08kv410jg6r"]
+
+[ext_resource type="Script" uid="uid://dx0hl2hagw1aq" path="res://Scripts/Player/player.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://pvpkr58o4845" path="res://Scripts/Player/camera_movement.gd" id="2_cvnsp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cvnsp"]
+fractal_octaves = 4
+fractal_gain = 0.8
+fractal_weighted_strength = 1.0
+fractal_ping_pong_strength = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
+
+[node name="Player" type="CharacterBody3D"]
+floor_block_on_wall = false
+script = ExtResource("1_v0iea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_f60y1")
+debug_color = Color(0.8522863, 0.0008484489, 0.89589584, 0.41960785)
+
+[node name="CameraPivot" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84107673, 0)
+script = ExtResource("2_cvnsp")
+noise = SubResource("FastNoiseLite_cvnsp")
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("SphereShape3D_cvnsp")
+
+[node name="TurnTimer" type="Timer" parent="."]
+one_shot = true
