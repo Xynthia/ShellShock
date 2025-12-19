@@ -28,6 +28,8 @@ enum dir {CENTER, LEFT, RIGHT, UP, DOWN}
 
 var dir_rotation : Vector3 
 
+var test : String = "test"
+
 func _ready() -> void:
 	zero_point = get_viewport().get_visible_rect().size / 2
 
