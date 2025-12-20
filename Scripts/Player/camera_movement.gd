@@ -1,4 +1,12 @@
 extends Area3D
+#onready
+
+@onready var camera_3d: Camera3D = $Camera3D
+@onready var initial_rotation := camera_3d.rotation_degrees as Vector3
+
+@onready var camera_pivot: Area3D = $"."
+
+# exports
 
 @export var trauma_reduction_rate := 0
 
@@ -9,32 +17,22 @@ extends Area3D
 @export var noise : FastNoiseLite
 @export var noise_speed := 50.0
 
+# var
 var trauma := 0.0
 var time := 0.0
 
-@onready var camera_3d: Camera3D = $Camera3D
 
-@onready var initial_rotation := camera_3d.rotation_degrees as Vector3
+enum dir {LEFT, RIGHT, UP, DOWN, NOTHING}
+enum look_position {CENTER, LEFT, RIGHT, UP, DOWN}
 
-@onready var turn_timer: Timer = $"../TurnTimer"
-
+var turn_time: float = 0.5
 var max_angle : float = 30
-var zero_point : Vector2
-var percentage_distance_x : float
-var percentage_distance_y : float
-var percentage_distance_zero_point : float = 50
-
-enum dir {CENTER, LEFT, RIGHT, UP, DOWN}
-
-var dir_rotation : Vector3 
-
-var test : String = "test"
+var current_look_pos : look_position = look_position.CENTER
 
 func _ready() -> void:
-	zero_point = get_viewport().get_visible_rect().size / 2
+	GameManager.player.camera_move_time = turn_time
 
 func _process(delta):
-	
 	# camera shake
 	time += delta
 	trauma = max(trauma - delta * trauma_reduction_rate, 0.0)
@@ -53,44 +51,69 @@ func get_noise_from_seed(_seed : int) -> float:
 	noise.seed = _seed
 	return noise.get_noise_1d(time * noise_speed)
 
+
 func change_looking_direction_based_on_mouse_position(mouse_position : Vector2) -> void:
 	var dir = find_dir_based_on_mouse_position(mouse_position)
 	set_dir_rotation(dir)
+
+func find_dir_based_on_mouse_position(mouse_position : Vector2) -> dir:
+	if abs(mouse_position.y) > abs(mouse_position.x):
+		if mouse_position.y > 0:
+			return dir.DOWN
+		else:
+			return dir.UP
+	else: 
+		if mouse_position.x > 0:
+			return dir.RIGHT
+		else:
+			return dir.LEFT
 	
 
+func set_dir_rotation(new_dir: dir) -> void:
+	match current_look_pos:
+		look_position.CENTER: 
+			match new_dir:
+				dir.LEFT: 
+					move_to(look_position.LEFT)
+				dir.RIGHT: 
+					move_to(look_position.RIGHT)
+				dir.UP: 
+					move_to(look_position.UP)
+				dir.DOWN: 
+					move_to(look_position.DOWN)
+		look_position.LEFT: 
+			match new_dir:
+				dir.RIGHT: 
+					move_to(look_position.CENTER)
+		look_position.RIGHT: 
+			match new_dir:
+				dir.LEFT: 
+					move_to(look_position.CENTER)
+		look_position.UP: 
+			match new_dir:
+				dir.DOWN: 
+					move_to(look_position.CENTER)
+		look_position.DOWN: 
+			match new_dir:
+				dir.UP: 
+					move_to(look_position.CENTER)
 
-func find_dir_based_on_mouse_position(mouse_position : Vector2) -> float:
-	var distance_x : float = mouse_position.x - zero_point.x 
-	var distance_y : float = mouse_position.y - zero_point.y
-	
-	percentage_distance_x = (100 / get_viewport().get_visible_rect().size.x ) * distance_x
-	percentage_distance_y = (100 / get_viewport().get_visible_rect().size.y ) * distance_y
-	
-	if abs(percentage_distance_x) < (percentage_distance_zero_point / 2) and abs(percentage_distance_y) < (percentage_distance_zero_point / 2):
-		return dir.CENTER
-	else :
-		if abs(percentage_distance_x) > abs(percentage_distance_y):
-			if percentage_distance_x < 0:
-				return dir.LEFT
-			else:
-				return dir.RIGHT
-		else :
-			if percentage_distance_y < 0:
-				return dir.UP
-			else:
-				return dir.DOWN
 
-func set_dir_rotation(new_dir: int) -> void:
-	match new_dir:
-		0: #center
-			dir_rotation = Vector3(0, 0, 0)
-		1: #left
-			dir_rotation = Vector3(0, max_angle, 0)
-		2: #right
-			dir_rotation = Vector3(0, -max_angle, 0)
-		3: #up
-			dir_rotation = Vector3(max_angle, 0, 0)
-		4: #down
-			dir_rotation = Vector3(-max_angle, 0, 0)
-	
-	turn_timer.start()
+func move_to(new_look_position : look_position):
+	var tween = create_tween().set_trans(Tween.TRANS_SINE)
+	match new_look_position:
+		look_position.CENTER: 
+			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,0,0),turn_time)
+			current_look_pos = look_position.CENTER
+		look_position.LEFT: 
+			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,max_angle,0),turn_time)
+			current_look_pos = look_position.LEFT
+		look_position.RIGHT: 
+			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,-max_angle,0),turn_time)
+			current_look_pos = look_position.RIGHT
+		look_position.UP: 
+			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(max_angle,0,0),turn_time)
+			current_look_pos = look_position.UP
+		look_position.DOWN: 
+			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(-max_angle,0,0),turn_time)
+			current_look_pos = look_position.DOWN
