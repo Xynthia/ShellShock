@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://baawy5t14fd05"]
+
+[ext_resource type="Script" uid="uid://cqb6wk67h0q1m" path="res://Scripts/walking_points.gd" id="1_b6jca"]
+[ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/walking_point.tscn" id="2_b6jca"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vccp3"]
+
+[sub_resource type="Sky" id="Sky_c50au"]
+sky_material = SubResource("ProceduralSkyMaterial_vccp3")
+
+[sub_resource type="Environment" id="Environment_ik7o5"]
+background_mode = 2
+sky = SubResource("Sky_c50au")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6jca"]
+albedo_color = Color(0.49411765, 0.78431374, 0.28627452, 1)
+
+[node name="TestingPlayerMovement" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_ik7o5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 20, 20)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -3.81)
+size = Vector3(5, 5, 5)
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_b6jca")
+use_collision = true
+size = Vector3(30, 0.1, 30)
+
+[node name="WalkingPoints" type="Node3D" parent="."]
+script = ExtResource("1_b6jca")
+
+[node name="WalkingPoint1" parent="WalkingPoints" instance=ExtResource("2_b6jca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987828, 0.465739, -0.16445118)
+
+[node name="WalkingPoint2" parent="WalkingPoints" instance=ExtResource("2_b6jca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987828, 0.465739, -7.238601)
+
+[node name="WalkingPoint3" parent="WalkingPoints" instance=ExtResource("2_b6jca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5309005, 0.465739, -7.238601)
+
+[node name="WalkingPoint4" parent="WalkingPoints" instance=ExtResource("2_b6jca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5309005, 0.465739, -0.22596908)
