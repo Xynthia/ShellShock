@@ -100,7 +100,7 @@ func turn_to_walk_point(direction: int) -> void:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	
-	if walk_points_next_to_current_walk_point.size() >= 3:
+	if walk_points_next_to_current_walk_point.size() == 3:
 		var current_look_dir : look_dir_3
 		
 		if direction == look_dir_2.RIGHT:
