@@ -7,8 +7,10 @@ var id : int
 @export_range(1, 100, 1) var mouse_sensitivity: int = 50
 
 @onready var camera_pivot: Area3D = $CameraPivot
+@onready var look_at_before_turn: Node3D = $LookAtBeforeTurn
 
-var do_this_once : bool = true;
+
+var do_this_once_per_change : bool = true;
 var screen_relative : Vector2
 var lastFrame : float
 var lastMouseMove : float
@@ -23,6 +25,11 @@ var looking_at_walk_point : VisibleOnScreenNotifier3D
 enum look_dir_3 {LEFT, MIDDLE, RIGHT}
 enum look_dir_2 {LEFT, RIGHT}
 
+var time_to_move : float = 0.5
+var time_to_turn : float = 0.5
+
+var do_this_once : bool = true
+
 func _init() -> void:
 	id = 1
 
@@ -32,15 +39,14 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	if current_walk_point != null:
+	if do_this_once == true:
 		set_new_position(current_walk_point)
+		do_this_once = false
 	
 	looking_at_walk_point = get_looking_at_walk_point()
 	
 	if looking_at_walk_point && looking_at_walk_point != current_walk_point && Input.is_action_just_pressed("MoveFoward"):
 		set_new_position(looking_at_walk_point)
-		turn_to_walk_point_once_moved()
-	
 	
 	
 	if Input.is_action_just_pressed("TurnLeft"):
@@ -61,13 +67,13 @@ func _physics_process(delta: float) -> void:
 		camera_move_timer += delta
 		if camera_move_timer > camera_move_time:
 			camera_move_timer = 0
-			do_this_once = true
+			do_this_once_per_change = true
 	
 	lastFrame += delta
 	
-	if screen_relative != Vector2.ZERO && do_this_once:
+	if screen_relative != Vector2.ZERO && do_this_once_per_change:
 		camera_pivot.change_looking_direction_based_on_mouse_position(screen_relative)
-		do_this_once = false
+		do_this_once_per_change = false
 
 func _input(event: InputEvent) -> void:
 	# check which side mouse is the camera movement to that side
@@ -84,7 +90,9 @@ func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	#if skipping a position check walkinpoints array
 	last_walk_point = current_walk_point
 	current_walk_point = new_position
-	position = new_position.position
+	var status = move_to(new_position.position)
+	if status == true:
+		turn_to_walk_point_once_moved()
 
 
 func get_looking_at_walk_point() -> VisibleOnScreenNotifier3D:
@@ -115,15 +123,15 @@ func turn_to_walk_point(direction: int) -> void:
 		match current_look_dir:
 			look_dir_3.LEFT:
 				if direction == look_dir_3.RIGHT:
-					look_at(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position, up_direction)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position)
 			look_dir_3.MIDDLE:
 				if direction == look_dir_3.LEFT:
-					look_at(walk_points_next_to_current_walk_point[look_dir_3.LEFT].position, up_direction)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.LEFT].position)
 				else:
-					look_at(walk_points_next_to_current_walk_point[look_dir_3.RIGHT].position, up_direction)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.RIGHT].position)
 			look_dir_3.RIGHT:
 				if direction == look_dir_3.LEFT:
-					look_at(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position, up_direction)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position)
 	else:
 		var current_look_dir : look_dir_2
 		
@@ -138,14 +146,40 @@ func turn_to_walk_point(direction: int) -> void:
 		match current_look_dir:
 			look_dir_2.LEFT:
 				if direction == look_dir_2.RIGHT:
-						look_at(walk_points_next_to_current_walk_point[look_dir_2.RIGHT].position, up_direction)
+						look_to(walk_points_next_to_current_walk_point[look_dir_2.RIGHT].global_position)
 			look_dir_2.RIGHT:
 				if direction == look_dir_2.LEFT:
-						look_at(walk_points_next_to_current_walk_point[look_dir_2.LEFT].position, up_direction)
+						look_to(walk_points_next_to_current_walk_point[look_dir_2.LEFT].global_position)
 
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
 		if walk_point != last_walk_point:
-			look_at(walk_point.position, up_direction)
+			look_to(walk_point.position)
+
+
+func move_to(new_position : Vector3) -> bool:
+	new_position.y = self.position.y
+	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	
+	tween.tween_property(self, "position",  new_position, time_to_move)
+	
+	return tween.is_running()
+
+
+func look_to(new_position : Vector3) -> void:
+	var direction = (new_position - global_position).normalized()
+	
+	var angle = atan2(direction.x, direction.z) + PI
+	
+	#rotation.y = angle
+	var new_rotation = rotation
+	new_rotation.y = angle
+	
+	
+	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	
+	tween.tween_property(self, "rotation", new_rotation, time_to_turn)
+	
+	
