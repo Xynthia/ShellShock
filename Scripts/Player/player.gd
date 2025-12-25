@@ -55,6 +55,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("TurnRight"):
 		turn_to_walk_point(look_dir_2.RIGHT)
 	
+	if Input.is_action_pressed("alt"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -123,15 +126,15 @@ func turn_to_walk_point(direction: int) -> void:
 		match current_look_dir:
 			look_dir_3.LEFT:
 				if direction == look_dir_3.RIGHT:
-					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE])
 			look_dir_3.MIDDLE:
 				if direction == look_dir_3.LEFT:
-					look_to(walk_points_next_to_current_walk_point[look_dir_3.LEFT].position)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.LEFT])
 				else:
-					look_to(walk_points_next_to_current_walk_point[look_dir_3.RIGHT].position)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.RIGHT])
 			look_dir_3.RIGHT:
 				if direction == look_dir_3.LEFT:
-					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE].position)
+					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE])
 	else:
 		var current_look_dir : look_dir_2
 		
@@ -146,17 +149,17 @@ func turn_to_walk_point(direction: int) -> void:
 		match current_look_dir:
 			look_dir_2.LEFT:
 				if direction == look_dir_2.RIGHT:
-						look_to(walk_points_next_to_current_walk_point[look_dir_2.RIGHT].global_position)
+						look_to(walk_points_next_to_current_walk_point[look_dir_2.RIGHT])
 			look_dir_2.RIGHT:
 				if direction == look_dir_2.LEFT:
-						look_to(walk_points_next_to_current_walk_point[look_dir_2.LEFT].global_position)
+						look_to(walk_points_next_to_current_walk_point[look_dir_2.LEFT])
 
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
 		if walk_point != last_walk_point:
-			look_to(walk_point.position)
+			look_to(walk_point)
 
 
 func move_to(new_position : Vector3) -> bool:
@@ -167,19 +170,22 @@ func move_to(new_position : Vector3) -> bool:
 	
 	return tween.is_running()
 
+#doesnt fully move over to the position of the visible on screen notifier.
+func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
+	var look_at_pos : Node3D = Node3D.new()
+	look_at_pos.look_at_from_position(global_position ,new_walk_point.global_position, up_direction, true)
+	
+	var vec1 = self.rotation
+	var vec2 = look_at_pos.rotation
+	
+	var angle = vec1.signed_angle_to(vec2, Vector3.MODEL_FRONT)
 
-func look_to(new_position : Vector3) -> void:
-	var direction = (new_position - global_position).normalized()
+	var difference_in_degrees = angle_difference(vec1.y, vec2.y)
+	var new_rotation_degrees :Vector3
+	var degrees = rad_to_deg(difference_in_degrees)
 	
-	var angle = atan2(direction.x, direction.z) + PI
-	
-	#rotation.y = angle
-	var new_rotation = rotation
-	new_rotation.y = angle
-	
+	new_rotation_degrees.y = degrees + rad_to_deg(vec1.y)
 	
 	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
-	tween.tween_property(self, "rotation", new_rotation, time_to_turn)
-	
-	
+	tween.tween_property(self, "rotation_degrees", new_rotation_degrees , time_to_move)
