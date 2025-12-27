@@ -28,6 +28,7 @@ debug_color = Color(0.8522863, 0.0008484489, 0.89589584, 0.41960785)
 [node name="CameraPivot" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84107673, 0)
 script = ExtResource("2_cvnsp")
+trauma_reduction_rate = 0.1
 noise = SubResource("FastNoiseLite_cvnsp")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]

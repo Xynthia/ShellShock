@@ -1,3 +1,4 @@
+class_name trauma_causer
 extends Area3D
 
 @export var trauma_amount := 0.1

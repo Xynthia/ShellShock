@@ -7,8 +7,7 @@ extends Area3D
 @onready var camera_pivot: Area3D = $"."
 
 # exports
-
-@export var trauma_reduction_rate := 0
+@export var trauma_reduction_rate : float = 0
 
 @export var max_x := 10.0
 @export var max_y := 10.0

@@ -59,7 +59,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("alt"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		pass
+	
+	if Input.is_action_just_pressed("Interact"):
+		GameManager.grenade_manager.spawn_grenade()
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -176,7 +180,6 @@ func move_to(new_position : Vector3) -> void:
 func on_move_tween_finished() -> void:
 	turn_to_walk_point_once_moved()
 	
-	#GameManager.grenade_manager.spawn_grenade()
 
 func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_once = false

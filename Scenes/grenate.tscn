@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bedtrjbqukbwj"]
+[gd_scene load_steps=13 format=3 uid="uid://bedtrjbqukbwj"]
 
 [ext_resource type="PackedScene" uid="uid://hj4haspcrn3y" path="res://Scenes/trauma_causer.tscn" id="1_exuoo"]
 [ext_resource type="Script" uid="uid://dr3ybyqjtgvg1" path="res://Scripts/grenate/grenate.gd" id="1_japri"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_japri"]
+[ext_resource type="Texture2D" uid="uid://caly3lon58amy" path="res://Assets/Particle Pack/PNG (Transparent)/smoke_04.png" id="4_52d56"]
 
 [sub_resource type="Curve3D" id="Curve3D_japri"]
 _data = {
@@ -16,16 +15,40 @@ point_count = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xunmi"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_japri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyj5p"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_52d56")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 2.0
+fixed_size = true
+
+[sub_resource type="Gradient" id="Gradient_88btf"]
+offsets = PackedFloat32Array(0, 0.04, 0.536, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iyj5p"]
+gradient = SubResource("Gradient_88btf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hqr7f"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.0
+scale_max = 2.0
+color = Color(0.67543423, 0.67543423, 0.67543423, 1)
+color_ramp = SubResource("GradientTexture1D_iyj5p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hqr7f"]
+
 [node name="Grenade" type="Node3D" groups=["Grenade"]]
 script = ExtResource("1_japri")
-
-[node name="TraumaCauser" parent="." instance=ExtResource("1_exuoo")]
-trauma_amount = 0.5
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-shape = SubResource("SphereShape3D_japri")
-debug_color = Color(0.99862367, 0.034269262, 7.70092e-07, 0.41960785)
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_japri")
@@ -45,3 +68,20 @@ skeleton = NodePath("../../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Grenade Body"]
 transform = Transform3D(0.3, 0, 0, 0, 0.29999998, 0, 1.7763568e-15, 0, 0.3, 0, 2.3841858e-07, 0)
 shape = SubResource("SphereShape3D_xunmi")
+
+[node name="TraumaCauser" parent="." instance=ExtResource("1_exuoo")]
+trauma_amount = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shape = SubResource("SphereShape3D_japri")
+
+[node name="smoke base" type="GPUParticles3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_iyj5p")
+amount = 100
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_hqr7f")
+draw_pass_1 = SubResource("QuadMesh_hqr7f")
+
+[connection signal="body_entered" from="TraumaCauser" to="." method="_on_body_entered"]
