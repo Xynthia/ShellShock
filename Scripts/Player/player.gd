@@ -30,16 +30,17 @@ var time_to_turn : float = 0.5
 
 var do_this_once : bool = true
 
+var move_tween : Tween
+var turn_tween : Tween 
+
+var turn_once : bool = true
+
 func _init() -> void:
 	id = 1
 
-func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	
 
 func _physics_process(delta: float) -> void:
-	if do_this_once == true:
+	if position != current_walk_point.position && do_this_once:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
@@ -57,6 +58,8 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("alt"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -89,14 +92,13 @@ func _input(event: InputEvent) -> void:
 			screen_relative *= mouse_sensitivity
 			screen_relative *= degrees_per_unit
 
+
 func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	#if skipping a position check walkinpoints array
 	last_walk_point = current_walk_point
 	current_walk_point = new_position
-	var status = move_to(new_position.position)
-	if status == true:
-		turn_to_walk_point_once_moved()
-
+	move_to(new_position.position)
+	
 
 func get_looking_at_walk_point() -> VisibleOnScreenNotifier3D:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
@@ -109,8 +111,7 @@ func get_looking_at_walk_point() -> VisibleOnScreenNotifier3D:
 
 func turn_to_walk_point(direction: int) -> void:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
-	
-	
+
 	if walk_points_next_to_current_walk_point.size() == 3:
 		var current_look_dir : look_dir_3
 		
@@ -158,34 +159,40 @@ func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
-		if walk_point != last_walk_point:
+		if walk_point != last_walk_point && turn_once && !looking_at_walk_point:
 			look_to(walk_point)
 
-
-func move_to(new_position : Vector3) -> bool:
+func move_to(new_position : Vector3) -> void:
+	
+	move_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	new_position.y = self.position.y
-	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
-	tween.tween_property(self, "position",  new_position, time_to_move)
+	move_tween.tween_property(self, "position",  new_position, time_to_move)
 	
-	return tween.is_running()
+	move_tween.finished.connect(on_move_tween_finished)
 
-#doesnt fully move over to the position of the visible on screen notifier.
+func on_move_tween_finished() -> void:
+	turn_to_walk_point_once_moved()
+
 func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
+	turn_once = false
+	turn_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	
 	var look_at_pos : Node3D = Node3D.new()
 	look_at_pos.look_at_from_position(global_position ,new_walk_point.global_position, up_direction, true)
 	
 	var vec1 = self.rotation
 	var vec2 = look_at_pos.rotation
 	
-	var angle = vec1.signed_angle_to(vec2, Vector3.MODEL_FRONT)
-
 	var difference_in_degrees = angle_difference(vec1.y, vec2.y)
 	var new_rotation_degrees :Vector3
 	var degrees = rad_to_deg(difference_in_degrees)
 	
 	new_rotation_degrees.y = degrees + rad_to_deg(vec1.y)
 	
-	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	turn_tween.tween_property(self, "rotation_degrees", new_rotation_degrees , time_to_move)
 	
-	tween.tween_property(self, "rotation_degrees", new_rotation_degrees , time_to_move)
+	turn_tween.finished.connect(on_turn_tween_finished)
+
+func on_turn_tween_finished() ->void:
+	turn_once = true

@@ -17,4 +17,4 @@ func _process(delta: float) -> void:
 func start_game() -> void:
 	var new_player = PLAYER_CLASS.instantiate()
 	player = new_player
-	add_child(player)
+	get_tree().get_first_node_in_group("Scene").add_child(player)

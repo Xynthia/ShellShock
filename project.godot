@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameManager="*res://Scripts/game_manager.gd"
 
+[global_group]
+
+Scene="The scene that will be playing"
+
 [input]
 
 MoveFoward={
