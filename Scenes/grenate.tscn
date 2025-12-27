@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bedtrjbqukbwj"]
+
+[ext_resource type="PackedScene" uid="uid://hj4haspcrn3y" path="res://Scenes/trauma_causer.tscn" id="1_exuoo"]
+[ext_resource type="Script" uid="uid://dr3ybyqjtgvg1" path="res://Scripts/grenate/grenate.gd" id="1_japri"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_japri"]
+
+[sub_resource type="Curve3D" id="Curve3D_japri"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 5.34, 0, 3.405, -8.355, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_japri"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xunmi"]
+
+[node name="Grenade" type="Node3D" groups=["Grenade"]]
+script = ExtResource("1_japri")
+
+[node name="TraumaCauser" parent="." instance=ExtResource("1_exuoo")]
+trauma_amount = 0.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("SphereShape3D_japri")
+debug_color = Color(0.99862367, 0.034269262, 7.70092e-07, 0.41960785)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_japri")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.9999984, 0, -8.742097e-08, 0, 0.99998266, 0, 8.7422634e-08, 0, -0.9999793, 0, 3.405, -8.355)
+loop = false
+
+[node name="Grenade Body" type="Area3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-1.0000015, 0, 8.742292e-08, 0, 1.0000055, 0, -8.7423444e-08, 0, -1.0000076, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/Grenade Body"]
+transform = Transform3D(0.3, 0, 0, 0, 0.29999998, 0, 1.7763568e-15, 0, 0.3, 0, 2.3841858e-07, 0)
+mesh = SubResource("SphereMesh_japri")
+skeleton = NodePath("../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Grenade Body"]
+transform = Transform3D(0.3, 0, 0, 0, 0.29999998, 0, 1.7763568e-15, 0, 0.3, 0, 2.3841858e-07, 0)
+shape = SubResource("SphereShape3D_xunmi")

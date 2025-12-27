@@ -3,6 +3,8 @@ extends Node
 @export var player : Player
 const PLAYER_CLASS = preload("res://Scenes/player.tscn")
 
+@export var grenade_manager : GrenadeManager
+
 @export var walking_points : WalkingPoints
 
 # Called when the node enters the scene tree for the first time.

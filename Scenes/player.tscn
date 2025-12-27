@@ -13,7 +13,7 @@ fractal_ping_pong_strength = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 rotation_order = 0
 axis_lock_angular_y = true
 floor_block_on_wall = false

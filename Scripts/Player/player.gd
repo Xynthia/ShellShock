@@ -175,6 +175,8 @@ func move_to(new_position : Vector3) -> void:
 
 func on_move_tween_finished() -> void:
 	turn_to_walk_point_once_moved()
+	
+	#GameManager.grenade_manager.spawn_grenade()
 
 func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_once = false

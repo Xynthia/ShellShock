@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://v6i5l0y1ok8i"]
+[gd_scene load_steps=10 format=3 uid="uid://v6i5l0y1ok8i"]
 
-[ext_resource type="PackedScene" uid="uid://dd08kv410jg6r" path="res://Scenes/player.tscn" id="1_232t6"]
-[ext_resource type="Script" uid="uid://dk442l1xwpc72" path="res://Scripts/testing_trauma_causer.gd" id="2_4d1kt"]
+[ext_resource type="Script" uid="uid://dk442l1xwpc72" path="res://Scripts/Testing/testing_trauma_causer.gd" id="2_4d1kt"]
 [ext_resource type="PackedScene" uid="uid://hj4haspcrn3y" path="res://Scenes/trauma_causer.tscn" id="2_c50au"]
+[ext_resource type="Script" uid="uid://dseynwydlxwc4" path="res://Scripts/Testing/walking_points_grenate_testing.gd" id="3_hjp42"]
+[ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/walking_point.tscn" id="4_hsww1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_232t6"]
 
@@ -18,7 +19,7 @@ albedo_color = Color(0.49411765, 0.78431374, 0.28627452, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4d1kt"]
 
-[node name="TestingCameraMovement" type="Node3D"]
+[node name="TestingCameraMovement" type="Node3D" groups=["Scene"]]
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -28,9 +29,6 @@ environment = SubResource("Environment_232t6")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 20, 20)
 shadow_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_232t6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1726236, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -8)
@@ -52,5 +50,11 @@ trauma_amount = 0.3
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.04382825, 0.5199292, 0)
 shape = SubResource("BoxShape3D_4d1kt")
 debug_color = Color(0.75686276, 0.45490196, 0, 0.627451)
+
+[node name="WalkingPoints" type="Node3D" parent="."]
+script = ExtResource("3_hjp42")
+
+[node name="WalkingPoint1" parent="WalkingPoints" instance=ExtResource("4_hsww1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987828, 0.465739, -0.16445118)
 
 [connection signal="body_entered" from="TestingTraumaCauser/TraumaCauser" to="TestingTraumaCauser" method="_on_trauma_causer_body_entered"]

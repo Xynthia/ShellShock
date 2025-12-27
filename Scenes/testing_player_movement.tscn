@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://baawy5t14fd05"]
 
-[ext_resource type="Script" uid="uid://cqb6wk67h0q1m" path="res://Scripts/walking_points.gd" id="1_b6jca"]
+[ext_resource type="Script" uid="uid://cqb6wk67h0q1m" path="res://Scripts/Testing/walking_points.gd" id="1_b6jca"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/walking_point.tscn" id="2_b6jca"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vccp3"]
