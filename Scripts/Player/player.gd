@@ -136,7 +136,7 @@ func turn_to_walk_point(direction: int) -> void:
 			look_dir_3.RIGHT:
 				if direction == look_dir_3.LEFT:
 					look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE])
-	else:
+	elif walk_points_next_to_current_walk_point.size() == 2:
 		var current_look_dir : look_dir_2
 		
 		for walk_point : VisibleOnScreenNotifier3D in walk_points_next_to_current_walk_point:
@@ -154,12 +154,14 @@ func turn_to_walk_point(direction: int) -> void:
 			look_dir_2.RIGHT:
 				if direction == look_dir_2.LEFT:
 						look_to(walk_points_next_to_current_walk_point[look_dir_2.LEFT])
+	else:
+		look_to(walk_points_next_to_current_walk_point[0])
 
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
-		if walk_point != last_walk_point && turn_once && !looking_at_walk_point:
+		if turn_once && !looking_at_walk_point:
 			look_to(walk_point)
 
 func move_to(new_position : Vector3) -> void:
