@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drnh5olui67mw"
+path="res://.godot/imported/Vadi Sound - Gun Point - Bullet Whiz Ricochet Metallic Hit.wav-fce83bdc418da6ec5dba26283a5b6ebe.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Vadi Sound - Gun Point - Bullet Whiz Ricochet Metallic Hit.wav"
+dest_files=["res://.godot/imported/Vadi Sound - Gun Point - Bullet Whiz Ricochet Metallic Hit.wav-fce83bdc418da6ec5dba26283a5b6ebe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

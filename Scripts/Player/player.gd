@@ -9,6 +9,13 @@ var id : int
 @onready var camera_pivot: Area3D = $CameraPivot
 @onready var look_at_before_turn: Node3D = $LookAtBeforeTurn
 
+@onready var bg_sound: AudioStreamPlayer3D = $BGSound
+@onready var sfx: AudioStreamPlayer3D = $SFX
+
+const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
+const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
+const TINNITUS = preload("uid://cwtpeduhorxbe")
+
 
 var do_this_once_per_change : bool = true;
 var screen_relative : Vector2
@@ -203,3 +210,11 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 
 func on_turn_tween_finished() ->void:
 	turn_once = true
+
+func play_BG() -> void:
+	bg_sound.stream = NIGHT_TIME_WIND_WHISTLING
+	
+	bg_sound.play()
+
+func _on_bg_sound_finished() -> void:
+	pass

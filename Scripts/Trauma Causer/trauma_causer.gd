@@ -1,4 +1,3 @@
-class_name trauma_causer
 extends Area3D
 
 @export var trauma_amount := 0.1
@@ -6,5 +5,6 @@ extends Area3D
 func cause_trauma():
 	var trauma_areas := get_overlapping_areas()
 	for area in trauma_areas:
-		if area.has_method("add_trauma"):
-			area.add_trauma(trauma_amount)
+		if area == GameManager.player.camera_pivot:
+			if area.has_method("add_trauma"):
+				area.add_trauma(trauma_amount)

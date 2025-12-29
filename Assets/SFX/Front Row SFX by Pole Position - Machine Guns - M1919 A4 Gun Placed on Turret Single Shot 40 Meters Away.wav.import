@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br347s0tnhshu"
+path="res://.godot/imported/Front Row SFX by Pole Position - Machine Guns - M1919 A4 Gun Placed on Turret Single Shot 40 Meters Away.wav-bd65ed96af31bac874b53c46730f8830.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Front Row SFX by Pole Position - Machine Guns - M1919 A4 Gun Placed on Turret Single Shot 40 Meters Away.wav"
+dest_files=["res://.godot/imported/Front Row SFX by Pole Position - Machine Guns - M1919 A4 Gun Placed on Turret Single Shot 40 Meters Away.wav-bd65ed96af31bac874b53c46730f8830.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

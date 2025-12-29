@@ -75,7 +75,7 @@ grow_amount = 2.0
 fixed_size = true
 
 [sub_resource type="Gradient" id="Gradient_88btf"]
-offsets = PackedFloat32Array(0, 0.04, 0.536, 1)
+offsets = PackedFloat32Array(0, 0.047138046, 0.3905724, 1)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_iyj5p"]
@@ -93,7 +93,7 @@ tangential_accel_min = -2.2351742e-06
 tangential_accel_max = 4.5599976
 scale_min = 0.0
 scale_max = 2.0
-color = Color(0.67543423, 0.67543423, 0.67543423, 1)
+color = Color(0.5167645, 0.5167645, 0.5167645, 1)
 color_ramp = SubResource("GradientTexture1D_iyj5p")
 
 [sub_resource type="QuadMesh" id="QuadMesh_2tsga"]
@@ -111,7 +111,7 @@ tangential_accel_max = 4.5599976
 damping_max = 17.768002
 scale_min = 0.0
 scale_max = 2.0
-color = Color(0.67543423, 0.67543423, 0.67543423, 1)
+color = Color(0.34789982, 0.34789982, 0.34789982, 1)
 color_ramp = SubResource("GradientTexture1D_iyj5p")
 
 [node name="Explosion" type="Node3D"]
@@ -122,7 +122,7 @@ material_override = SubResource("StandardMaterial3D_48id1")
 cast_shadow = 0
 emitting = false
 amount = 5
-lifetime = 0.5
+lifetime = 0.3
 one_shot = true
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_021c3")
@@ -133,7 +133,7 @@ material_override = SubResource("StandardMaterial3D_pyedb")
 cast_shadow = 0
 emitting = false
 amount = 15
-lifetime = 2.0
+lifetime = 0.8
 one_shot = true
 explosiveness = 1.0
 randomness = 0.5
@@ -153,9 +153,32 @@ draw_pass_1 = SubResource("QuadMesh_2tsga")
 [node name="smoke spread2" type="GPUParticles3D" parent="."]
 material_override = SubResource("StandardMaterial3D_drq55")
 emitting = false
-amount = 50
+amount = 65
 lifetime = 5.0
 one_shot = true
-randomness = 0.2
+explosiveness = 0.5
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_1v2kj")
+draw_pass_1 = SubResource("QuadMesh_2tsga")
+
+[node name="smoke spread4" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_drq55")
+emitting = false
+amount = 65
+lifetime = 5.0
+one_shot = true
+explosiveness = 0.5
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_1v2kj")
+draw_pass_1 = SubResource("QuadMesh_2tsga")
+
+[node name="smoke spread3" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_drq55")
+emitting = false
+amount = 65
+lifetime = 5.0
+one_shot = true
+explosiveness = 0.5
+randomness = 0.3
 process_material = SubResource("ParticleProcessMaterial_1v2kj")
 draw_pass_1 = SubResource("QuadMesh_2tsga")

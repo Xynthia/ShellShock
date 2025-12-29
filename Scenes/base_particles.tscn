@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0h827u5rnw03"]
+
+[ext_resource type="Texture2D" uid="uid://caly3lon58amy" path="res://Assets/Particle Pack/PNG (Transparent)/smoke_04.png" id="1_xdjuh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_516c0"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_xdjuh")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 2.0
+fixed_size = true
+
+[sub_resource type="Gradient" id="Gradient_k6vu7"]
+offsets = PackedFloat32Array(0, 0.04, 0.536, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iyj5p"]
+gradient = SubResource("Gradient_k6vu7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kk45i"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 2, 0)
+scale_min = 0.0
+scale_max = 2.0
+color = Color(0.67543423, 0.67543423, 0.67543423, 1)
+color_ramp = SubResource("GradientTexture1D_iyj5p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2sy6p"]
+
+[node name="Base particles" type="Node3D"]
+
+[node name="smoke base" type="GPUParticles3D" parent="."]
+visible = false
+material_override = SubResource("StandardMaterial3D_516c0")
+amount = 100
+lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_kk45i")
+draw_pass_1 = SubResource("QuadMesh_2sy6p")

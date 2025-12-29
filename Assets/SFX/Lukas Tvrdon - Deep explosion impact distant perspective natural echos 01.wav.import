@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb4p3tca4ytix"
+path="res://.godot/imported/Lukas Tvrdon - Deep explosion impact distant perspective natural echos 01.wav-2e946d774728d3ef2806c2b592151e73.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Lukas Tvrdon - Deep explosion impact distant perspective natural echos 01.wav"
+dest_files=["res://.godot/imported/Lukas Tvrdon - Deep explosion impact distant perspective natural echos 01.wav-2e946d774728d3ef2806c2b592151e73.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

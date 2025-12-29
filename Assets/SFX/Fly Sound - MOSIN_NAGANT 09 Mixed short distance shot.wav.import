@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bfy0i2d6ckx1k"
+path="res://.godot/imported/Fly Sound - MOSIN_NAGANT 09 Mixed short distance shot.wav-cfb71a5e2f347b44c0d642f6d3199b1e.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Fly Sound - MOSIN_NAGANT 09 Mixed short distance shot.wav"
+dest_files=["res://.godot/imported/Fly Sound - MOSIN_NAGANT 09 Mixed short distance shot.wav-cfb71a5e2f347b44c0d642f6d3199b1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

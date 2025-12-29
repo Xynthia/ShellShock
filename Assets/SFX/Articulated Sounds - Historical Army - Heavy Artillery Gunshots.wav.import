@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckvuqapemebm2"
+path="res://.godot/imported/Articulated Sounds - Historical Army - Heavy Artillery Gunshots.wav-de1e718e5d6cfbe13e9c8b8247342138.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Articulated Sounds - Historical Army - Heavy Artillery Gunshots.wav"
+dest_files=["res://.godot/imported/Articulated Sounds - Historical Army - Heavy Artillery Gunshots.wav-de1e718e5d6cfbe13e9c8b8247342138.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

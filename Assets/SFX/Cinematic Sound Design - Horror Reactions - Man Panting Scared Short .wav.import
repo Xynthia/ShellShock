@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cd8klou5f6f4r"
+path="res://.godot/imported/Cinematic Sound Design - Horror Reactions - Man Panting Scared Short .wav-95ac2e687a0f46283bdf8291cc60d5fd.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Cinematic Sound Design - Horror Reactions - Man Panting Scared Short .wav"
+dest_files=["res://.godot/imported/Cinematic Sound Design - Horror Reactions - Man Panting Scared Short .wav-95ac2e687a0f46283bdf8291cc60d5fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

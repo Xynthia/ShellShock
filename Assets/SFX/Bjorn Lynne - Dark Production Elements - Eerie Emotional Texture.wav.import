@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bnnhg6b8yci1f"
+path="res://.godot/imported/Bjorn Lynne - Dark Production Elements - Eerie Emotional Texture.wav-3564f4c55b605d5359c5b213ae7194b6.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Bjorn Lynne - Dark Production Elements - Eerie Emotional Texture.wav"
+dest_files=["res://.godot/imported/Bjorn Lynne - Dark Production Elements - Eerie Emotional Texture.wav-3564f4c55b605d5359c5b213ae7194b6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dseynwydlxwc4" path="res://Scripts/Testing/walking_points_grenate_testing.gd" id="1_8bfyq"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/walking_point.tscn" id="2_nfu1b"]
 [ext_resource type="Script" uid="uid://ckbca3y7532cv" path="res://Scripts/grenate/grenate_manager.gd" id="3_nfu1b"]
-[ext_resource type="PackedScene" uid="uid://nspw2bofwrw0" path="res://Scenes/explosion.tscn" id="4_7l1vc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l1vc"]
 
@@ -16,6 +15,9 @@ sky = SubResource("Sky_c50au")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b6o3"]
 albedo_color = Color(0.49411765, 0.78431374, 0.28627452, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfu1b"]
+size = Vector3(29.96289, 1, 30.130798)
 
 [node name="Grenate Event Test" type="Node3D" groups=["Scene"]]
 
@@ -45,8 +47,12 @@ script = ExtResource("1_8bfyq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987828, 0.465739, -0.16445118)
 
 [node name="GrenateManager" type="Node3D" parent="."]
-transform = Transform3D(-0.9999999, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.9999999, -3.69, 0, 4.6394854)
+transform = Transform3D(-0.9999999, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.9999999, 0, -0.5, 0)
 script = ExtResource("3_nfu1b")
 
-[node name="Explosion" parent="." instance=ExtResource("4_7l1vc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.710001, 0, 12.147231)
+[node name="Area3D" type="Area3D" parent="GrenateManager"]
+transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrenateManager/Area3D"]
+transform = Transform3D(1, 0, 4.3272053e-12, 0, 1, 0, -4.3272053e-12, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nfu1b")

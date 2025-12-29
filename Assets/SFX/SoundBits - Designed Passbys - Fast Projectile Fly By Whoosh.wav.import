@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcqrmbwld4en5"
+path="res://.godot/imported/SoundBits - Designed Passbys - Fast Projectile Fly By Whoosh.wav-7641a227470c33102d8e1189b94f115b.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/SoundBits - Designed Passbys - Fast Projectile Fly By Whoosh.wav"
+dest_files=["res://.godot/imported/SoundBits - Designed Passbys - Fast Projectile Fly By Whoosh.wav-7641a227470c33102d8e1189b94f115b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

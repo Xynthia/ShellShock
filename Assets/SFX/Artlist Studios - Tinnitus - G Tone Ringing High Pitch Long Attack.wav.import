@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://db1ll1g7lo6s4"
+path="res://.godot/imported/Artlist Studios - Tinnitus - G Tone Ringing High Pitch Long Attack.wav-8d9686809cf9522c2d05e9b43926ba4e.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Artlist Studios - Tinnitus - G Tone Ringing High Pitch Long Attack.wav"
+dest_files=["res://.godot/imported/Artlist Studios - Tinnitus - G Tone Ringing High Pitch Long Attack.wav-8d9686809cf9522c2d05e9b43926ba4e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

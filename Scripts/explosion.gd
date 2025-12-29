@@ -7,7 +7,7 @@ extends Node3D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func particle_start() -> void:
 	fire_init.emitting = true
 	fire_2.emitting = true
 	smoke_spread.emitting = true

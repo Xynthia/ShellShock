@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b13xmhtcnx0ij"
+path="res://.godot/imported/Epic Stock Media - Infiltration Thriller - Violin Screech Transition.wav-8f9c8eee6ee19b50dd097b95e2a343ff.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Epic Stock Media - Infiltration Thriller - Violin Screech Transition.wav"
+dest_files=["res://.godot/imported/Epic Stock Media - Infiltration Thriller - Violin Screech Transition.wav-8f9c8eee6ee19b50dd097b95e2a343ff.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dinl221d1f88n"
+path="res://.godot/imported/Bjorn Lynne - Injured Male - Breathing Heavily Scared Exhausted .wav-42d29c2c536aa7835d099ce03b043bad.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Bjorn Lynne - Injured Male - Breathing Heavily Scared Exhausted .wav"
+dest_files=["res://.godot/imported/Bjorn Lynne - Injured Male - Breathing Heavily Scared Exhausted .wav-42d29c2c536aa7835d099ce03b043bad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
