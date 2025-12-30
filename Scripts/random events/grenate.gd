@@ -18,6 +18,8 @@ extends Node3D
 const WHOOSH_THROWING_AN_OBJECT = preload("uid://cawikrapdwpto")
 const SMALL_GRENADE_EXPLOSION = preload("uid://bnv38w7p2jqab")
 
+var explosion_timer : float = 1
+var explosion_time : float = 7
 
 var move_speed = 150
 
@@ -36,12 +38,17 @@ func _physics_process(delta: float) -> void:
 	path_follow_3d.progress += move_speed * get_process_delta_time()
 	if path_follow_3d.progress_ratio == 1 && do_this_once:
 		explosion()
+	elif path_follow_3d.progress_ratio == 1:
+		explosion_timer += delta
 		
+		if explosion_timer >= explosion_time:
+			queue_free()
 
 func explosion() -> void:
 	explosion_particles.particle_start()
 	play_explosion()
 	trauma_causer_up_scale()
+	grenade_body.visible = false
 
 func trauma_causer_up_scale() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)

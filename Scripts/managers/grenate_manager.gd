@@ -32,11 +32,11 @@ func spawn_grenade() -> void:
 	set_position_grenade(grenade)
 
 func set_position_grenade(grenade : Grenade) -> void:
-	var half_x = GameManager.size_danger_zone.x / 2
+	var half_x = GameManager.grenade_danger_zone.x / 2
 	var min_x = -half_x
 	var max_x = half_x
 	
-	var half_z = GameManager.size_danger_zone.z / 2
+	var half_z = GameManager.grenade_danger_zone.z / 2
 	var min_z = -half_z
 	var max_z = half_z
 	var random_x : float = randf_range(min_x, max_x)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dseynwydlxwc4" path="res://Scripts/Testing/walking_points_grenate_testing.gd" id="1_8bfyq"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/walking_point.tscn" id="2_nfu1b"]
 [ext_resource type="Script" uid="uid://ckbca3y7532cv" path="res://Scripts/managers/grenate_manager.gd" id="3_nfu1b"]
-[ext_resource type="Script" uid="uid://dsy3x3h2tuptx" path="res://Scripts/managers/artillery_manager.gd" id="5_xgoya"]
+[ext_resource type="PackedScene" uid="uid://dempxvg1xn4nq" path="res://Scenes/artillery.tscn" id="4_7l1vc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l1vc"]
 
@@ -58,6 +58,5 @@ transform = Transform3D(1, 0, 2.842171e-14, 0, 1, 0, -2.842171e-14, 0, 1, 0, 0, 
 transform = Transform3D(1, 0, 4.3272053e-12, 0, 1, 0, -4.3272053e-12, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_nfu1b")
 
-[node name="ArtilleryManager" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 19.62386)
-script = ExtResource("5_xgoya")
+[node name="artillery" parent="." instance=ExtResource("4_7l1vc")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 30.397497)

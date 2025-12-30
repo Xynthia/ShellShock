@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		pass
 	
 	if Input.is_action_just_pressed("Interact"):
-		GameManager.grenade_manager.spawn_grenade()
+		GameManager.artillery_manager.spawn_artillery()
 	
 	# Add the gravity.
 	if not is_on_floor():
