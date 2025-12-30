@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		explosion_timer += delta
 		
 		if explosion_timer >= explosion_time:
+			GameManager.artillery_manager.artillerys.erase(self)
 			queue_free()
 
 func explosion() -> void:

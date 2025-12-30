@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d1dpheldycu3m"]
+[gd_scene load_steps=20 format=3 uid="uid://d1dpheldycu3m"]
 
 [ext_resource type="Script" uid="uid://dxdif6riks764" path="res://Scripts/explosion_arty.gd" id="1_307k7"]
 [ext_resource type="Texture2D" uid="uid://bt1bc6skow7b" path="res://Assets/Particle Pack/PNG (Transparent)/fire_01.png" id="2_x4jon"]
@@ -25,7 +25,7 @@ grow_amount = 1.0
 offsets = PackedFloat32Array(0, 0.34133333, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_52d56"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_307k7"]
 gradient = SubResource("Gradient_h4yxj")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_021c3"]
@@ -34,7 +34,7 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 gravity = Vector3(0, 2, 0)
 color = Color(0.98028797, 0.81042117, 0.08438703, 1)
-color_ramp = SubResource("GradientTexture1D_52d56")
+color_ramp = SubResource("GradientTexture1D_307k7")
 
 [sub_resource type="QuadMesh" id="QuadMesh_fjw3j"]
 
@@ -50,6 +50,13 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 grow = true
 grow_amount = -3.0
+
+[sub_resource type="Gradient" id="Gradient_ooxhs"]
+offsets = PackedFloat32Array(0, 0.34133333, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_52d56"]
+gradient = SubResource("Gradient_ooxhs")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kqepn"]
 emission_shape_scale = Vector3(0.1, 0.1, 0.1)

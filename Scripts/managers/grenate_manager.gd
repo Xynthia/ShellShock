@@ -11,6 +11,7 @@ extends Node3D
 const GRENADE_CLASS = preload("res://Scenes/grenate.tscn")
 
 var grenades : Array[Grenade]
+var max_amount: int = 3
 
 var rng = RandomNumberGenerator.new()
 var grenade_pos : Vector3
@@ -25,11 +26,12 @@ func _process(delta: float) -> void:
 	pass
 
 func spawn_grenade() -> void:
-	var grenade : Grenade = GRENADE_CLASS.instantiate()
-	
-	grenades.push_back(grenade)
-	add_child(grenade)
-	set_position_grenade(grenade)
+	if grenades.size() < max_amount:
+		var grenade : Grenade = GRENADE_CLASS.instantiate()
+		
+		grenades.push_back(grenade)
+		add_child(grenade)
+		set_position_grenade(grenade)
 
 func set_position_grenade(grenade : Grenade) -> void:
 	var half_x = GameManager.grenade_danger_zone.x / 2

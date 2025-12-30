@@ -29,6 +29,7 @@ var new_scale : Vector3 = Vector3(10, 10, 10)
 
 func _ready() -> void:
 	play_trowing_object()
+	explosion_particles.particle_start()
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
@@ -42,10 +43,10 @@ func _physics_process(delta: float) -> void:
 		explosion_timer += delta
 		
 		if explosion_timer >= explosion_time:
+			GameManager.grenade_manager.grenades.erase(self)
 			queue_free()
 
 func explosion() -> void:
-	explosion_particles.particle_start()
 	play_explosion()
 	trauma_causer_up_scale()
 	grenade_body.visible = false
