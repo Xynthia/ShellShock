@@ -1,7 +1,8 @@
 extends Node
 
 @export var player : Player
-const PLAYER_CLASS = preload("res://Scenes/player.tscn")
+const PLAYER_CLASS = preload("uid://dd08kv410jg6r")
+
 
 @export var grenade_manager : GrenadeManager
 @export var artillery_manager : ArtilleryManager

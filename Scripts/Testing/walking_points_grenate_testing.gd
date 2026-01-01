@@ -1,4 +1,4 @@
-class_name WalkingPoints
+
 extends Node3D
 
 
@@ -13,8 +13,9 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GameManager.walking_points = self
-	GameManager.player.current_walk_point = starting_point
+	#GameManager.walking_points = self
+	#GameManager.player.current_walk_point = starting_point
+	pass
 
 func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3D) -> Array:
 	var points_next_to_current_point : Array[VisibleOnScreenNotifier3D]

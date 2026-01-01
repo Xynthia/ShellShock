@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2t7ctg0degb"]
+
+[ext_resource type="Script" uid="uid://dseynwydlxwc4" path="res://Scripts/Testing/walking_points_grenate_testing.gd" id="1_8bfyq"]
+[ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="2_nfu1b"]
+[ext_resource type="Script" uid="uid://ckbca3y7532cv" path="res://Scripts/managers/grenate_manager.gd" id="3_nfu1b"]
+[ext_resource type="Script" uid="uid://cllmiw8r74xxs" path="res://Scripts/managers/shot_manager.gd" id="5_8b6o3"]
+[ext_resource type="Script" uid="uid://dsy3x3h2tuptx" path="res://Scripts/managers/artillery_manager.gd" id="5_xgoya"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l1vc"]
+
+[sub_resource type="Sky" id="Sky_c50au"]
+sky_material = SubResource("ProceduralSkyMaterial_7l1vc")
+
+[sub_resource type="Environment" id="Environment_xgoya"]
+background_mode = 2
+sky = SubResource("Sky_c50au")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8b6o3"]
+albedo_color = Color(0.49411765, 0.78431374, 0.28627452, 1)
+
+[node name="Grenate Event Test" type="Node3D" groups=["Scene"]]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_xgoya")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 20, 20)
+shadow_enabled = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.562647, 2.5, -3.81)
+size = Vector3(5, 5, 5)
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_8b6o3")
+use_collision = true
+size = Vector3(30, 0.1, 30)
+
+[node name="WalkingPoints" type="Node3D" parent="."]
+script = ExtResource("1_8bfyq")
+
+[node name="WalkingPoint1" parent="WalkingPoints" instance=ExtResource("2_nfu1b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.987828, 0.465739, -0.16445118)
+
+[node name="GrenateManager" type="Node3D" parent="."]
+transform = Transform3D(-0.9999999, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.9999999, 0, -0.5, 0)
+script = ExtResource("3_nfu1b")
+
+[node name="ArtilleryManager" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 19.62386)
+script = ExtResource("5_xgoya")
+
+[node name="shotManager" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.13065696, 0, 0)
+script = ExtResource("5_8b6o3")

@@ -1,0 +1,360 @@
+[gd_scene load_steps=90 format=3 uid="uid://4471vf3lph1m"]
+
+[ext_resource type="PackedScene" uid="uid://bhnsmn1jwfaso" path="res://Assets/trenches assets pack/SM_AmmoCrateCloth_01.glb" id="1_pln67"]
+[ext_resource type="PackedScene" uid="uid://d04wmp81h4wqr" path="res://Assets/trenches assets pack/SM_AmmoCrate_01.glb" id="2_gf62g"]
+[ext_resource type="PackedScene" uid="uid://pf7h4djc7nmm" path="res://Assets/trenches assets pack/SM_AmmoCrate_02.glb" id="3_xme2b"]
+[ext_resource type="PackedScene" uid="uid://dohbnd3jfbki5" path="res://Assets/trenches assets pack/SM_BarbedWire01.glb" id="4_1bcbg"]
+[ext_resource type="PackedScene" uid="uid://d076xtiusa6a0" path="res://Assets/trenches assets pack/SM_BarbedWire02.glb" id="5_bm012"]
+[ext_resource type="PackedScene" uid="uid://lirbfoymrt8" path="res://Assets/trenches assets pack/SM_BarbedWire03.glb" id="6_fshla"]
+[ext_resource type="PackedScene" uid="uid://d4kgkmqebsgf5" path="res://Assets/trenches assets pack/SM_BarbedWire_01.glb" id="7_c3dsa"]
+[ext_resource type="PackedScene" uid="uid://p8heomuur00" path="res://Assets/trenches assets pack/SM_BedsFrame01.glb" id="8_ooj1h"]
+[ext_resource type="PackedScene" uid="uid://ponnsvyfbyk" path="res://Assets/trenches assets pack/SM_BedSheets01.glb" id="9_tfkqs"]
+[ext_resource type="PackedScene" uid="uid://7ml08kmyfsbw" path="res://Assets/trenches assets pack/SM_BedSheets02.glb" id="10_r6k80"]
+[ext_resource type="PackedScene" uid="uid://df1x2rv2da6t" path="res://Assets/trenches assets pack/SM_Cables01.glb" id="11_n2k65"]
+[ext_resource type="PackedScene" uid="uid://dcbydtrbhgkyl" path="res://Assets/trenches assets pack/SM_Cables02.glb" id="12_scv50"]
+[ext_resource type="PackedScene" uid="uid://b3uucei0v0yrb" path="res://Assets/trenches assets pack/SM_Cables03.glb" id="13_ta2f3"]
+[ext_resource type="PackedScene" uid="uid://bb1ylu3jo856i" path="res://Assets/trenches assets pack/SM_Chair01.glb" id="14_1j5yb"]
+[ext_resource type="PackedScene" uid="uid://cowpup4q0h8ih" path="res://Assets/trenches assets pack/SM_ClothHang01.glb" id="15_uckdt"]
+[ext_resource type="PackedScene" uid="uid://dnnt1mbjdp02j" path="res://Assets/trenches assets pack/SM_CorrugatedMetal_01.glb" id="16_lav6k"]
+[ext_resource type="PackedScene" uid="uid://d2skf23mp4mgy" path="res://Assets/trenches assets pack/SM_CorrugatedMetal_02.glb" id="17_fel28"]
+[ext_resource type="PackedScene" uid="uid://d00du22n1cvn5" path="res://Assets/trenches assets pack/SM_ElectricalBox01.glb" id="18_rf5ai"]
+[ext_resource type="PackedScene" uid="uid://dtvrreahlwd0e" path="res://Assets/trenches assets pack/SM_ElectricalBox02.glb" id="19_gngyy"]
+[ext_resource type="PackedScene" uid="uid://cipe4vqt8gnu0" path="res://Assets/trenches assets pack/SM_FloorMudCorner_4x8_01.glb" id="20_wxm5v"]
+[ext_resource type="PackedScene" uid="uid://uwrs83enwbjc" path="res://Assets/trenches assets pack/SM_FloorMudCorner_4x8_02.glb" id="21_lxbs3"]
+[ext_resource type="PackedScene" uid="uid://cppepyudaqtj3" path="res://Assets/trenches assets pack/SM_FloorMud_2x4_01.glb" id="22_hnui5"]
+[ext_resource type="PackedScene" uid="uid://dw1x3wt6w10yi" path="res://Assets/trenches assets pack/SM_FloorMud_4x4_01.glb" id="23_fxkdf"]
+[ext_resource type="PackedScene" uid="uid://dc4sru1x1qg7o" path="res://Assets/trenches assets pack/SM_FloorMud_4x4_02.glb" id="24_0ca7q"]
+[ext_resource type="PackedScene" uid="uid://7ou8i70d5brs" path="res://Assets/trenches assets pack/SM_FloorMud_4x4_03.glb" id="25_7tvjy"]
+[ext_resource type="PackedScene" uid="uid://15k3yb244xjx" path="res://Assets/trenches assets pack/SM_FloorMud_4x8_01.glb" id="26_q2oap"]
+[ext_resource type="PackedScene" uid="uid://3ykkj1uupr38" path="res://Assets/trenches assets pack/SM_FloorMud_4x8_02.glb" id="27_jlkgj"]
+[ext_resource type="PackedScene" uid="uid://dtia2i58lcs5s" path="res://Assets/trenches assets pack/SM_GroundMudCrater_8x8_01.glb" id="28_uct5y"]
+[ext_resource type="PackedScene" uid="uid://dgvyykkd2ug1k" path="res://Assets/trenches assets pack/SM_GroundMudCrater_8x8_02.glb" id="29_ei4a3"]
+[ext_resource type="PackedScene" uid="uid://b1hg37pilgxlr" path="res://Assets/trenches assets pack/SM_GroundMudRough_4x4_01.glb" id="30_mjibh"]
+[ext_resource type="PackedScene" uid="uid://dl0cpdroi77l5" path="res://Assets/trenches assets pack/SM_GroundMudRough_4x4_02.glb" id="31_5jowa"]
+[ext_resource type="PackedScene" uid="uid://bmha7r3xe388v" path="res://Assets/trenches assets pack/SM_GroundMudRough_4x4_03.glb" id="32_13kkq"]
+[ext_resource type="PackedScene" uid="uid://cbs8i01yfprxi" path="res://Assets/trenches assets pack/SM_GroundMudRough_4x8_01.glb" id="33_c666t"]
+[ext_resource type="PackedScene" uid="uid://cdgpno12fcgu4" path="res://Assets/trenches assets pack/SM_GroundMudRough_4x8_02.glb" id="34_bhaa0"]
+[ext_resource type="PackedScene" uid="uid://b3xmf4o5hflqd" path="res://Assets/trenches assets pack/SM_HelmetBritish01.glb" id="35_r4yv0"]
+[ext_resource type="PackedScene" uid="uid://dfnasbkys6vyr" path="res://Assets/trenches assets pack/SM_HelmetGerman01.glb" id="36_c5nmn"]
+[ext_resource type="PackedScene" uid="uid://bgjnupgxpv04n" path="res://Assets/trenches assets pack/SM_Ladder01.glb" id="37_4wygn"]
+[ext_resource type="PackedScene" uid="uid://hwgj1u47cpdo" path="res://Assets/trenches assets pack/SM_LaternBox01.glb" id="38_jhnkb"]
+[ext_resource type="PackedScene" uid="uid://clerpm072f715" path="res://Assets/trenches assets pack/SM_LaternBox01DoorR.glb" id="39_s3ugk"]
+[ext_resource type="PackedScene" uid="uid://ru6vdt5sfsg3" path="res://Assets/trenches assets pack/SM_Latern_01.glb" id="40_g07ry"]
+[ext_resource type="PackedScene" uid="uid://ic2cxoxhqelj" path="res://Assets/trenches assets pack/SM_LightWall01.glb" id="41_10jrx"]
+[ext_resource type="PackedScene" uid="uid://c7h4k5yi1x8n0" path="res://Assets/trenches assets pack/SM_LogLadder_01.glb" id="42_y5s2s"]
+[ext_resource type="PackedScene" uid="uid://5b8imi4hoibf" path="res://Assets/trenches assets pack/SM_LogMed_01.glb" id="43_dhng7"]
+[ext_resource type="PackedScene" uid="uid://blr2vgvnyykwa" path="res://Assets/trenches assets pack/SM_LogMed_02.glb" id="44_1fvhl"]
+[ext_resource type="PackedScene" uid="uid://dhfuidxw4ebjp" path="res://Assets/trenches assets pack/SM_LogSmall_01.glb" id="45_om46r"]
+[ext_resource type="PackedScene" uid="uid://bs0qibk7hqwma" path="res://Assets/trenches assets pack/SM_LogSmall_02.glb" id="46_nb07r"]
+[ext_resource type="PackedScene" uid="uid://bm6uy87x7in3m" path="res://Assets/trenches assets pack/SM_LogStruct_01.glb" id="47_tu81c"]
+[ext_resource type="PackedScene" uid="uid://bm3e6ogg4n47u" path="res://Assets/trenches assets pack/SM_LogTri_01.glb" id="48_hltf1"]
+[ext_resource type="PackedScene" uid="uid://g7vh4infkaf2" path="res://Assets/trenches assets pack/SM_Sandbags01.glb" id="49_xolrp"]
+[ext_resource type="PackedScene" uid="uid://dsr2lnn4tr0jd" path="res://Assets/trenches assets pack/SM_Sandbags02.glb" id="50_8e2tv"]
+[ext_resource type="PackedScene" uid="uid://cjegcyd83pdhm" path="res://Assets/trenches assets pack/SM_Sandbags03.glb" id="51_c6lcr"]
+[ext_resource type="PackedScene" uid="uid://f7hyu006j307" path="res://Assets/trenches assets pack/SM_SandbagsPile_01.glb" id="52_fid52"]
+[ext_resource type="PackedScene" uid="uid://dbfeoi6f0qa4n" path="res://Assets/trenches assets pack/SM_SandbagsPile_02.glb" id="53_0a5xh"]
+[ext_resource type="PackedScene" uid="uid://bb0k74r0a3al4" path="res://Assets/trenches assets pack/SM_Sandbags_01.glb" id="54_qtln4"]
+[ext_resource type="PackedScene" uid="uid://b3pwgmql4mtmf" path="res://Assets/trenches assets pack/SM_Sandbags_02.glb" id="55_5l3tu"]
+[ext_resource type="PackedScene" uid="uid://cjp8lsvfxmdg" path="res://Assets/trenches assets pack/SM_Sandbags_03.glb" id="56_vyx21"]
+[ext_resource type="PackedScene" uid="uid://b7fdyw7bhai0l" path="res://Assets/trenches assets pack/SM_Sandbags_04.glb" id="57_dt0yd"]
+[ext_resource type="PackedScene" uid="uid://bpbaewpdwqt0l" path="res://Assets/trenches assets pack/SM_Signpost01.glb" id="58_7nwcr"]
+[ext_resource type="PackedScene" uid="uid://dkdjvh51a07bo" path="res://Assets/trenches assets pack/SM_Signpost02.glb" id="59_gecle"]
+[ext_resource type="PackedScene" uid="uid://c7ocbdmsmtlts" path="res://Assets/trenches assets pack/SM_Signpost03.glb" id="60_mnewf"]
+[ext_resource type="PackedScene" uid="uid://x6k67b50e5ce" path="res://Assets/trenches assets pack/SM_Table01.glb" id="61_3ae73"]
+[ext_resource type="PackedScene" uid="uid://d2ps0o4ohpbij" path="res://Assets/trenches assets pack/SM_TreeBattlefield01.glb" id="62_yam85"]
+[ext_resource type="PackedScene" uid="uid://c1scv3fiv0e7l" path="res://Assets/trenches assets pack/SM_TreeBattlefield02.glb" id="63_8wypx"]
+[ext_resource type="PackedScene" uid="uid://dgdx0uj7tibsn" path="res://Assets/trenches assets pack/SM_TreeBattlefield03.glb" id="64_p2swy"]
+[ext_resource type="PackedScene" uid="uid://caf3cltdt4x1q" path="res://Assets/trenches assets pack/SM_TreeBattlefield04.glb" id="65_cp28j"]
+[ext_resource type="PackedScene" uid="uid://dpwc56rih2nn7" path="res://Assets/trenches assets pack/SM_TreeLog01.glb" id="66_vqebf"]
+[ext_resource type="PackedScene" uid="uid://cmcju45fmy8gx" path="res://Assets/trenches assets pack/SM_TreeLog02.glb" id="67_i1rvm"]
+[ext_resource type="PackedScene" uid="uid://bsmtqsqbh03dy" path="res://Assets/trenches assets pack/SM_WallMudRough_4x3_01.glb" id="68_as2bu"]
+[ext_resource type="PackedScene" uid="uid://bfre08unvsxfg" path="res://Assets/trenches assets pack/SM_WallMudRough_4x3_02.glb" id="69_xr5i1"]
+[ext_resource type="PackedScene" uid="uid://4jokx51e4mc1" path="res://Assets/trenches assets pack/SM_WallMudRough_4x3_03.glb" id="70_2n5l5"]
+[ext_resource type="PackedScene" uid="uid://c4adqtuagk0oi" path="res://Assets/trenches assets pack/SM_WallMud_2x4_00.glb" id="71_n7rn0"]
+[ext_resource type="PackedScene" uid="uid://nt0mdv45klkp" path="res://Assets/trenches assets pack/SM_WallMud_2x4_01.glb" id="72_vk3va"]
+[ext_resource type="PackedScene" uid="uid://cs3y66wpfawy3" path="res://Assets/trenches assets pack/SM_WallMud_2x4_02.glb" id="73_wq4qq"]
+[ext_resource type="PackedScene" uid="uid://bjw0es26b23es" path="res://Assets/trenches assets pack/SM_WallMud_2x4_03.glb" id="74_m3rpf"]
+[ext_resource type="PackedScene" uid="uid://dfeq6m6ndc6m3" path="res://Assets/trenches assets pack/SM_WallWeaved01.glb" id="75_l2ho0"]
+[ext_resource type="PackedScene" uid="uid://cncl5rqcavpv8" path="res://Assets/trenches assets pack/SM_WallWoodBoards01.glb" id="76_yvns1"]
+[ext_resource type="PackedScene" uid="uid://6egacoit1vs7" path="res://Assets/trenches assets pack/SM_WallWoodBoards02.glb" id="77_t07pg"]
+[ext_resource type="PackedScene" uid="uid://dh4b4kpot4w68" path="res://Assets/trenches assets pack/SM_WoodBeam01.glb" id="78_htq1c"]
+[ext_resource type="PackedScene" uid="uid://dv8choup80ig1" path="res://Assets/trenches assets pack/SM_WoodBeam02.glb" id="79_e8egl"]
+[ext_resource type="PackedScene" uid="uid://dp5jyna5m38w1" path="res://Assets/trenches assets pack/SM_WoodBeam03.glb" id="80_wv5l6"]
+[ext_resource type="PackedScene" uid="uid://jdtnvqufft77" path="res://Assets/trenches assets pack/SM_WoodBoards_2x2_01.glb" id="81_q4xba"]
+[ext_resource type="PackedScene" uid="uid://bf3tvg200jqta" path="res://Assets/trenches assets pack/SM_WoodBoards_2x2_02.glb" id="82_gctyi"]
+[ext_resource type="PackedScene" uid="uid://blfuhmq2vppyx" path="res://Assets/trenches assets pack/SM_WoodBoards_2x3_01.glb" id="83_av6wy"]
+[ext_resource type="PackedScene" uid="uid://deylx1xn0n7th" path="res://Assets/trenches assets pack/SM_WoodBoards_2x3_02.glb" id="84_gpsqi"]
+[ext_resource type="PackedScene" uid="uid://c6pn7of0kfu2v" path="res://Assets/trenches assets pack/SM_WoodBoards_4x1_01.glb" id="85_ay3mc"]
+[ext_resource type="PackedScene" uid="uid://bwfcynsf1srv7" path="res://Assets/trenches assets pack/SM_WoodBoard_01.glb" id="86_xcvas"]
+[ext_resource type="PackedScene" uid="uid://b5l5wxw6lfoeh" path="res://Assets/trenches assets pack/SM_WoodBoard_02.glb" id="87_ndx2d"]
+[ext_resource type="PackedScene" uid="uid://dlb6ag3wb8ybw" path="res://Assets/trenches assets pack/SM_WoodBoard_03.glb" id="88_cj2nt"]
+[ext_resource type="PackedScene" uid="uid://be1vvpt26ry26" path="res://Assets/trenches assets pack/SM_WoodBoard_04.glb" id="89_pw7ro"]
+
+[node name="Assets" type="Node3D"]
+
+[node name="SM_AmmoCrateCloth_01" parent="." instance=ExtResource("1_pln67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3093767, -0.079063416, -2.1468444)
+
+[node name="SM_AmmoCrate_01" parent="." instance=ExtResource("2_gf62g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3205013, 0, -4.1941094)
+
+[node name="SM_AmmoCrate_02" parent="." instance=ExtResource("3_xme2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31921, 0, -5.818358)
+
+[node name="SM_BarbedWire01" parent="." instance=ExtResource("4_1bcbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9709024, 0, -0.18281198)
+
+[node name="SM_BarbedWire02" parent="." instance=ExtResource("5_bm012")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7349014, 0, -3.586897)
+
+[node name="SM_BarbedWire03" parent="." instance=ExtResource("6_fshla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.677898, 0, -7.092306)
+
+[node name="SM_BarbedWire_01" parent="." instance=ExtResource("7_c3dsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8245687, 0, -11.424331)
+
+[node name="SM_BedsFrame01" parent="." instance=ExtResource("8_ooj1h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7452793, 0, -2.0579314)
+
+[node name="SM_BedSheets01" parent="." instance=ExtResource("9_tfkqs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.069705, 0, -5.8583097)
+
+[node name="SM_BedSheets02" parent="." instance=ExtResource("10_r6k80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.85961, 0, -8.889015)
+
+[node name="SM_Cables01" parent="." instance=ExtResource("11_n2k65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.706702, 0, -0.9538021)
+
+[node name="SM_Cables02" parent="." instance=ExtResource("12_scv50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.62984, 0, -4.189506)
+
+[node name="SM_Cables03" parent="." instance=ExtResource("13_ta2f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.563838, 0, -6.7852306)
+
+[node name="SM_Chair01" parent="." instance=ExtResource("14_1j5yb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.579558, 0, -1.0996914)
+
+[node name="SM_ClothHang01" parent="." instance=ExtResource("15_uckdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.765841, -4.7683716e-07, -3.3808877)
+
+[node name="SM_CorrugatedMetal_01" parent="." instance=ExtResource("16_lav6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0312805, 1.1182926, -1.0704315)
+
+[node name="SM_CorrugatedMetal_02" parent="." instance=ExtResource("17_fel28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.599443, 0.061911106, -4.7173223)
+
+[node name="SM_ElectricalBox01" parent="." instance=ExtResource("18_rf5ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.72144, 0, -0.73247147)
+
+[node name="SM_ElectricalBox02" parent="." instance=ExtResource("19_gngyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.64552, 0, -1.9175665)
+
+[node name="SM_FloorMudCorner_4x8_01" parent="." instance=ExtResource("20_wxm5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.992165, 0, -4.2780104)
+
+[node name="SM_FloorMudCorner_4x8_02" parent="." instance=ExtResource("21_lxbs3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1352, 0, -13.851572)
+
+[node name="SM_FloorMud_2x4_01" parent="." instance=ExtResource("22_hnui5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.019897, 1.6867762, -3.8362627)
+
+[node name="SM_FloorMud_4x4_01" parent="." instance=ExtResource("23_fxkdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.520157, -1.2877884, -10.097398)
+
+[node name="SM_FloorMud_4x4_02" parent="." instance=ExtResource("24_0ca7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.68168, 0, -14.712694)
+
+[node name="SM_FloorMud_4x4_03" parent="." instance=ExtResource("25_7tvjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.76049, 0, -19.726406)
+
+[node name="SM_FloorMud_4x8_01" parent="." instance=ExtResource("26_q2oap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.20173, 0, -25.47141)
+
+[node name="SM_FloorMud_4x8_02" parent="." instance=ExtResource("27_jlkgj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.29104, 0, -31.153145)
+
+[node name="SM_GroundMudCrater_8x8_01" parent="." instance=ExtResource("28_uct5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.53326, 0.4742422, -7.7740498)
+
+[node name="SM_GroundMudCrater_8x8_02" parent="." instance=ExtResource("29_ei4a3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.084843, 0, -18.126915)
+
+[node name="SM_GroundMudRough_4x4_01" parent="." instance=ExtResource("30_mjibh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.619408, 0, -2.4326563)
+
+[node name="SM_GroundMudRough_4x4_02" parent="." instance=ExtResource("31_5jowa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.61668, 0, -8.739913)
+
+[node name="SM_GroundMudRough_4x4_03" parent="." instance=ExtResource("32_13kkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.551907, 0, -14.931363)
+
+[node name="SM_GroundMudRough_4x8_01" parent="." instance=ExtResource("33_c666t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.45918, 0, -20.784496)
+
+[node name="SM_GroundMudRough_4x8_02" parent="." instance=ExtResource("34_bhaa0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.587185, 0, -26.634808)
+
+[node name="SM_HelmetBritish01" parent="." instance=ExtResource("35_r4yv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.538506, 0, -2.475668)
+
+[node name="SM_HelmetGerman01" parent="." instance=ExtResource("36_c5nmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.454926, 0, -3.82485)
+
+[node name="SM_Ladder01" parent="." instance=ExtResource("37_4wygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.59856, 0, -2.2139301)
+
+[node name="SM_LaternBox01" parent="." instance=ExtResource("38_jhnkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.46549, 0, -4.30447)
+
+[node name="SM_LaternBox01DoorR" parent="." instance=ExtResource("39_s3ugk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.486855, 0, -5.008315)
+
+[node name="SM_Latern_01" parent="." instance=ExtResource("40_g07ry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.45258, 0, -5.762603)
+
+[node name="SM_LightWall01" parent="." instance=ExtResource("41_10jrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.6073, 0, -7.055731)
+
+[node name="SM_LogLadder_01" parent="." instance=ExtResource("42_y5s2s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.372055, 0, -2.2119274)
+
+[node name="SM_LogMed_01" parent="." instance=ExtResource("43_dhng7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.92522, 4.7683716e-07, -3.6671789)
+
+[node name="SM_LogMed_02" parent="." instance=ExtResource("44_1fvhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.94314, 4.7683716e-07, -4.7174354)
+
+[node name="SM_LogSmall_01" parent="." instance=ExtResource("45_om46r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.885056, 0, -5.661126)
+
+[node name="SM_LogSmall_02" parent="." instance=ExtResource("46_nb07r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.99375, 4.7683716e-07, -6.6171827)
+
+[node name="SM_LogStruct_01" parent="." instance=ExtResource("47_tu81c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.34432, 0.409976, -1.8195233)
+
+[node name="SM_LogTri_01" parent="." instance=ExtResource("48_hltf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.89231, 0.416255, -4.5925326)
+
+[node name="SM_Sandbags01" parent="." instance=ExtResource("49_xolrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.63973, 0, -2.2767994)
+
+[node name="SM_Sandbags02" parent="." instance=ExtResource("50_8e2tv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.40769, 0, -7.6123085)
+
+[node name="SM_Sandbags03" parent="." instance=ExtResource("51_c6lcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.32347, 0, -12.413002)
+
+[node name="SM_SandbagsPile_01" parent="." instance=ExtResource("52_fid52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.92816, 0, -1.3195281)
+
+[node name="SM_SandbagsPile_02" parent="." instance=ExtResource("53_0a5xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.93705, 0, -4.7734294)
+
+[node name="SM_Sandbags_01" parent="." instance=ExtResource("54_qtln4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.148285, 0, -7.1441755)
+
+[node name="SM_Sandbags_02" parent="." instance=ExtResource("55_5l3tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.01579, 0, -9.095681)
+
+[node name="SM_Sandbags_03" parent="." instance=ExtResource("56_vyx21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.04746, 0, -11.439975)
+
+[node name="SM_Sandbags_04" parent="." instance=ExtResource("57_dt0yd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.01835, 0, -13.298195)
+
+[node name="SM_Signpost01" parent="." instance=ExtResource("58_7nwcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.22035, 0, -0.46310425)
+
+[node name="SM_Signpost02" parent="." instance=ExtResource("59_gecle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.191734, 0, -2.0633373)
+
+[node name="SM_Signpost03" parent="." instance=ExtResource("60_mnewf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.16281, 0, -3.7154348)
+
+[node name="SM_Table01" parent="." instance=ExtResource("61_3ae73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.432014, 0, -1.0759287)
+
+[node name="SM_TreeBattlefield01" parent="." instance=ExtResource("62_yam85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.25165, 0, -1.3207169)
+
+[node name="SM_TreeBattlefield02" parent="." instance=ExtResource("63_8wypx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.572174, 0, -5.8195777)
+
+[node name="SM_TreeBattlefield03" parent="." instance=ExtResource("64_p2swy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.07137, 0, -11.110202)
+
+[node name="SM_TreeBattlefield04" parent="." instance=ExtResource("65_cp28j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.65805, 0, -18.95293)
+
+[node name="SM_TreeLog01" parent="." instance=ExtResource("66_vqebf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.64177, 0, -2.0299673)
+
+[node name="SM_TreeLog02" parent="." instance=ExtResource("67_i1rvm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.326836, 0, -6.5752106)
+
+[node name="SM_WallMudRough_4x3_01" parent="." instance=ExtResource("68_as2bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.13023, 0, -3.6274688)
+
+[node name="SM_WallMudRough_4x3_02" parent="." instance=ExtResource("69_xr5i1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.16079, 0, -9.252211)
+
+[node name="SM_WallMudRough_4x3_03" parent="." instance=ExtResource("70_2n5l5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.463486, 0, -15.449423)
+
+[node name="SM_WallMud_2x4_00" parent="." instance=ExtResource("71_n7rn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.19642, 0, -21.1748)
+
+[node name="SM_WallMud_2x4_01" parent="." instance=ExtResource("72_vk3va")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.60386, 2.484106, -15.612222)
+
+[node name="SM_WallMud_2x4_02" parent="." instance=ExtResource("73_wq4qq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.041016, 2.0310535, -9.907145)
+
+[node name="SM_WallMud_2x4_03" parent="." instance=ExtResource("74_m3rpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.95701, 0, -3.1776724)
+
+[node name="SM_WallWeaved01" parent="." instance=ExtResource("75_l2ho0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.75966, 0, -3.9146376)
+
+[node name="SM_WallWoodBoards01" parent="." instance=ExtResource("76_yvns1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.70746, 0, -9.476141)
+
+[node name="SM_WallWoodBoards02" parent="." instance=ExtResource("77_t07pg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.555405, 0, -14.848469)
+
+[node name="SM_WoodBeam01" parent="." instance=ExtResource("78_htq1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.80416, 9.536743e-07, -2.356874)
+
+[node name="SM_WoodBeam02" parent="." instance=ExtResource("79_e8egl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.59569, 9.536743e-07, -5.9060845)
+
+[node name="SM_WoodBeam03" parent="." instance=ExtResource("80_wv5l6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.52257, 0, -10.108645)
+
+[node name="SM_WoodBoards_2x2_01" parent="." instance=ExtResource("81_q4xba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.42809, 0, -2.664113)
+
+[node name="SM_WoodBoards_2x2_02" parent="." instance=ExtResource("82_gctyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.412964, 0, -5.9145436)
+
+[node name="SM_WoodBoards_2x3_01" parent="." instance=ExtResource("83_av6wy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.08577, 0, -9.486637)
+
+[node name="SM_WoodBoards_2x3_02" parent="." instance=ExtResource("84_gpsqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116.278694, 0, -14.088034)
+
+[node name="SM_WoodBoards_4x1_01" parent="." instance=ExtResource("85_ay3mc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.28581, 1.9364853, -4.264554)
+
+[node name="SM_WoodBoard_01" parent="." instance=ExtResource("86_xcvas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.30486, 1.9364872, -7.6642313)
+
+[node name="SM_WoodBoard_02" parent="." instance=ExtResource("87_ndx2d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.249306, 1.9364862, -10.915309)
+
+[node name="SM_WoodBoard_03" parent="." instance=ExtResource("88_cj2nt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.196625, 9.536743e-07, -14.001916)
+
+[node name="SM_WoodBoard_04" parent="." instance=ExtResource("89_pw7ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.99939, 0, -2.804237)

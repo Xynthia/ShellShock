@@ -13,12 +13,12 @@ extends Node3D
 
 @onready var muzzleflash: Node3D = $muzzleflash
 
-
 const MIXED_LONG_DISTANCE_SHOT = preload("uid://q5pbmggc6vqa")
 const RICOCHET_METALLIC_HIT = preload("uid://drnh5olui67mw")
 
 const FAST_PROJECTILE_FLY_BY_WHOOSH = preload("uid://bcqrmbwld4en5")
 
+var RichochetChance = RandomNumberGenerator.new()
 
 var hit_timer : float = 1
 var hit_time : float = 3
@@ -51,7 +51,9 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 
 func hit() -> void:
-	if didnt_hit_player:
+	var my_random_number = RichochetChance.randf_range(0, 1)
+	
+	if didnt_hit_player && my_random_number <= 0.15:
 		play_shot_on_ground()
 	
 	bullet_body.visible = false

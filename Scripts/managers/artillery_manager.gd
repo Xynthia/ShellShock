@@ -3,6 +3,7 @@ extends Node3D
 
 const ARTILLERY_CLASS = preload("uid://dempxvg1xn4nq")
 
+
 var artillerys : Array[Array]
 var amount_artillerys : int = 2
 

@@ -3,6 +3,7 @@ extends Node3D
 
 const SHOT_CLASS = preload("uid://pirqdphslrxt")
 
+
 var shots : Array[Shot]
 var max_amount: int = 8
 

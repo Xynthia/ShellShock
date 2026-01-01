@@ -8,7 +8,8 @@ extends Node3D
 @onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 
 
-const GRENADE_CLASS = preload("res://Scenes/grenate.tscn")
+const GRENADE_CLASS = preload("uid://bedtrjbqukbwj")
+
 
 var grenades : Array[Grenade]
 var max_amount: int = 3
