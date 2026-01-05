@@ -16,9 +16,9 @@ const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
 const TINNITUS = preload("uid://cwtpeduhorxbe")
 
-var middle : Array[float] = [-75, 75]
-var right : Array[float] = [75, 180]
-var left : Array[float] = [-75, -180]
+var middle : Array[float] = [-37.5, 37.5]
+var right : Array[float] = [37.5, 180]
+var left : Array[float] = [-37.5, -180]
 
 var do_this_once_per_change : bool = true;
 var screen_relative : Vector2
@@ -70,17 +70,11 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("alt"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		pass
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Input.is_action_just_pressed("Interact"):
 		GameManager.shot_manager.spawn_shot()
 	
-	# Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
-	#
-	#move_and_slide()
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -112,6 +106,7 @@ func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	#if skipping a position check walkinpoints array
 	last_walk_point = current_walk_point
 	current_walk_point = new_position
+	
 	move_to(new_position.position)
 	
 
@@ -128,98 +123,81 @@ func turn_to_walk_point(direction: int) -> void:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	var walking_points_directions : Array[look_dir_3]
-	
-	for walk_point in walk_points_next_to_current_walk_point:
-		walking_points_directions.push_back(get_look_dir_new_walking_point(walk_point))
-	
-	var next_look_at_walking_point = walk_points_next_to_current_walk_point[walking_points_directions.find(direction)]
-	
-	
-	look_at(next_look_at_walking_point.global_position)
-	
-	#if walk_points_next_to_current_walk_point.size() == 3:
-		#
-		#if direction == look_dir_2.RIGHT:
-			#direction = look_dir_3.RIGHT
-		#elif direction == look_dir_2.LEFT:
-			#direction = look_dir_3.LEFT
-		#
-		#
-		##match current_look_dir:
-			##look_dir_3.LEFT:
-				##if direction == look_dir_3.RIGHT:
-					##look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE])
-			##look_dir_3.MIDDLE:
-				##if direction == look_dir_3.LEFT:
-					##look_to(walk_points_next_to_current_walk_point[look_dir_3.LEFT])
-				##else:
-					##look_to(walk_points_next_to_current_walk_point[look_dir_3.RIGHT])
-			##look_dir_3.RIGHT:
-				##if direction == look_dir_3.LEFT:
-					##look_to(walk_points_next_to_current_walk_point[look_dir_3.MIDDLE])
-	#elif walk_points_next_to_current_walk_point.size() == 2:
-		#var current_look_dir : look_dir_2
-		#
-		#for walk_point : VisibleOnScreenNotifier3D in walk_points_next_to_current_walk_point:
-			#if looking_at_walk_point == walk_point:
-				#var position = walk_points_next_to_current_walk_point.find(walk_point, 0)
-				#if position == 1:
-					#current_look_dir = look_dir_2.RIGHT
-				#else:
-					#current_look_dir = look_dir_2.LEFT
-	#
-		#match current_look_dir:
-			#look_dir_2.LEFT:
-				#if direction == look_dir_2.RIGHT:
-						#look_to(walk_points_next_to_current_walk_point[look_dir_2.RIGHT])
-			#look_dir_2.RIGHT:
-				#if direction == look_dir_2.LEFT:
-						#look_to(walk_points_next_to_current_walk_point[look_dir_2.LEFT])
-	#else:
-		#look_to(walk_points_next_to_current_walk_point[0])
-
-func get_look_dir_new_walking_point(walking_point : VisibleOnScreenNotifier3D) -> look_dir_3:
-	#check point position compared to player degrees.
-	var look_at_pos : CollisionShape3D = CollisionShape3D.new()
-	var box = BoxShape3D.new()
-	box.size = Vector3(0.5,0.5,5)
-	look_at_pos.shape = box
-	current_walk_point.add_child(look_at_pos)
-	
-	look_at_pos.global_rotation.y = self.global_rotation.y
-	look_at_pos.look_at_from_position(global_position ,walking_point.global_position, up_direction, true)
+	var walking_points_closest : Array[VisibleOnScreenNotifier3D]
+	var next_look_at_walking_point : VisibleOnScreenNotifier3D
+	var closest_walking_point_left : VisibleOnScreenNotifier3D
+	var closest_walking_point_right : VisibleOnScreenNotifier3D
 	
 	
+	var last_degree_difference : float = 360
 	
-	var vec1 = self.rotation
-	var vec2 = look_at_pos.rotation
-	
-	var difference_in_degrees = angle_difference(vec1.y, vec2.y)
-	var new_rotation_degrees :Vector3
-	var degrees = rad_to_deg(difference_in_degrees)
-	#look_at_pos.rotation_degrees.y = degrees + rad_to_deg(vec1.y)
-	
-	print(degrees)
-	
-	if degrees >= middle[0] && degrees <=  middle[1]:
-		return look_dir_3.MIDDLE
-	elif degrees >=  right[0] && degrees <=  right[1]:
-		return look_dir_3.RIGHT
-	elif degrees >=  left[1] && degrees <= left[0]:
-		return look_dir_3.LEFT
+	if walk_points_next_to_current_walk_point.size() > 1:
+		for walk_point in walk_points_next_to_current_walk_point:
+			var look_at_pos : CollisionShape3D = CollisionShape3D.new()
+			
+			look_at_pos.look_at_from_position(current_walk_point.global_position ,walk_point.global_position, up_direction, true)
+			
+			var vec1 = self.rotation
+			var vec2 = look_at_pos.rotation
+			
+			var difference_in_degrees = angle_difference(vec1.y, vec2.y)
+			var degrees = rad_to_deg(difference_in_degrees)
+			
+			degrees = fmod(degrees + 180.0, 360.0) - 180.0
+			
+			if degrees >= middle[0] && degrees <=  middle[1]:
+				walking_points_directions.push_back(look_dir_3.MIDDLE)
+			elif degrees >=  right[0] && degrees <=  right[1]:
+				walking_points_directions.push_back(look_dir_3.RIGHT)
+			elif degrees >=  left[1] && degrees <= left[0]:
+				walking_points_directions.push_back(look_dir_3.LEFT)
+			
+			
+			if abs(degrees) < abs(last_degree_difference):
+				walking_points_closest.push_front(walk_point)
+				last_degree_difference = degrees
+			elif last_degree_difference == null:
+				last_degree_difference = degrees
+			else:
+				walking_points_closest.push_back(walk_point)
+		
+		for walking_point in walking_points_closest:
+			var direction_walking_point_id: float = walk_points_next_to_current_walk_point.find(walking_point)
+			var direction_walking_point = walking_points_directions[direction_walking_point_id]
+			
+			if !closest_walking_point_left && direction_walking_point == look_dir_3.LEFT:
+				closest_walking_point_left = walking_point
+			elif !closest_walking_point_right && direction_walking_point == look_dir_3.RIGHT:
+				closest_walking_point_right = walking_point
+			
+		
+		if direction == look_dir_3.LEFT:
+			for walking_point in walking_points_directions:
+				if walking_point == look_dir_3.LEFT && closest_walking_point_left:
+					next_look_at_walking_point = closest_walking_point_left
+		if direction == look_dir_3.RIGHT:
+			for walking_point in walking_points_directions:
+				if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
+					next_look_at_walking_point = closest_walking_point_right
+		
 	else:
-		return look_dir_3.MIDDLE
+		next_look_at_walking_point = walk_points_next_to_current_walk_point[0]
+		
+	if next_look_at_walking_point:
+		look_to(next_look_at_walking_point)
+	
 
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
 		if turn_once && !looking_at_walk_point && walk_point != last_walk_point:
-			look_at(walk_point.global_position)
+			look_to(walk_point)
+			
+			
 		
 
 func move_to(new_position : Vector3) -> void:
-	
 	move_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	new_position.y = self.position.y
 	
@@ -235,14 +213,15 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_once = false
 	turn_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
-	var look_at_pos : Node3D = Node3D.new()
-	look_at_pos.rotation_degrees.y = self.rotation_degrees.y
-	look_at_pos.look_at_from_position(global_position ,new_walk_point.global_position, up_direction, true)
+	var look_at_pos : CollisionShape3D = CollisionShape3D.new()
+	
+	look_at_pos.look_at_from_position(global_position ,new_walk_point.global_position, up_direction, false)
 	
 	var vec1 = self.rotation
 	var vec2 = look_at_pos.rotation
 	
 	var difference_in_degrees = angle_difference(vec1.y, vec2.y)
+	
 	var new_rotation_degrees :Vector3
 	var degrees = rad_to_deg(difference_in_degrees)
 	
@@ -251,6 +230,7 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_tween.tween_property(self, "rotation_degrees", new_rotation_degrees , time_to_move)
 	
 	turn_tween.finished.connect(on_turn_tween_finished)
+
 
 func on_turn_tween_finished() ->void:
 	turn_once = true

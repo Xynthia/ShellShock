@@ -1,4 +1,4 @@
-#class_name WalkingPoints
+class_name WalkingPoints
 extends Node3D
 
 @onready var walking_point: VisibleOnScreenNotifier3D = $WalkingPoint
