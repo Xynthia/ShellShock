@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://n8usaw7wote5"]
+
+[ext_resource type="PackedScene" uid="uid://bwjraowk62dyv" path="res://Scenes/walls and floors.tscn" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://caot7h0nvew70" path="res://Scripts/level_walking_points.gd" id="2_81xng"]
+[ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="3_wqkje"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0f350"]
+
+[sub_resource type="Sky" id="Sky_8c0lf"]
+sky_material = SubResource("ProceduralSkyMaterial_0f350")
+
+[sub_resource type="Environment" id="Environment_754fn"]
+background_mode = 2
+sky = SubResource("Sky_8c0lf")
+
+[node name="Level" type="Node3D" groups=["Scene"]]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="walls and floors" parent="Environment" instance=ExtResource("1_6phgx")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_754fn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.9938184, -0.111017965, 0, 0.111017965, 0.9938184, 0, 0, 0)
+visible = false
+light_color = Color(0.72786784, 0.99999994, 0.9964419, 1)
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, -0.23414108, 0.97220266, 0, -0.97220266, -0.23414108, 0, 0, 0)
+light_color = Color(0.72786784, 0.99999994, 0.9964419, 1)
+shadow_enabled = true
+
+[node name="WalkingPoints" type="Node3D" parent="."]
+script = ExtResource("2_81xng")
+
+[node name="WalkingPoint" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.595, 0, 0)
+
+[node name="WalkingPoint2" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.256386, 0, -1.4118073)
+
+[node name="WalkingPoint3" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15858, 0, -8.984392)
+
+[node name="WalkingPoint4" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9092488, 0, -12.84963)
+
+[node name="WalkingPoint5" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9092488, 0, -26.10589)
+
+[node name="WalkingPoint6" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2821593, 0, -29.286505)
+
+[node name="WalkingPoint7" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.444391, 0, -38.632523)
+
+[node name="WalkingPoint8" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7192855, 0, -41.367645)
+
+[node name="WalkingPoint9" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8280334, 0, -50.209305)
+
+[node name="WalkingPoint10" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9989486, 0, -52.411)
