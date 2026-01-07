@@ -2,9 +2,8 @@ extends Area3D
 #onready
 
 @onready var camera_3d: Camera3D = $Camera3D
-@onready var initial_rotation := camera_3d.rotation_degrees as Vector3
+@onready var initial_rotation : Vector3 = Vector3(0, -180, 0)
 
-@onready var camera_pivot: Area3D = $"."
 
 # exports
 @export var trauma_reduction_rate : float = 0
@@ -30,6 +29,7 @@ var current_look_pos : look_position = look_position.CENTER
 
 func _ready() -> void:
 	GameManager.player.camera_move_time = turn_time
+	print(initial_rotation)
 
 func _process(delta):
 	# camera shake
@@ -102,17 +102,17 @@ func move_to(new_look_position : look_position):
 	var tween = create_tween().set_trans(Tween.TRANS_SINE)
 	match new_look_position:
 		look_position.CENTER: 
-			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,0,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(0,0,0),turn_time)
 			current_look_pos = look_position.CENTER
 		look_position.LEFT: 
-			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,max_angle,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(0,max_angle,0),turn_time)
 			current_look_pos = look_position.LEFT
 		look_position.RIGHT: 
-			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(0,-max_angle,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(0,-max_angle,0),turn_time)
 			current_look_pos = look_position.RIGHT
 		look_position.UP: 
-			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(max_angle,0,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(max_angle,0,0),turn_time)
 			current_look_pos = look_position.UP
 		look_position.DOWN: 
-			tween.tween_property(camera_pivot, "rotation_degrees", Vector3(-max_angle,0,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(-max_angle,0,0),turn_time)
 			current_look_pos = look_position.DOWN
