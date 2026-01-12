@@ -6,6 +6,7 @@ extends Node3D
 @onready var smoke_spread_2: GPUParticles3D = $"smoke spread2"
 
 
+
 # Called when the node enters the scene tree for the first time.
 func particle_start() -> void:
 	fire_init.emitting = true

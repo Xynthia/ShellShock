@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://nspw2bofwrw0"]
+[gd_scene load_steps=20 format=3 uid="uid://nspw2bofwrw0"]
 
 [ext_resource type="Script" uid="uid://bnurjhyihu0f0" path="res://Scripts/explosion.gd" id="1_k2xjm"]
 [ext_resource type="Texture2D" uid="uid://bt1bc6skow7b" path="res://Assets/Particle Pack/PNG (Transparent)/fire_01.png" id="2_bvnfy"]
@@ -64,7 +64,6 @@ color_ramp = SubResource("GradientTexture1D_52d56")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drq55"]
 transparency = 1
-blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_14ogo")
 billboard_mode = 3
@@ -73,6 +72,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 grow_amount = 2.0
 fixed_size = true
+proximity_fade_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_88btf"]
 offsets = PackedFloat32Array(0, 0.047138046, 0.3905724, 1)
@@ -93,10 +93,17 @@ tangential_accel_min = -2.2351742e-06
 tangential_accel_max = 4.5599976
 scale_min = 0.0
 scale_max = 2.0
-color = Color(0.5167645, 0.5167645, 0.5167645, 1)
+color = Color(0.2822116, 0.09742307, 4.813075e-08, 1)
 color_ramp = SubResource("GradientTexture1D_iyj5p")
 
 [sub_resource type="QuadMesh" id="QuadMesh_2tsga"]
+
+[sub_resource type="Gradient" id="Gradient_o4cj7"]
+offsets = PackedFloat32Array(0, 0.033994336, 0.31444758, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pfmqu"]
+gradient = SubResource("Gradient_o4cj7")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1v2kj"]
 emission_shape_scale = Vector3(0.2, 0.2, 0.2)
@@ -111,8 +118,8 @@ tangential_accel_max = 4.5599976
 damping_max = 17.768002
 scale_min = 0.0
 scale_max = 2.0
-color = Color(0.34789982, 0.34789982, 0.34789982, 1)
-color_ramp = SubResource("GradientTexture1D_iyj5p")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_pfmqu")
 
 [node name="Explosion" type="Node3D"]
 script = ExtResource("1_k2xjm")

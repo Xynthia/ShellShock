@@ -1,8 +1,11 @@
 class_name ArtilleryManager
-extends Node3D
+extends Area3D
 
 const ARTILLERY_CLASS = preload("uid://dempxvg1xn4nq")
 
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
+@onready var collision_size : Vector3 = collision_shape_3d.shape.size
 
 var artillerys : Array[Array]
 var amount_artillerys : int = 2
@@ -17,6 +20,7 @@ var barrage_sent = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.artillery_manager = self
+	GameManager.arty_danger_zone = collision_size
 
 func _physics_process(delta: float) -> void:
 	
@@ -69,6 +73,6 @@ func set_position_artillery(artillery : Artillery) -> void:
 	var random_x : float = randf_range(min_x, max_x)
 	var random_z : float = randf_range(min_z, max_z)
 	
-	artillery_pos = Vector3(random_x, y_to_the_ground, random_z)
+	artillery_pos = Vector3(random_x + position.x, y_to_the_ground, random_z + position.z)
 	
 	artillery.global_position = artillery_pos

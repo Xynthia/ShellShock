@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://n8usaw7wote5"]
+[gd_scene load_steps=13 format=3 uid="uid://n8usaw7wote5"]
 
 [ext_resource type="PackedScene" uid="uid://bwjraowk62dyv" path="res://Scenes/walls and floors.tscn" id="1_6phgx"]
 [ext_resource type="Script" uid="uid://caot7h0nvew70" path="res://Scripts/level_walking_points.gd" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="3_wqkje"]
+[ext_resource type="Script" uid="uid://dsy3x3h2tuptx" path="res://Scripts/managers/artillery_manager.gd" id="4_0f350"]
+[ext_resource type="Script" uid="uid://ckbca3y7532cv" path="res://Scripts/managers/grenate_manager.gd" id="5_8c0lf"]
+[ext_resource type="Script" uid="uid://cllmiw8r74xxs" path="res://Scripts/managers/shot_manager.gd" id="6_754fn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0f350"]
+sky_top_color = Color(0.051391706, 0.07057848, 0.095245965, 1)
+sky_horizon_color = Color(0.008602222, 0.041893475, 0.04673986, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_8c0lf"]
 sky_material = SubResource("ProceduralSkyMaterial_0f350")
@@ -12,6 +19,34 @@ sky_material = SubResource("ProceduralSkyMaterial_0f350")
 [sub_resource type="Environment" id="Environment_754fn"]
 background_mode = 2
 sky = SubResource("Sky_8c0lf")
+tonemap_mode = 3
+ssr_max_steps = 32
+ssr_fade_in = 0.13995522
+ssr_fade_out = 137.18672
+ssr_depth_tolerance = 0.01
+sdfgi_enabled = true
+sdfgi_min_cell_size = 0.09765625
+fog_enabled = true
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 0.05
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.6860386, 0.8892246, 0.9310812, 1)
+volumetric_fog_emission = Color(0.0253638, 0.0253638, 0.025363795, 1)
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_anisotropy = 0.1
+volumetric_fog_ambient_inject = 0.2
+adjustment_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6phgx"]
+size = Vector3(200, 10, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81xng"]
+size = Vector3(50, 10, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wqkje"]
+size = Vector3(25, 10, 200)
 
 [node name="Level" type="Node3D" groups=["Scene"]]
 
@@ -225,6 +260,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0571847, 0, -87.46325)
 [node name="WalkingPoint16" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.808405, 0, -89.66277)
 
+[node name="WalkingPoint70" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.502152, 0, -100.79643)
+
+[node name="WalkingPoint71" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.51812, 0, -102.32798)
+
+[node name="WalkingPoint72" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.42248, 0, -103.965385)
+
+[node name="WalkingPoint73" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.498074, 0, 55.98814)
+
+[node name="WalkingPoint74" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.744242, 0, 55.01357)
+
+[node name="WalkingPoint75" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.699435, 0, 46.43842)
+
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="walls and floors" parent="Environment" instance=ExtResource("1_6phgx")]
@@ -233,13 +286,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022201538, -0.032589912, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_754fn")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 0.9938184, -0.111017965, 0, 0.111017965, 0.9938184, 0, 0, 0)
-visible = false
-light_color = Color(0.72786784, 0.99999994, 0.9964419, 1)
-shadow_enabled = true
-
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, -0.23414108, 0.97220266, 0, -0.97220266, -0.23414108, 0, 0, 0)
-light_color = Color(0.72786784, 0.99999994, 0.9964419, 1)
+light_color = Color(0.19064468, 0.23365143, 0.26393116, 1)
+light_energy = 0.6
 shadow_enabled = true
+
+[node name="ArtilleryManager" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 31.790565, 7.9520864, -22.904366)
+script = ExtResource("4_0f350")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ArtilleryManager"]
+shape = SubResource("BoxShape3D_6phgx")
+debug_color = Color(2.1658839e-06, 0.6337402, 0.44062135, 0.41960785)
+
+[node name="GrenadeManager" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 58.670166, 5.0834694, -22.88187)
+script = ExtResource("5_8c0lf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrenadeManager"]
+shape = SubResource("BoxShape3D_81xng")
+
+[node name="ShotManager" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 71.22744, 7.777608, -22.671959)
+script = ExtResource("6_754fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShotManager"]
+shape = SubResource("BoxShape3D_wqkje")

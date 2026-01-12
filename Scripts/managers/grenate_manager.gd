@@ -4,8 +4,9 @@ extends Node3D
 @onready var path_3d: Path3D = $Path3D
 @onready var path_follow_3d: PathFollow3D = $Path3D/PathFollow3D
 
-@onready var area_3d: Area3D = $Area3D
-@onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
+@onready var collision_size : Vector3 = collision_shape_3d.shape.size
 
 
 const GRENADE_CLASS = preload("uid://bedtrjbqukbwj")
@@ -20,6 +21,7 @@ var grenade_pos : Vector3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.grenade_manager = self
+	GameManager.grenade_danger_zone = collision_size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,6 +48,6 @@ func set_position_grenade(grenade : Grenade) -> void:
 	var random_z : float = randf_range(min_z, max_z)
 	var y_to_the_ground : float = 0
 	
-	grenade_pos = Vector3(random_x, y_to_the_ground, random_z)
+	grenade_pos = Vector3(random_x + position.x, y_to_the_ground, random_z + position.z)
 	
 	grenade.global_position = grenade_pos

@@ -78,6 +78,14 @@ extends Node3D
 @onready var walking_point_68: VisibleOnScreenNotifier3D = $WalkingPoint68
 @onready var walking_point_69: VisibleOnScreenNotifier3D = $WalkingPoint69
 
+@onready var walking_point_70: VisibleOnScreenNotifier3D = $WalkingPoint70
+@onready var walking_point_71: VisibleOnScreenNotifier3D = $WalkingPoint71
+@onready var walking_point_72: VisibleOnScreenNotifier3D = $WalkingPoint72
+@onready var walking_point_73: VisibleOnScreenNotifier3D = $WalkingPoint73
+@onready var walking_point_74: VisibleOnScreenNotifier3D = $WalkingPoint74
+@onready var walking_point_75: VisibleOnScreenNotifier3D = $WalkingPoint75
+
+
 @onready var starting_point : VisibleOnScreenNotifier3D = walking_point
 
 func _ready() -> void:
@@ -300,3 +308,23 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_68)
 	
 	return points_next_to_current_point
+
+func check_look_at_point(current_point : VisibleOnScreenNotifier3D) -> VisibleOnScreenNotifier3D:
+	var look_at_point : VisibleOnScreenNotifier3D
+	
+	match current_point:
+		walking_point_16:
+			look_at_point = walking_point_70
+		walking_point_23:
+			look_at_point = walking_point_71
+		walking_point_32:
+			look_at_point = walking_point_72
+		walking_point_45:
+			look_at_point = walking_point_73
+		walking_point_51:
+			look_at_point = walking_point_74
+		walking_point_61:
+			look_at_point = walking_point_75
+	
+	
+	return look_at_point

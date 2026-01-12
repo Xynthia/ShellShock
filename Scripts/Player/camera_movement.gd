@@ -42,6 +42,8 @@ func _process(delta):
 
 func add_trauma(trauma_amount : float):
 	trauma = clamp(trauma + trauma_amount, 0.0, 2.0)
+	GameManager.player.blink()
+	GameManager.player.play_beep()
 
 func get_shake_intensity() -> float:
 	return trauma * trauma

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd08kv410jg6r"]
+[gd_scene load_steps=10 format=3 uid="uid://dd08kv410jg6r"]
 
 [ext_resource type="Script" uid="uid://dx0hl2hagw1aq" path="res://Scripts/Player/player.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://pvpkr58o4845" path="res://Scripts/Player/camera_movement.gd" id="2_cvnsp"]
@@ -14,10 +14,48 @@ fractal_ping_pong_strength = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cvnsp"]
 
+[sub_resource type="Animation" id="Animation_mxepk"]
+resource_name = "blink"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eyelids/CanvasLayer/top:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333334, 0.08333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e41v5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("eyelids/CanvasLayer/top:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca0mu"]
+_data = {
+&"RESET": SubResource("Animation_e41v5"),
+&"blink": SubResource("Animation_mxepk")
+}
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 rotation_order = 0
 floor_block_on_wall = false
 script = ExtResource("1_v0iea")
+mouse_sensitivity = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.7, 0, 0, 0, -1.7, 1.4861872e-07, 0, -1.4861872e-07, -1.7, 0, 1.7, 0)
@@ -33,6 +71,16 @@ noise = SubResource("FastNoiseLite_cvnsp")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 
+[node name="Node3D" type="Node3D" parent="CameraPivot/Camera3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera3D/Node3D"]
+light_color = Color(0.96999353, 0.8794211, 0.6672549, 1)
+light_energy = 3.5
+light_volumetric_fog_energy = 0.1
+spot_range = 10.0
+spot_angle = 44.79
+spot_angle_attenuation = 1.4488996
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("SphereShape3D_cvnsp")
@@ -45,8 +93,31 @@ one_shot = true
 [node name="BGSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
 stream = ExtResource("3_6t5aa")
+bus = &"BG"
 
 [node name="SFX" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
+bus = &"SFX"
+
+[node name="eyelids" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="eyelids"]
+follow_viewport_enabled = true
+
+[node name="top" type="ColorRect" parent="eyelids/CanvasLayer"]
+custom_minimum_size = Vector2(1000, 325)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="eyelids"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ca0mu")
+}
 
 [connection signal="finished" from="BGSound" to="." method="_on_bg_sound_finished"]

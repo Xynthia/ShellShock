@@ -3,6 +3,9 @@ extends Node3D
 
 const SHOT_CLASS = preload("uid://pirqdphslrxt")
 
+@onready var collision_shape_3d: CollisionShape3D = $CollisionShape3D
+
+@onready var collision_size : Vector3 = collision_shape_3d.shape.size
 
 var shots : Array[Shot]
 var max_amount: int = 8
@@ -13,6 +16,7 @@ var shot_pos : Vector3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.shot_manager = self
+	GameManager.shot_danger_zone = collision_size
 
 func spawn_shot()-> void:
 	if shots.size() < max_amount:
@@ -35,6 +39,6 @@ func set_position_shot(shot : Shot) -> void:
 	var random_z : float = randf_range(min_z, max_z)
 	var y_to_the_ground : float = 0
 	
-	shot_pos = Vector3(random_x, y_to_the_ground, random_z)
+	shot_pos = Vector3(random_x + position.x, y_to_the_ground, random_z + position.z)
 	
 	shot.global_position = shot_pos

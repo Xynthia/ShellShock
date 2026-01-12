@@ -12,6 +12,9 @@ var id : int
 @onready var bg_sound: AudioStreamPlayer3D = $BGSound
 @onready var sfx: AudioStreamPlayer3D = $SFX
 
+@onready var animation_player: AnimationPlayer = $eyelids/AnimationPlayer
+
+
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
 const TINNITUS = preload("uid://cwtpeduhorxbe")
@@ -39,9 +42,11 @@ var time_to_move : float = 0.5
 var time_to_turn : float = 0.5
 
 var do_this_once : bool = true
+var dead_end_check : bool = true
 
 var move_tween : Tween
 var turn_tween : Tween 
+var sound_tween : Tween 
 
 var turn_once : bool = true
 var for_first_spawn : bool = true
@@ -49,33 +54,37 @@ var for_first_spawn : bool = true
 func _init() -> void:
 	id = 1
 
+func _ready() -> void:
+	play_BG()
 
 func _physics_process(delta: float) -> void:
 	if position != current_walk_point.position && do_this_once:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
-	#looking_at_walk_point = get_looking_at_walk_point()
 	
-	if looking_at_walk_point && looking_at_walk_point != current_walk_point && Input.is_action_just_pressed("MoveFoward"):
+	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward"):
 		set_new_position(looking_at_walk_point)
-	
+	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward"):
+		set_new_position(looking_at_walk_point)
 	
 	if Input.is_action_just_pressed("TurnLeft"):
 		turn_to_walk_point(look_dir_3.RIGHT)
-	
 	if Input.is_action_just_pressed("TurnRight"):
+		
 		turn_to_walk_point(look_dir_3.LEFT)
 	
 	if Input.is_action_pressed("alt"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
-		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pass
 	
 	if Input.is_action_just_pressed("Interact"):
-		GameManager.shot_manager.spawn_shot()
+		GameManager.grenade_manager.spawn_grenade()
 	
+	
+
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -103,6 +112,11 @@ func _input(event: InputEvent) -> void:
 			screen_relative *= degrees_per_unit
 
 
+func blink():
+	animation_player.play("blink")
+
+
+
 func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	#if skipping a position check walkinpoints array
 	last_walk_point = current_walk_point
@@ -110,15 +124,6 @@ func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	
 	move_to(new_position.position)
 	
-
-func get_looking_at_walk_point() -> VisibleOnScreenNotifier3D:
-	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
-	
-	for walk_point : VisibleOnScreenNotifier3D in walk_points_next_to_current_walk_point:
-		if walk_point.is_on_screen():
-			return walk_point
-	
-	return null
 
 func turn_to_walk_point(direction: look_dir_3) -> void:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
@@ -188,6 +193,14 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 		look_to(next_look_at_walking_point)
 	
 
+func check_walkpoint_dead_end() -> bool:
+	var walking_points = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
+	
+	if walking_points != null && walking_points.size() == 1:
+		return true
+	
+	return false
+
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
@@ -205,8 +218,14 @@ func move_to(new_position : Vector3) -> void:
 	move_tween.finished.connect(on_move_tween_finished)
 
 func on_move_tween_finished() -> void:
-	turn_to_walk_point_once_moved()
-	
+	if check_walkpoint_dead_end() == true && dead_end_check == true:
+		var new_looking_at_walk_point = GameManager.walking_points.check_look_at_point(current_walk_point)
+		if new_looking_at_walk_point != null:
+			look_to(new_looking_at_walk_point)
+			dead_end_check = false
+	else:
+		dead_end_check = true
+		turn_to_walk_point_once_moved()
 
 func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_once = false
@@ -225,9 +244,7 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	var degrees = rad_to_deg(difference_in_degrees)
 	
 	new_rotation_degrees.y = rad_to_deg(vec1.y) + degrees 
-	
-	print(new_rotation_degrees.y)
-	
+	  
 	turn_tween.tween_property(self, "rotation_degrees", new_rotation_degrees , time_to_move)
 	
 	turn_tween.finished.connect(on_turn_tween_finished.bind(new_walk_point))
@@ -244,3 +261,16 @@ func play_BG() -> void:
 
 func _on_bg_sound_finished() -> void:
 	pass
+
+
+func play_beep() -> void:
+	sfx.stream = TINNITUS
+	
+	sfx.play()
+	var lowest_db = -80
+
+	var sound_duration = 1
+	
+	sound_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	
+	sound_tween.tween_property(sfx, "volume_db", lowest_db, sound_duration)
