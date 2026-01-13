@@ -18,27 +18,29 @@ func open_settings() -> void:
 
 
 func back() -> void:
-	main_menu_ui.visible = true
+	if get_tree().paused == true:
+		pause_menu_ui.visible = true
+	else:
+		main_menu_ui.visible = true
+	
 	settings_ui.visible = false
+	
 
 func pause_menu() -> void:
 	if panel.visible && pause_menu_ui.visible:
 		main_menu_ui.visible = true
 		pause_menu_ui.visible = false
 		panel.visible = false
-		pause_menu_ui.z_index = 0
 		get_tree().paused = false
 	else:
 		main_menu_ui.visible = false
 		pause_menu_ui.visible = true
 		panel.visible = true
-		pause_menu_ui.z_index = 99
 		get_tree().paused = true
 	
 
 func _on_back_to_game_button_pressed() -> void:
-	pause_menu_ui.visible = false
-	panel.visible = false
+	pause_menu()
 
 func quit() -> void:
 	get_tree().quit()
@@ -55,3 +57,9 @@ func _on_contrast_value_changed(value: float) -> void:
 		GameManager.game_environment.environment.adjustment_contrast = value
 	else:
 		GameManager.main_menu_environment.environment.adjustment_contrast = value
+
+func _on_mouse_sensitivity_value_changed(value: float) -> void:
+	if GameManager.started_game:
+		GameManager.player.mouse_sensitivity = value
+	else: 
+		GameManager.mouse_sensitivity = value

@@ -6,14 +6,16 @@ var id : int
 @export_subgroup("Mouse settings")
 @export_range(1, 100, 1) var mouse_sensitivity: int = 50
 
-@onready var camera_pivot: Area3D = $CameraPivot
-@onready var look_at_before_turn: Node3D = $LookAtBeforeTurn
+@onready var camera_pivot: Area3D = $pauseble/CameraPivot
+@onready var look_at_before_turn: Node3D = $pauseble/LookAtBeforeTurn
 
-@onready var bg_sound: AudioStreamPlayer3D = $BGSound
-@onready var sfx: AudioStreamPlayer3D = $SFX
-@onready var va: AudioStreamPlayer3D = $VA
 
-@onready var animation_player: AnimationPlayer = $eyelids/AnimationPlayer
+@onready var bg_sound: AudioStreamPlayer3D = $pauseble/BGSound
+@onready var sfx: AudioStreamPlayer3D = $pauseble/SFX
+@onready var va: AudioStreamPlayer3D = $pauseble/VA
+
+@onready var animation_player: AnimationPlayer = $pauseble/eyelids/AnimationPlayer
+
 
 
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
@@ -85,8 +87,8 @@ func _physics_process(delta: float) -> void:
 		camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.LEFT)
 	
-	if GameManager.ui.panel.visible && GameManager.ui.pause_menu_ui.visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if get_tree().paused == true:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -112,7 +114,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	# check which side mouse is the camera movement to that side
-	if event is InputEventMouseMotion && get_tree().paused == false:
+	if event is InputEventMouseMotion:
 		if abs(event.screen_relative.x) > 25 or abs(event.screen_relative.y) > 25:
 			var degrees_per_unit: float = 0.001
 			screen_relative = event.screen_relative

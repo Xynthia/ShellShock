@@ -3,6 +3,7 @@ extends Node
 @export var player : Player
 const PLAYER_CLASS = preload("uid://dd08kv410jg6r")
 
+var mouse_sensitivity : float = 50
 
 @export var grenade_manager : GrenadeManager
 @export var artillery_manager : ArtilleryManager
@@ -47,7 +48,6 @@ var shot_time : Array[float] = [0.5, 7]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	start_main_menu()
 
 
@@ -106,6 +106,8 @@ func add_main_menu_level()-> void:
 func start_game() -> void:
 	var new_player = PLAYER_CLASS.instantiate()
 	player = new_player
+	player.mouse_sensitivity = mouse_sensitivity
+	
 	get_tree().get_first_node_in_group("Scene").add_child(player)
 	
 	level = LEVEL.instantiate()
