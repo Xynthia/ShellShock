@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwjraowk62dyv"]
+[gd_scene load_steps=33 format=3 uid="uid://bwjraowk62dyv"]
 
 [ext_resource type="PackedScene" uid="uid://cipe4vqt8gnu0" path="res://Assets/trenches assets pack/SM_FloorMudCorner_4x8_01.glb" id="1_jptys"]
 [ext_resource type="PackedScene" uid="uid://15k3yb244xjx" path="res://Assets/trenches assets pack/SM_FloorMud_4x8_01.glb" id="2_i80mp"]
@@ -19,6 +19,19 @@
 [ext_resource type="PackedScene" uid="uid://d04wmp81h4wqr" path="res://Assets/trenches assets pack/SM_AmmoCrate_01.glb" id="17_1af6v"]
 [ext_resource type="PackedScene" uid="uid://pf7h4djc7nmm" path="res://Assets/trenches assets pack/SM_AmmoCrate_02.glb" id="18_jblox"]
 [ext_resource type="PackedScene" uid="uid://bhnsmn1jwfaso" path="res://Assets/trenches assets pack/SM_AmmoCrateCloth_01.glb" id="19_jblox"]
+[ext_resource type="PackedScene" uid="uid://bf3tvg200jqta" path="res://Assets/trenches assets pack/SM_WoodBoards_2x2_02.glb" id="20_87mgm"]
+[ext_resource type="PackedScene" uid="uid://deylx1xn0n7th" path="res://Assets/trenches assets pack/SM_WoodBoards_2x3_02.glb" id="21_typlu"]
+[ext_resource type="PackedScene" uid="uid://dlb6ag3wb8ybw" path="res://Assets/trenches assets pack/SM_WoodBoard_03.glb" id="22_kcjh1"]
+[ext_resource type="PackedScene" uid="uid://6egacoit1vs7" path="res://Assets/trenches assets pack/SM_WallWoodBoards02.glb" id="23_1dx06"]
+[ext_resource type="PackedScene" uid="uid://b5l5wxw6lfoeh" path="res://Assets/trenches assets pack/SM_WoodBoard_02.glb" id="24_ehlc5"]
+[ext_resource type="PackedScene" uid="uid://bwfcynsf1srv7" path="res://Assets/trenches assets pack/SM_WoodBoard_01.glb" id="25_daidg"]
+[ext_resource type="PackedScene" uid="uid://bm3e6ogg4n47u" path="res://Assets/trenches assets pack/SM_LogTri_01.glb" id="26_1dx06"]
+[ext_resource type="PackedScene" uid="uid://c7h4k5yi1x8n0" path="res://Assets/trenches assets pack/SM_LogLadder_01.glb" id="27_ehlc5"]
+[ext_resource type="PackedScene" uid="uid://cjegcyd83pdhm" path="res://Assets/trenches assets pack/SM_Sandbags03.glb" id="28_daidg"]
+[ext_resource type="PackedScene" uid="uid://b3xmf4o5hflqd" path="res://Assets/trenches assets pack/SM_HelmetBritish01.glb" id="29_ehlc5"]
+[ext_resource type="PackedScene" uid="uid://d076xtiusa6a0" path="res://Assets/trenches assets pack/SM_BarbedWire02.glb" id="30_e1rnw"]
+[ext_resource type="PackedScene" uid="uid://lirbfoymrt8" path="res://Assets/trenches assets pack/SM_BarbedWire03.glb" id="31_m8uxl"]
+[ext_resource type="PackedScene" uid="uid://dohbnd3jfbki5" path="res://Assets/trenches assets pack/SM_BarbedWire01.glb" id="32_pb2dl"]
 
 [node name="walls and floors" type="Node3D"]
 
@@ -235,22 +248,22 @@ transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08
 transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 1.0961838, 2.781353, 16.226662)
 
 [node name="SM_WoodBeam03" parent="frontline/sandbags6" instance=ExtResource("7_yp1je")]
-transform = Transform3D(1.4909617, 2.7939677e-09, 0.16441935, 0.012568312, 1.4956113, -0.11397, -0.16393827, 0.11466092, 1.4865992, 0.9038315, 0.671757, 1.8281283)
+transform = Transform3D(1.4909617, 2.7939677e-09, 0.16441935, 0.012568312, 1.4956113, -0.11397, -0.16393827, 0.11466092, 1.4865992, 0.9038315, 0.5564716, 1.8281288)
 
 [node name="SM_WoodBeam04" parent="frontline/sandbags6" instance=ExtResource("7_yp1je")]
-transform = Transform3D(1.4612861, 0.33530897, -0.047020562, -0.3372852, 1.4598193, -0.07187647, 0.029693797, 0.08059429, 1.4975389, 1.1683807, 0.5357467, 13.697956)
+transform = Transform3D(1.4612861, 0.33530897, -0.047020562, -0.3372852, 1.4598193, -0.07187647, 0.029693797, 0.08059429, 1.4975389, 1.1683807, 0.41108477, 13.697956)
 
 [node name="SM_WoodBeam05" parent="frontline/sandbags6" instance=ExtResource("7_yp1je")]
-transform = Transform3D(1.4579847, 0.3412229, 0.08858552, -0.33996537, 1.4606392, -0.030923411, -0.0932955, 0.009979904, 1.4970624, 1.1683807, 0.5357467, 7.6316757)
+transform = Transform3D(1.4579847, 0.3412229, 0.08858552, -0.33996537, 1.4606392, -0.030923411, -0.0932955, 0.009979904, 1.4970624, 1.1683807, 0.32933939, 7.6316757)
 
 [node name="SM_Sandbags03" parent="frontline/sandbags6" instance=ExtResource("5_i80mp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.512436, 2.737, 7.9380074)
 
 [node name="SM_WoodBoards_2x3_01" parent="frontline/sandbags6" instance=ExtResource("8_q4riw")]
-transform = Transform3D(1.4996042, 0.008183928, -0.033482343, -0.008340736, 1.499961, -0.006921515, 0.033443615, 0.0071057603, 1.4996102, 0, 0.13964245, 3.5961642)
+transform = Transform3D(1.4982113, -0.06533401, -0.03310292, 0.0651599, 1.4985601, -0.008554058, 0.03344362, 0.0071057607, 1.4996103, 0.004211426, 0.004542798, 3.8197937)
 
 [node name="SM_WoodBoards_2x3_02" parent="frontline/sandbags6" instance=ExtResource("8_q4riw")]
-transform = Transform3D(1.4996042, 0.008183928, -0.033482343, -0.008340736, 1.499961, -0.006921515, 0.033443615, 0.0071057603, 1.4996102, 0, 0.18527481, 12.118469)
+transform = Transform3D(1.4996043, 0.008183928, -0.033482347, -0.005427465, 1.494993, 0.12234372, 0.03403801, -0.12219038, 1.4946275, 0, 0.0978497, 12.118469)
 
 [node name="SM_WoodBoards_2x2_01" parent="frontline/sandbags6" instance=ExtResource("9_s2udt")]
 transform = Transform3D(4.105742e-05, -0.0078538405, -1.4999795, -0.0078538405, 1.4999592, -0.007853946, 1.4999797, 0.007853948, -6.5566184e-08, 0, 1.254, 0.5922437)
@@ -262,7 +275,7 @@ transform = Transform3D(-4.1188552e-05, 0.0078538405, 1.4999795, -0.0078538405, 
 transform = Transform3D(1.4137173, 0.50140125, 0, -0.50140125, 1.4137173, 0, 0, 0, 1.5, 1.071373, 0.453, 1.1022439)
 
 [node name="SM_Ladder02" parent="frontline/sandbags6" instance=ExtResource("10_254jd")]
-transform = Transform3D(1.4137173, 0.50140125, 0, -0.50140125, 1.4137173, 0, 0, 0, 1.5, 1.071373, 0.26560283, 10.863529)
+transform = Transform3D(1.4137173, 0.50140125, 0, -0.50140125, 1.4137173, 0, 0, 0, 1.5, 1.071373, 0.20474839, 10.863529)
 
 [node name="SM_BarbedWire_01" parent="frontline" instance=ExtResource("11_gjquf")]
 transform = Transform3D(1.4482089, 0, 0.3907568, 0, 1.5, 0, -0.3907568, 0, 1.4482089, 87.58218, 2.8123908, -87.54633)
@@ -627,7 +640,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5867805, 0.215366, 38.0401
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.161971, 0.215366, -10.953399)
 
 [node name="SM_FloorMud_4x4_03" parent="ground/part one" instance=ExtResource("3_7sqr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9358654, 0.215366, -10.953399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9358654, 0.21536505, -10.953399)
 
 [node name="Node3D" type="Node3D" parent="ground/part one"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.542881, 0, 0)
@@ -4180,7 +4193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.99908, 2.8155687, -63.2394
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.89633, 2.8155687, -61.12374)
 
 [node name="SM_FloorMud_4x4_962" parent="ground/Node3D" instance=ExtResource("3_7sqr3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.158916, 2.8155687, -61.050316)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 62.158916, 2.8155687, -61.050316)
 
 [node name="SM_FloorMud_4x4_963" parent="ground/Node3D" instance=ExtResource("3_7sqr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.99908, 2.8155687, -61.12374)
@@ -6982,7 +6995,7 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 303.8421, 2.8155687, -9.682
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 303.8421, 2.8155687, -48.765785)
 
 [node name="SM_FloorMud_4x4_401" parent="ground/Node3D10" instance=ExtResource("3_7sqr3")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 303.8421, 2.8155687, -88.17041)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 300.73456, 4.4913197, -100.414345)
 
 [node name="SM_FloorMud_4x4_406" parent="ground/Node3D10" instance=ExtResource("3_7sqr3")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 309.77893, 2.8155687, -127.53898)
@@ -7144,7 +7157,7 @@ transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -44.21027, 2.8155687, -9.68
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -44.21028, 2.8155687, 259.3104)
 
 [node name="SM_FloorMud_4x4_398" parent="ground/Node3D8" instance=ExtResource("3_7sqr3")]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -83.00726, 2.8155687, 29.476017)
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -83.81406, 2.5529268, 29.614765)
 
 [node name="SM_FloorMud_4x4_399" parent="ground/Node3D8" instance=ExtResource("3_7sqr3")]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, -83.00726, 2.8155687, -9.682377)
@@ -7367,3 +7380,1082 @@ transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0.384
 
 [node name="SM_AmmoCrateCloth_01" parent="crates coverd5" instance=ExtResource("19_jblox")]
 transform = Transform3D(0.6666667, 0, 0, 0, 0.6666667, 0, 0, 0, 0.6666667, 0.13992167, 0.14615211, 0.5703697)
+
+[node name="Trees" type="Node3D" parent="."]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.427393, -0.13208723, -90.217186)
+
+[node name="SM_TreeBattlefield04" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.12694338, 0, 0.7319796, 0, 0.7429056, 0, -0.7319796, 0, -0.12694338, 77.46665, 1.9223732, -38.768776)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.232919, 0, 0.44503564, 0, 0.50230265, 0, -0.44503564, 0, -0.232919, 74.85169, 1.9223732, -29.952913)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (1)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.68706673, 0, 0.3761827, 0, 0.7833097, 0, -0.3761827, 0, -0.68706673, 81.17967, 1.9223738, -22.835276)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (2)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.42070425, 0, -0.30710414, 0, 0.52086943, 0, 0.30710414, 0, -0.42070425, 98.02955, 1.9223732, -22.1983)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.39948982, 0, -0.28471115, 0, 0.49056348, 0, 0.28471115, 0, -0.39948982, 100.33206, 1.9223732, -36.808235)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (3)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.78281605, 0, -0.33368552, 0, 0.8509681, 0, 0.33368552, 0, -0.78281605, 96.15347, 1.9223732, -29.01152)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.5561813, 0, -0.07789678, 0, 0.5616098, 0, 0.07789678, 0, -0.5561813, 87.89931, 1.9223732, -38.96057)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (1)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.08086724, 0, -0.49918538, 0, 0.50569284, 0, 0.49918538, 0, -0.08086724, 79.84639, 1.9223732, -32.63293)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (1)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.620821, 0, 0.08606689, 0, 0.6267585, 0, -0.08606689, 0, -0.620821, 95.801605, 1.9223732, -32.443817)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (2)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.63916695, 0, -0.48102388, 0, 0.79994893, 0, 0.48102388, 0, -0.63916695, 86.88051, 1.9223732, -40.8909)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (4)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.21481782, 0, 0.77286017, 0, 0.80215925, 0, -0.7728602, 0, -0.21481784, 68.71556, 1.9223732, -38.260803)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (3)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.5008019, 0, 0.08063973, 0, 0.5072527, 0, -0.08063973, 0, -0.5008019, 68.883865, 1.9223732, -33.236656)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (1)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.6714829, 0, 0.03276553, 0, 0.67228186, 0, -0.03276553, 0, -0.6714829, 63.418617, 1.9223738, -38.52054)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (5)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.048320647, 0, 0.55600655, 0, 0.5581023, 0, -0.55600655, 0, -0.048320647, 56.3916, 1.9223732, -38.509243)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (6)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.31268635, 0, 0.51631707, 0, 0.6036191, 0, -0.51631707, 0, -0.31268635, 59.084496, 1.9223732, -35.755486)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (7)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.10610555, 0, 0.745088, 0, 0.75260514, 0, -0.745088, 0, -0.10610555, 65.80957, 1.9223725, -29.624063)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (4)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.67025226, 0, 0.46458688, 0, 0.8155238, 0, -0.46458688, 0, -0.67025226, 55.33521, 1.9223732, -23.11121)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (5)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.31025317, 0.14589682, -0.71388716, 0.058151986, 0.7783906, 0.13380669, 0.72631884, -6.3773524e-09, -0.31565598, 48.565987, 1.3829708, -28.365635)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (2)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.8167166, 0, -0.20195356, 0, 0.8413152, 0, 0.20195356, 0, -0.8167166, 55.95885, 1.9223732, -43.936188)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (3)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.033591878, 0, -0.63783675, 0, 0.63872063, 0, 0.63783675, 0, -0.033591878, 42.858765, 1.9223732, -43.733894)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (4)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.39651155, 0, 0.49281815, 0, 0.6325276, 0, -0.49281815, 0, -0.39651155, 47.470047, 1.9223732, -32.874554)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (2)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.32294095, 0, -0.6484597, 0, 0.7244245, 0, 0.6484597, 0, -0.32294095, 32.165543, 1.9223732, -43.314148)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (6)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.44796124, 0, 0.5753743, 0, 0.72919464, 0, -0.5753743, 0, -0.44796124, 27.549072, 1.9223732, -34.500175)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (7)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.6276766, 0, 0.48283222, 0, 0.79189956, 0, -0.48283222, 0, -0.6276766, 31.449753, 1.9223732, -26.21048)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (8)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.5636928, 0, 0.16493279, 0, 0.58732647, 0, -0.16493279, 0, -0.5636928, 45.465446, 1.9223732, -39.151512)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (3)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.03186367, 0, 0.715995, 0, 0.71670365, 0, -0.715995, 0, -0.03186367, 41.424187, 1.9223732, -30.094202)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (8)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.26189002, 0, 0.7137024, 0, 0.7602352, 0, -0.7137024, 0, -0.26189002, 59.27861, 1.9223732, -17.663227)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (9)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.09013774, 0, -0.49378842, 0, 0.5019474, 0, 0.49378842, 0, -0.09013774, 57.09041, 1.9223719, -9.520152)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (10)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.6723087, 0, 0.13585404, 0, 0.68589747, 0, -0.13585404, 0, -0.6723087, 45.818764, 1.9223732, 2.1857853)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (11)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.14245297, 0, 0.46590948, 0, 0.48720068, 0, -0.46590948, 0, -0.14245297, 56.318996, 1.9223732, -3.5593262)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (4)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.4999133, 0, 0.13160746, 0, 0.5169467, 0, -0.13160746, 0, -0.4999133, 52.890396, 1.9223732, -6.028467)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (9)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.45516002, 0, 0.3287342, 0, 0.56145954, 0, -0.3287342, 0, -0.45516002, 49.170433, 1.9223732, 8.2653885)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (12)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.0777274, 0, 0.6094619, 0, 0.6143975, 0, -0.6094619, 0, -0.0777274, 55.29452, 1.9223732, 7.506222)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (5)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.76826686, 0, -0.3473941, 0, 0.8431587, 0, 0.3473941, 0, -0.76826686, 63.449158, 1.9223732, -3.9117193)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (13)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.5345496, 0, -0.47429827, 0, 0.7146342, 0, 0.47429827, 0, -0.5345496, 43.020805, 1.9223732, -14.724913)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (5)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.030142246, 0, 0.679762, 0, 0.68042946, 0, -0.679762, 0, -0.030142246, 36.504128, 1.9223732, -1.4026899)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (6)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.48779917, 0, -0.21753712, 0, 0.53410715, 0, 0.21753712, 0, -0.48779917, 29.160488, 1.9223732, 5.406698)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (14)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.1807372, 0, -0.7326437, 0, 0.7546074, 0, 0.7326437, 0, -0.1807372, 30.031864, 1.9223732, 0.49235022)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (6)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.7653825, 0, -0.33447173, 0, 0.8352734, 0, 0.33447173, 0, -0.7653825, 21.536255, 1.9223732, -1.4609118)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (7)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.039524503, 0, 0.658666, 0, 0.65985084, 0, -0.658666, 0, -0.039524503, 20.771671, 1.9223732, -9.360141)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (10)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.47121423, 0, -0.082895406, 0, 0.47845006, 0, 0.082895406, 0, -0.47121423, 32.14204, 1.9223732, -16.191902)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (7)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.03409888, 0, -0.7849159, 0, 0.7856562, 0, 0.7849159, 0, -0.03409888, 63.330563, 1.6557068, -29.09585)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (15)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.2963558, 0, -0.41465446, 0, 0.50967157, 0, 0.41465446, 0, -0.2963558, 67.28615, 1.6557055, -15.847707)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (11)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.5722815, 0, -0.018685805, 0, 0.5725865, 0, 0.018685805, 0, -0.5722815, 70.65304, 1.6557055, -2.4389298)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (8)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.56776476, 0, 0.45790854, 0, 0.7294087, 0, -0.45790854, 0, -0.56776476, 71.06297, 1.6557055, -14.181824)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (16)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.055765282, 0, 0.56920034, 0, 0.57192546, 0, -0.56920034, 0, -0.055765282, 68.27488, 1.6557055, -9.013711)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (18)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.43157026, 0, -0.21396936, 0, 0.4817009, 0, 0.21396936, 0, -0.43157026, 77.7561, 1.6557055, -9.705812)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (12)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.473187, 0, -0.38811222, 0, 0.61199427, 0, 0.38811222, 0, -0.473187, 73.642494, 1.6557055, -6.066758)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (13)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.49805713, 0, -0.029971197, 0, 0.4989575, 0, 0.029971197, 0, -0.49805713, 74.17002, 1.6557055, 3.713864)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (8)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.4977099, 0, -0.68737054, 0, 0.8486421, 0, 0.68737054, 0, -0.4977099, 80.96243, 1.6557055, -9.338592)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (9)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.17934734, 0, -0.79236573, 0, 0.81240934, 0, 0.79236573, 0, -0.17934734, 74.38859, 1.6557055, -1.0830442)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (10)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.51430935, 0, 0.5410983, 0, 0.74652624, 0, -0.5410983, 0, -0.51430935, 79.98379, 1.6557055, -4.72237)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (14)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.18303742, 0, -0.7872616, 0, 0.8082595, 0, 0.7872616, 0, -0.18303742, 82.30647, 1.6557055, -12.715399)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (15)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.4781457, 0, -0.14755686, 0, 0.5003962, 0, 0.14755686, 0, -0.4781457, 83.19011, 1.6557055, -1.443206)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (19)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.5628095, 0, 0.33834192, 0, 0.65668094, 0, -0.33834192, 0, -0.5628095, 77.686485, 1.6557055, -3.3199663)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (11)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.33874118, 0, 0.40519962, 0, 0.5281404, 0, -0.40519962, 0, -0.33874118, 88.552704, 1.6557055, -13.560932)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (9)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.1948901, 0, -0.5856318, 0, 0.61720884, 0, 0.5856318, 0, -0.1948901, 95.37741, 1.6557055, -12.326898)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (16)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.6231073, 0, -0.506631, 0, 0.8030801, 0, 0.506631, 0, -0.6231073, 97.71246, 1.6557055, -13.869232)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (20)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.14185835, 0, -0.68304056, 0, 0.6976161, 0, 0.68304056, 0, -0.14185835, 90.51785, 1.6557055, -9.993712)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (12)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.44707304, 0, -0.38523635, 0, 0.5901537, 0, 0.38523635, 0, -0.44707304, 86.23216, 1.6557055, -10.094153)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (17)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.1965326, 0, 0.73010063, 0, 0.7560899, 0, -0.73010063, 0, -0.1965326, 86.43007, 1.6557055, -0.89134085)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (13)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.46646458, 0, 0.30914208, 0, 0.55960524, 0, -0.30914208, 0, -0.46646458, 89.42523, 1.6557055, 3.419511)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (21)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.69535434, 0, -0.06259531, 0, 0.698166, 0, 0.06259531, 0, -0.69535434, 92.21781, 1.6557055, 12.226452)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (10)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.2382412, 0, 0.47725162, 0, 0.5334116, 0, -0.47725162, 0, -0.2382412, 87.30509, 1.6557055, 12.139393)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (11)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.23553616, 0, 0.5936559, 0, 0.6386741, 0, -0.5936559, 0, -0.23553616, 81.14766, 1.6557055, 11.685709)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (18)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.027307322, 0, -0.5179378, 0, 0.5186571, 0, 0.5179378, 0, -0.027307322, 81.86861, 1.6557055, 4.3367453)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (19)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.28833112, 0, -0.80423427, 0, 0.85435796, 0, 0.80423427, 0, -0.28833112, 81.61825, 1.6557055, 7.516411)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (14)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.82060313, 0, -0.14015388, 0, 0.8324858, 0, 0.14015388, 0, -0.82060313, 70.502335, 1.6557055, 11.33327)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (15)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.039995153, 0, -0.5853101, 0, 0.5866749, 0, 0.5853101, 0, -0.039995153, 65.203285, 1.6557055, 6.193574)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (22)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.22494473, 0, 0.5424822, 0, 0.58727086, 0, -0.5424822, 0, -0.22494473, 73.13572, 1.6557055, 3.7037313)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (23)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.4960059, 0, 0.5718163, 0, 0.7569648, 0, -0.5718163, 0, -0.4960059, 62.050568, 1.6557055, 4.2734137)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (12)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.33772555, 0, -0.39437577, 0, 0.5192213, 0, 0.39437577, 0, -0.33772555, 46.28613, 1.6557055, 5.076028)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (20)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.47402653, 0, 0.20016478, 0, 0.51455516, 0, -0.20016478, 0, -0.47402653, 35.616257, 1.6557055, 6.3810997)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (13)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.2369908, 0, -0.5024194, 0, 0.55550873, 0, 0.5024194, 0, -0.2369908, 41.673756, 1.6557055, 7.618078)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (16)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.67073846, 0, 0.29594043, 0, 0.733124, 0, -0.29594043, 0, -0.67073846, 39.172173, 1.6557055, 6.5448723)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (17)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.12853174, 0, -0.7698482, 0, 0.7805041, 0, 0.7698482, 0, -0.12853174, 22.701012, 1.6557055, -5.5429993)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (14)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.7415767, 0, 0.3732416, 0, 0.830208, 0, -0.3732416, 0, -0.7415767, 11.610233, 1.6557055, -6.106679)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield04 (24)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.3782102, 0, 0.5571174, 0, 0.6733667, 0, -0.5571174, 0, -0.3782102, 12.484501, 1.6557055, 0.7034919)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (18)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.67641044, 0, -0.1254983, 0, 0.6879539, 0, 0.1254983, 0, -0.67641044, 14.832008, 1.6557055, -0.7256527)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (15)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.019562695, 0, 0.66602594, 0, 0.66631305, 0, -0.66602594, 0, -0.019562695, 10.076767, 1.6557055, 3.26806)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (19)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.52465034, 0, -0.32795438, 0, 0.618718, 0, 0.32795438, 0, -0.52465034, 4.7522926, 1.6557055, 3.0333416)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (21)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.17523956, 0, 0.69673055, 0, 0.71843046, 0, -0.69673055, 0, -0.17523956, 5.025978, 1.6557055, -3.5662425)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (16)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.4225745, 0, 0.20450287, 0, 0.4694578, 0, -0.20450287, 0, -0.4225745, 3.2609406, 1.6557055, -2.5452552)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (20)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.29750213, 0, 0.54599553, 0, 0.6217866, 0, -0.54599553, 0, -0.29750213, -3.940567, 1.6557055, -3.2281315)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (17)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5465968, 0, 0.067964695, 0, 0.55080605, 0, -0.067964695, 0, -0.5465968, -4.5628815, 1.6557055, 1.0383558)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (21)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.28690922, 0, 0.737302, 0, 0.79115796, 0, -0.737302, 0, -0.28690922, -2.745987, 1.6557055, 0.6293286)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (25)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.7974944, 0, -0.2271272, 0, 0.82920694, 0, 0.2271272, 0, -0.7974944, -3.2678452, 1.9223732, -1.044169)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (18)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.54624456, 0, -0.5922357, 0, 0.8056838, 0, 0.5922357, 0, -0.54624456, 2.7283516, 1.6557055, -10.370307)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (22)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.44004804, 0, -0.6800947, 0, 0.81004393, 0, 0.6800947, 0, -0.44004804, -2.1155548, 1.6557055, -11.147654)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (19)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.28951934, 0, 0.45851052, 0, 0.54226685, 0, -0.45851052, 0, -0.28951934, 3.8732338, 1.6557055, -15.141468)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (22)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.6816392, 0, 0.28594372, 0, 0.7391859, 0, -0.28594372, 0, -0.6816392, -1.9619827, 1.6557055, -13.010497)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (23)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.30918315, 0, 0.38995585, 0, 0.49765426, 0, -0.38995585, 0, -0.30918315, 0.9375076, 1.6557055, -26.354914)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (24)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.5661956, 0, 0.09222076, 0, 0.5736567, 0, -0.09222076, 0, -0.5661956, -3.9684143, 1.6557055, -18.598988)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (25)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.1382262, 0, 0.46792018, 0, 0.48790962, 0, -0.46792018, 0, -0.1382262, -0.47257614, 1.6557055, -16.115162)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (26)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.58623296, 0, 0.5360379, 0, 0.7943587, 0, -0.5360379, 0, -0.58623296, 1.1413498, 1.6557055, -25.138704)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (23)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.523641, 0, -0.43498144, 0, 0.6807413, 0, 0.43498144, 0, -0.523641, 1.3906937, 1.6557055, -18.428493)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (24)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.31100294, 0, -0.6786861, 0, 0.74655026, 0, 0.6786861, 0, -0.31100294, -6.2804565, 1.6557055, -27.86297)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (20)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.58960843, 0, -0.23402321, 0, 0.634354, 0, 0.23402321, 0, -0.58960843, -10.544189, 1.6557055, -27.817816)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (25)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.25153586, 0, -0.66494673, 0, 0.71093196, 0, 0.66494673, 0, -0.25153586, -9.951424, 1.6557055, -32.441376)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (27)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.49430382, 0, -0.21072412, 0, 0.5373462, 0, 0.21072412, 0, -0.49430382, -6.9553604, 1.6557055, -34.128304)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (26)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.3355534, 0, 0.55321616, 0, 0.6470272, 0, -0.55321616, 0, -0.3355534, 2.4620132, 1.6557055, -35.831974)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (28)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.3280991, 0, -0.4362561, 0, 0.5458648, 0, 0.4362561, 0, -0.3280991, 8.184235, 1.6557055, -36.202354)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (27)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.22938898, 0, -0.6695919, 0, 0.7077942, 0, 0.6695919, 0, -0.22938898, 9.840355, 1.6557055, -29.251114)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (21)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.0438867, 0, -0.47343403, 0, 0.47546345, 0, 0.47343403, 0, -0.0438867, 10.207371, 1.6557055, -36.575077)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (22)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.20498241, 0, 0.5227728, 0, 0.56152385, 0, -0.5227728, 0, -0.20498241, 6.5858803, 1.6557055, -35.65925)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (23)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.7060785, 0, -0.01111805, 0, 0.706166, 0, 0.01111805, 0, -0.7060785, 10.665718, 1.6557055, -33.53128)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (26)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.56022376, 0, -0.15249814, 0, 0.5806086, 0, 0.15249814, 0, -0.56022376, 15.291542, 1.6557055, -29.120197)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (29)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.5259898, 0, -0.37340558, 0, 0.6450558, 0, 0.37340558, 0, -0.5259898, 16.216118, 1.6557055, -32.37864)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (24)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.030582352, 0, 0.6273931, 0, 0.62813807, 0, -0.6273931, 0, -0.030582352, 15.572971, 1.6557055, -36.61713)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (25)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.56735694, 0, -0.4522965, 0, 0.72557974, 0, 0.4522965, 0, -0.56735694, 17.210941, 1.6557055, -41.02192)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (26)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.66771454, 0.09354043, 0.17942458, 0.13953897, 0.6608949, 0.1747354, -0.14653273, 0.20311028, -0.6511989, 19.960407, 1.8056402, -42.98097)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (27)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5864727, 0, -0.2962614, 0, 0.6570547, 0, 0.2962614, 0, -0.5864727, 16.793476, 1.6557055, -44.425793)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (28)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.63479763, 0, 0.550277, 0, 0.84010285, 0, -0.550277, 0, -0.63479763, 11.362549, 1.6557055, -41.784653)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (29)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.45672247, 0, -0.4002758, 0, 0.60730237, 0, 0.4002758, 0, -0.45672247, 5.757023, 1.6557055, -46.949924)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (30)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.55923975, 0, -0.03391328, 0, 0.56026703, 0, 0.03391328, 0, -0.55923975, 5.143814, 1.6557055, -51.923073)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (28)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.23639667, 0, -0.5217757, 0, 0.5728292, 0, 0.5217757, 0, -0.23639667, 1.7403145, 1.6557055, -46.800636)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (31)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.22352798, 0, -0.7861533, 0, 0.8173138, 0, 0.7861533, 0, -0.22352798, 6.489128, 1.6557055, -44.066704)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (27)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.5388053, 0, 0.39674607, 0, 0.6691178, 0, -0.39674607, 0, -0.5388053, 8.945641, 1.6557055, -43.622993)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (28)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.40965462, 0, 0.35492048, 0, 0.5420197, 0, -0.35492048, 0, -0.40965462, -5.147789, 1.6557055, -47.812763)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (29)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.4938479, 0, -0.022710077, 0, 0.4943698, 0, 0.022710077, 0, -0.4938479, -10.44136, 1.6557055, -49.84098)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (30)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.6107111, 0, -0.36960515, 0, 0.7138459, 0, 0.36960515, 0, -0.6107111, -12.7656555, 1.6557055, -48.213688)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (31)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.1863724, 0, 0.66437805, 0, 0.69002366, 0, -0.66437805, 0, -0.1863724, -7.929451, 1.6557055, -49.127346)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (30)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.6488277, 0, -0.10793256, 0, 0.6577437, 0, 0.10793256, 0, -0.6488277, -13.499062, 1.6557055, -54.076073)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (32)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.36073554, 0, 0.33562914, 0, 0.49272406, 0, -0.33562914, 0, -0.36073554, -8.525253, 1.6557055, -54.676846)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (32)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5544507, 0, -0.22754636, 0, 0.5993271, 0, 0.22754636, 0, -0.5544507, -6.9061737, 1.6557055, -55.78371)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (33)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.56331944, 0, -0.21376762, 0, 0.6025158, 0, 0.21376762, 0, -0.56331944, -11.8183975, 1.6557055, -40.120945)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (34)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5268166, 0, -0.65139294, 0, 0.83776397, 0, 0.65139294, 0, -0.5268166, 1.3239899, 1.6557055, -35.47718)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (35)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5192238, 0, 0.014197808, 0, 0.5194179, 0, -0.014197808, 0, -0.5192238, -1.4550285, 1.6557055, -26.63784)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (36)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.10967427, 0, -0.8295262, 0, 0.83674496, 0, 0.8295262, 0, -0.10967427, -9.278839, 1.6557055, -25.16581)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (33)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.8261033, 0, 0.22991762, 0, 0.8575015, 0, -0.22991762, 0, -0.8261033, 3.8328285, 1.6557055, -26.321207)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (37)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.46714512, 0, 0.45727405, 0, 0.65370035, 0, -0.45727405, 0, -0.46714512, 22.353455, 1.6557068, -26.147533)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (29)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.5672958, 0, -0.03138555, 0, 0.5681633, 0, 0.03138555, 0, -0.5672958, 14.096985, 1.6557055, -21.882736)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (38)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.11297078, 0, 0.8563247, 0, 0.8637444, 0, -0.8563247, 0, -0.11297078, 20.870735, 1.6557068, -20.988068)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (39)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.100644104, 0, -0.78934526, 0, 0.79573554, 0, 0.78934526, 0, -0.100644104, 15.129368, 1.9223732, -16.930431)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (40)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.49256316, 0, 0.35170203, 0, 0.6052378, 0, -0.35170203, 0, -0.49256316, 29.666908, 1.9223732, -25.301424)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (41)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.1699287, 0, 0.79783416, 0, 0.8157298, 0, -0.79783416, 0, -0.1699287, 24.541191, 1.9223732, -33.220943)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (34)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.5028211, -0.12124147, 0.45619854, -0.08979245, 0.6789298, 0.081466734, -0.46341553, 3.926804e-09, -0.51077557, 27.061604, 1.9094286, -40.720104)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (42)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.3018318, 0, -0.7279637, 0, 0.78805685, 0, 0.7279637, 0, -0.3018318, 27.621357, 1.9223732, -29.816818)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (43)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.32904455, 0, -0.41978824, 0, 0.53337836, 0, 0.41978824, 0, -0.32904455, 36.934677, 1.9223719, -29.303398)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield04 (31)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.32239446, 0, 0.36840722, 0, 0.48955292, 0, -0.36840722, 0, -0.32239446, 37.50653, 1.9223732, -18.563145)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (35)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.26908097, 0, 1.3811693, 0, 1.4071364, 0, -1.3811693, 0, -0.26908097, 40.979366, 1.9223732, -6.210784)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (36)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.3676946, 0, -0.3574913, 0, 1.4136437, 0, 0.3574913, 0, -1.3676946, 17.20433, 1.9223732, -7.6230173)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (30)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-7.341511e-08, 0, 1.679542, 0, 1.679542, 0, -1.679542, 0, -7.341511e-08, 40.81118, 1.9223732, -10.130871)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (31)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-1.037798e-07, 0, 2.374205, 0, 2.374205, 0, -2.374205, 0, -1.037798e-07, 21.285381, 1.9223732, -14.109496)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (44)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.00910626e-07, 0, 2.308566, 0, 2.308566, 0, -2.308566, 0, -1.00910626e-07, 12.849632, 1.9223732, -35.82294)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (45)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-6.9448014e-08, 0, 1.5887855, 0, 1.5887855, 0, -1.5887855, 0, -6.9448014e-08, 53.133446, 1.9223732, -33.781696)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (46)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-9.001689e-08, 0, 2.0593467, 0, 2.0593467, 0, -2.0593467, 0, -9.001689e-08, 68.65716, 1.9223732, -11.916341)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (47)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.07543684e-07, 0, 2.4603128, 0, 2.4603128, 0, -2.4603128, 0, -1.07543684e-07, 43.74684, 1.9223732, 5.9519815)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (48)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-9.875912e-08, 0, 2.2593455, 0, 2.2593455, 0, -2.2593455, 0, -9.875912e-08, -1.9960556, 1.9223732, 3.8769324)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (37)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-8.787043e-08, 0, 2.0102413, 0, 2.0102413, 0, -2.0102413, 0, -8.787043e-08, 30.539505, 1.9223732, -29.125893)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (38)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-9.0140475e-08, 0, 2.0621738, 0, 2.0621738, 0, -2.0621738, 0, -9.0140475e-08, 47.82878, 1.9223732, -41.60348)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (39)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.9521008, 0, -2.270035, 0, 2.4616163, 0, 2.270035, 0, -0.9521008, 67.88769, 1.1223726, -32.63171)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (40)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(1.6356763, 0, 0.34756735, 0, 1.6721961, 0, -0.34756735, 0, 1.6356763, 74.322586, 1.6557068, -14.866205)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (32)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-2.4463372, 0, -0.05906475, 0, 2.4470496, 0, 0.05906475, 0, -2.4463372, 87.0548, 1.6557068, -22.127583)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (32)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-2.4949203, -1.4618498e-08, -0.34827667, 0.046236526, 2.4968128, -0.3312208, 0.34519386, -0.3344323, -2.4728363, 90.76961, -0.59741753, -14.785439)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (41)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.7219575, -1.1527421, -1.0423665, -0.3525812, 1.2408639, -1.1280553, 1.5136142, -0.2607834, -0.7599524, 90.51347, -5.3541026, -14.0155945)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (49)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.5115106, 0, -2.1648157, 0, 2.2244256, 0, 2.1648157, 0, -0.5115106, 74.21761, 1.6557055, 13.070969)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (50)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(1.880846, 0, -1.2973268, 0, 2.2848718, 0, 1.2973268, 0, 1.880846, 61.82155, 1.6557055, 10.991117)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (51)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(0.7940703, 0, 1.9285166, 0, 2.085599, 0, -1.9285166, 0, 0.7940703, 40.14209, 1.6557055, 8.817444)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (52)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.4444044, 0, 2.1344805, 0, 2.1802526, 0, -2.1344805, 0, -0.4444044, 47.583363, 1.5931292, 4.343992)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (33)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-2.2557504, 0, -0.5552087, 0, 2.3230724, 0, 0.5552087, 0, -2.2557504, 83.914986, 1.6557055, 12.592978)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (34)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(1.7721763, 0, -0.12480646, 0, 1.7765654, 0, 0.12480646, 0, 1.7721763, 97.41716, 1.6557055, 10.81729)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (35)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.1914967, 0, 1.9773824, 0, 1.9866333, 0, -1.9773824, 0, -0.1914967, 29.904154, 1.6557055, 8.490395)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (36)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-2.2457848, 0, 0.7047308, 0, 2.3537617, 0, -0.7047308, 0, -2.2457848, 12.951004, 1.6557055, 6.346159)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (42)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.8106728, 0, 1.0411898, 0, 2.088687, 0, -1.0411898, 0, -1.8106728, 59.949905, 1.6557055, 10.407289)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (43)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-2.240377, 0, 0.34111473, 0, 2.2661967, 0, -0.34111473, 0, -2.240377, 48.29625, 1.6557055, 1.4858339)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (44)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.07429225, 0, -1.8563216, 0, 1.8578075, 0, 1.8563216, 0, -0.07429225, 34.501434, 1.6557055, 7.9461985)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (45)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(0.15277117, 0, 1.5090187, 0, 1.5167321, 0, -1.5090187, 0, 0.15277117, 22.34127, 1.6557055, 6.754822)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (46)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.4044484, 0, 1.2700337, 0, 1.8935312, 0, -1.2700337, 0, -1.4044484, 49.806522, 1.6557055, 9.564071)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (47)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.5678501, 0, 1.191771, 0, 1.9693837, 0, -1.191771, 0, -1.5678501, 64.53696, 1.6557055, 14.109353)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (48)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(0.7743564, 0, -1.5686667, 0, 1.7493834, 0, 1.5686667, 0, 0.7743564, 65.66109, 1.6557055, 6.0745735)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (49)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.2906121, 0, 1.6764991, 0, 1.7015008, 0, -1.6764991, 0, -0.2906121, 94.036354, 1.6557055, 11.179429)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (50)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.8283638, 0, -0.6241296, 0, 1.9319546, 0, 0.6241296, 0, -1.8283638, 93.313644, 1.6557055, 3.5614483)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (51)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(1.6482543, 0, -1.0204207, 0, 1.9385561, 0, 1.0204207, 0, 1.6482543, 89.71295, 1.6557055, 0.6661223)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (37)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-1.2988265, 0, -2.161593, 0, 2.521792, 0, 2.161593, 0, -1.2988265, 89.63633, 1.655708, -3.7538352)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (38)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.062888704, 0, -1.5505469, 0, 1.5518216, 0, 1.5505469, 0, -0.062888704, 79.88838, 1.6557055, -6.5266256)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield02 (39)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(0.40171176, 0, 2.6239092, 0, 2.6544814, 0, -2.6239092, 0, 0.40171176, 72.59383, 1.655703, -1.781908)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (53)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.9436965, 0, -1.1191295, 0, 2.2428565, 0, 1.1191295, 0, -1.9436965, 52.217995, 1.655708, -9.273772)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (54)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.011153145, 0, -1.8130082, 0, 1.8130425, 0, 1.8130082, 0, -0.011153145, 75.26851, 1.6557055, -5.7311487)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (55)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(1.0105548, 0, 1.0245726, 0, 1.4390864, 0, -1.0245726, 0, 1.0105548, 91.415405, 1.655703, -6.686328)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (56)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-2.3432326, 0, 1.1390687, 0, 2.6054208, 0, -1.1390687, 0, -2.3432326, 47.128178, 1.6557055, -9.091416)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (57)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.7090743, 0, -1.1890866, 0, 1.3844541, 0, 1.1890866, 0, -0.7090743, 24.827381, 1.6557055, -9.474521)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (40)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.525757, 0, -1.4289632, 0, 1.522615, 0, 1.4289632, 0, -0.525757, -2.1578827, 1.3890404, 11.458307)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (52)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.9697251, 0, -0.22271521, 0, 1.9822763, 0, 0.22271521, 0, -1.9697251, 22.888733, 1.3890404, 19.988441)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="@Node3D@45962" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-1.7606229, 0, 1.9608217, 0, 2.635264, 0, -1.9608217, 0, -1.7606229, 36.59172, 1.3890404, 20.87434)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (41)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-1.744217, 0, 1.5121456, 0, 2.3084362, 0, -1.5121456, 0, -1.744217, 52.031437, 1.3890404, 25.922707)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (53)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.3062009, 0, 0.96938413, 0, 1.626612, 0, -0.96938413, 0, -1.3062009, 83.711464, 1.3890404, 25.95996)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (54)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.7095776, 0, 0.36090437, 0, 1.7472571, 0, -0.36090437, 0, -1.7095776, 96.136475, 1.3890404, 22.98088)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (55)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.70444435, 0, 1.6659875, 0, 1.8087996, 0, -1.6659875, 0, -0.70444435, 82.02348, 1.3890404, 25.702988)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (33)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.93885547, 0, 1.3474791, 0, 1.6423, 0, -1.3474791, 0, -0.93885547, 67.20257, 1.3890404, 24.170652)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (34)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.7232532, 0, 1.1631479, 0, 1.3696744, 0, -1.1631479, 0, -0.7232532, 59.669193, 1.3890404, 20.825676)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (58)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.0466028, 0, 2.4385705, 0, 2.6536765, 0, -2.4385705, 0, -1.0466028, 46.608833, 1.3890377, 15.924474)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (59)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.7816209, 0, -1.9290314, 0, 2.0813682, 0, 1.9290314, 0, -0.7816209, 22.173973, 1.3890404, 12.619355)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (56)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.8293682, 0, 1.6053455, 0, 2.4338698, 0, -1.6053455, 0, -1.8293682, 13.342026, 1.3890404, 12.559607)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield04 (35)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-1.2086864, 0, -0.7725541, 0, 1.4344901, 0, 0.7725541, 0, -1.2086864, 18.578041, 1.3890404, 14.970594)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (57)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.32275155, 0, -1.820471, 0, 1.84886, 0, 1.820471, 0, -0.32275155, 7.681076, 1.3890404, 17.883041)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (58)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.2547227, 0, 1.460588, 0, 1.9255247, 0, -1.460588, 0, -1.2547227, 22.560646, 1.3890404, 17.716934)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (60)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.655859, 0, 0.52312964, 0, 1.7365292, 0, -0.52312964, 0, -1.655859, 28.602015, 1.3890377, 14.217352)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (42)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.7387629, 0, -1.8101629, 0, 1.9551114, 0, 1.8101629, 0, -0.7387629, 28.81045, 1.3890377, 20.384758)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (59)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.9365115, 0, -0.97411996, 0, 2.1677146, 0, 0.97411996, 0, -1.9365115, 33.854755, 1.3890377, 14.149363)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield02 (43)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.7810503, 0, -2.382161, 0, 2.5069366, 0, 2.382161, 0, -0.7810503, 30.363384, 1.3890377, 14.409344)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield03 (61)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.9312687, 0, 0.097273596, 0, 1.933717, 0, -0.097273596, 0, -1.9312687, 42.22422, 1.3890377, 21.307365)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (62)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.5825179, 0, -0.0043513807, 0, 1.5825237, 0, 0.0043513807, 0, -1.5825179, 40.44276, 1.3890377, 13.095097)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (63)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.4406098, 0, 0.6100203, 0, 1.5644429, 0, -0.6100203, 0, -1.4406098, 50.201725, 1.3890377, 16.591005)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (64)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.1789018, 0, -1.0869052, 0, 1.6034874, 0, 1.0869052, 0, -1.1789018, 50.19258, 1.3890377, 22.122828)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (65)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.48320392, 0, -2.0269418, 0, 2.0837417, 0, 2.0269418, 0, -0.48320392, 53.495617, 1.3890377, 16.063925)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (66)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.2691627, 0, -1.632829, 0, 2.0680678, 0, 1.632829, 0, -1.2691627, 57.60428, 1.3890377, 22.872812)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (44)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-0.72743857, 0, -2.44939, 0, 2.5551276, 0, 2.44939, 0, -0.72743857, 57.418037, 1.3890377, 19.01007)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield01 (60)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-0.6774485, 0, -2.0513833, 0, 2.160349, 0, 2.0513833, 0, -0.6774485, 59.33874, 1.3890377, 14.861121)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield01 (61)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.0215677, 0, 1.6262019, 0, 1.9204512, 0, -1.6262019, 0, -1.0215677, 73.17847, 1.3890377, 18.898056)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (67)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.3972237, 0, -1.3849353, 0, 1.9673027, 0, 1.3849353, 0, -1.3972237, 70.8109, 1.3890377, 25.279848)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield01 (62)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.2765766, 0, 1.657038, 0, 2.091751, 0, -1.657038, 0, -1.2765766, 85.798035, 1.3890377, 20.596233)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_TreeBattlefield03 (68)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.5662498, 0, 1.172586, 0, 1.956552, 0, -1.172586, 0, -1.5662498, 93.9803, 1.3890377, 16.239033)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield02 (51)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-1.0744004, 0, 1.6310835, 0, 1.9531435, 0, -1.6310835, 0, -1.0744004, 92.56087, 1.3890377, 19.349442)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (36)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-2.1110659, 0, -0.25728396, 0, 2.126686, 0, 0.25728396, 0, -2.1110659, 94.246605, 1.3890377, 25.720463)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (37)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.6546092, 0, 1.6639303, 0, 1.7880652, 0, -1.6639303, 0, -0.6546092, 84.49698, 1.3890377, 18.446348)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield03 (69)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-1.9738053, 0, -0.6244073, 0, 2.0702155, 0, 0.6244073, 0, -1.9738053, 66.12189, 1.3890377, 29.375868)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (70)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.63147646, 0, -2.3358145, 0, 2.4196677, 0, 2.3358145, 0, -0.63147646, 44.261604, 1.3890377, 27.200777)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield03 (71)" type="Node3D" parent="Trees" instance=ExtResource("15_jblox")]
+transform = Transform3D(-0.9631795, 0, -1.2077998, 0, 1.5448287, 0, 1.2077998, 0, -0.9631795, 31.41675, 1.3890377, 28.46315)
+metadata/asset_placer_res_id = "uid://dgdx0uj7tibsn"
+
+[node name="SM_TreeBattlefield04 (38)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-1.0447124, 0, 1.5993576, 0, 1.9103317, 0, -1.5993576, 0, -1.0447124, 23.7448, 1.3890377, 26.158997)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (39)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-0.44320995, 0, 2.4621603, 0, 2.501733, 0, -2.4621603, 0, -0.44320995, 9.442097, 1.3890377, 22.14516)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield02 (54)" type="Node3D" parent="Trees" instance=ExtResource("14_1af6v")]
+transform = Transform3D(-1.5180295, 0, 0.54307586, 0, 1.6122483, 0, -0.54307586, 0, -1.5180295, 7.10651, 1.3890377, 15.895747)
+metadata/asset_placer_res_id = "uid://c1scv3fiv0e7l"
+
+[node name="SM_TreeBattlefield04 (40)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-1.1127188, 0, 1.2123051, 0, 1.6455474, 0, -1.2123051, 0, -1.1127188, -7.4217987, 1.3890377, 20.466366)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (41)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-2.1797123, 0, -0.9299191, 0, 2.369788, 0, 0.9299191, 0, -2.1797123, -11.574005, 1.3890377, 18.545317)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (42)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(0.19146977, 0, -2.4537704, 0, 2.4612288, 0, 2.4537704, 0, 0.19146977, 1.0915222, 1.3890404, 10.960621)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield04 (43)" type="Node3D" parent="Trees" instance=ExtResource("16_0w1c6")]
+transform = Transform3D(-2.0016048, 0, -0.20723829, 0, 2.0123045, 0, 0.20723829, 0, -2.0016048, -9.435562, 1.3890377, 7.784649)
+metadata/asset_placer_res_id = "uid://caf3cltdt4x1q"
+
+[node name="SM_TreeBattlefield01 (63)" type="Node3D" parent="Trees" instance=ExtResource("13_xnjnx")]
+transform = Transform3D(-1.4412118, 0, 1.4387399, 0, 2.0364342, 0, -1.4387399, 0, -1.4412118, -8.048027, 1.3890404, 13.407742)
+metadata/asset_placer_res_id = "uid://d2ps0o4ohpbij"
+
+[node name="SM_WoodBoards_2x3_02" parent="." instance=ExtResource("21_typlu")]
+transform = Transform3D(2.9966165e-07, 0, 1.5390375, 0, 1.5390363, 0, -1.5390375, 0, 2.9966165e-07, 62.694645, 0, 57.421623)
+metadata/asset_placer_res_id = "uid://deylx1xn0n7th"
+
+[node name="SM_WoodBoard_03" parent="." instance=ExtResource("22_kcjh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.977158, 2.3841858e-07, 55.379097)
+metadata/asset_placer_res_id = "uid://dlb6ag3wb8ybw"
+
+[node name="SM_WoodBoard_03 (1)" parent="." instance=ExtResource("22_kcjh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.74384, 0.121009886, 55.182346)
+metadata/asset_placer_res_id = "uid://dlb6ag3wb8ybw"
+
+[node name="SM_WoodBoard_03 (1)2" parent="." instance=ExtResource("22_kcjh1")]
+transform = Transform3D(0.95597243, 0, -0.2934564, -0.019305404, 0.9978337, -0.06288987, 0.2928207, 0.06578628, 0.9539015, 63.062786, 0.121009886, 55.182346)
+metadata/asset_placer_res_id = "uid://dlb6ag3wb8ybw"
+
+[node name="SM_WoodBoards_2x3_02 (1)" parent="." instance=ExtResource("21_typlu")]
+transform = Transform3D(-1.1859214, 0, 3.4272668e-07, 0, 1.185921, 0, -3.4272668e-07, 0, -1.1859214, 60.764523, -2.3841858e-07, 49.05929)
+metadata/asset_placer_res_id = "uid://deylx1xn0n7th"
+
+[node name="SM_WoodBoards_2x3_02 (2)" parent="." instance=ExtResource("21_typlu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.34622, 0, 49.282642)
+metadata/asset_placer_res_id = "uid://deylx1xn0n7th"
+
+[node name="SM_WallWoodBoards02" parent="." instance=ExtResource("23_1dx06")]
+transform = Transform3D(-1.0000013, 0, 4.0233135e-07, 0, 1, 0, -4.0233135e-07, 0, -1.0000013, 64.14995, -0.79999995, 49.2795)
+metadata/asset_placer_res_id = "uid://6egacoit1vs7"
+
+[node name="SM_WallWoodBoards02 (1)" parent="." instance=ExtResource("23_1dx06")]
+transform = Transform3D(-0.99616534, 0.0635619, 0.06015093, 0.06332865, 0.997976, -0.0057801036, -0.060396567, -0.0019486545, -0.9981743, 64.08679, -0.8000002, 51.45564)
+metadata/asset_placer_res_id = "uid://6egacoit1vs7"
+
+[node name="SM_WoodBoards_2x2_02 (2)" parent="." instance=ExtResource("20_87mgm")]
+transform = Transform3D(1.2952923, 0, 0.4714478, 0, 1.3784211, 0, -0.4714478, 0, 1.2952923, 62.482346, -0.16568542, 51.039978)
+metadata/asset_placer_res_id = "uid://bf3tvg200jqta"
+
+[node name="SM_WoodBoard_02" parent="." instance=ExtResource("24_ehlc5")]
+transform = Transform3D(0.9396928, 0, 0.34202018, 0, 1, 0, -0.34202018, 0, 0.9396928, 62.249046, -0.16568542, 53.489826)
+metadata/asset_placer_res_id = "uid://b5l5wxw6lfoeh"
+
+[node name="SM_WoodBoard_01" parent="." instance=ExtResource("25_daidg")]
+transform = Transform3D(0.64278793, 0, -0.7660447, 0, 1, 0, 0.7660447, 0, 0.64278793, 61.210526, -0.5656853, 57.477066)
+metadata/asset_placer_res_id = "uid://bwfcynsf1srv7"
+
+[node name="SM_WoodBoard_02 (1)" parent="." instance=ExtResource("24_ehlc5")]
+transform = Transform3D(1.3207442, 0, 0.46663666, 0, 1.400755, 0, -0.46663666, 0, 1.3207442, 0.40530682, -0.034943342, 0)
+metadata/asset_placer_res_id = "uid://b5l5wxw6lfoeh"
+
+[node name="SM_WoodBoard_02 (2)" parent="." instance=ExtResource("24_ehlc5")]
+transform = Transform3D(0.9517766, 0, -0.3067919, 0, 1, 0, 0.3067919, 0, 0.9517766, 0, -0.058131456, 0.14802873)
+metadata/asset_placer_res_id = "uid://b5l5wxw6lfoeh"
+
+[node name="SM_WoodBoards_2x2_01 (4)" parent="." instance=ExtResource("9_s2udt")]
+transform = Transform3D(0.48868158, 0, 1.4691379, 0, 1.5482816, 0, -1.4691379, 0, 0.48868158, 60.137363, -1.2656875, 50.727318)
+metadata/asset_placer_res_id = "uid://jdtnvqufft77"
+
+[node name="SM_LogTri_01" type="Node3D" parent="." instance=ExtResource("26_1dx06")]
+transform = Transform3D(1.0585933, 0, -0.81539464, 0, 1.3362212, 0, 0.81539464, 0, 1.0585933, 63.477596, 0.012107372, 56.60302)
+metadata/asset_placer_res_id = "uid://bm3e6ogg4n47u"
+
+[node name="SM_Sandbags01" type="Node3D" parent="." instance=ExtResource("5_i80mp")]
+transform = Transform3D(7.891023e-08, 0, 0.40527645, 0, 0.40527636, 0, -0.40527645, 0, 7.891023e-08, 63.179626, -0.005333066, 57.31544)
+metadata/asset_placer_res_id = "uid://g7vh4infkaf2"
+
+[node name="SM_Sandbags01 (1)" type="Node3D" parent="." instance=ExtResource("5_i80mp")]
+transform = Transform3D(0.10303689, 0, 0.58435065, 0, 0.59336513, 0, -0.58435065, 0, 0.10303689, 61.201607, -0.005333066, 57.259533)
+metadata/asset_placer_res_id = "uid://g7vh4infkaf2"
+
+[node name="SM_WoodBoards_2x3_02 (3)" type="Node3D" parent="." instance=ExtResource("21_typlu")]
+transform = Transform3D(0.99756503, 0, -0.069756545, 0, 1, 0, 0.069756545, 0, 0.99756503, 60.82904, 0.3514719, 55.156025)
+metadata/asset_placer_res_id = "uid://deylx1xn0n7th"
+
+[node name="SM_LogLadder_01" type="Node3D" parent="." instance=ExtResource("27_ehlc5")]
+transform = Transform3D(0.32434478, 0.12989588, -0.93698263, -0.314046, 0.94913524, 0.02287132, 0.8922917, 0.28683567, 0.34863928, 63.069508, 0.15966606, 56.74253)
+metadata/asset_placer_res_id = "uid://c7h4k5yi1x8n0"
+
+[node name="SM_Sandbags03" type="Node3D" parent="." instance=ExtResource("28_daidg")]
+transform = Transform3D(-0.9993942, 0, -0.034899298, 0, 1, 0, 0.034899298, 0, -0.9993942, 61.530766, 0.099999905, 56.284813)
+metadata/asset_placer_res_id = "uid://cjegcyd83pdhm"
+
+[node name="SM_WoodBoards_2x2_02 (1)" type="Node3D" parent="." instance=ExtResource("20_87mgm")]
+transform = Transform3D(-0.20791186, 0, 0.97814894, 0, 1, 0, -0.97814894, 0, -0.20791186, 61.967358, 0.099999905, 54.47181)
+metadata/asset_placer_res_id = "uid://bf3tvg200jqta"
+
+[node name="SM_HelmetBritish01" type="Node3D" parent="." instance=ExtResource("29_ehlc5")]
+transform = Transform3D(0.9960733, 0.024682967, -0.08502194, -0.05841584, 0.90486246, -0.4216768, 0.06652494, 0.42498764, 0.9027513, 61.543507, 1.2343545, 55.521187)
+metadata/asset_placer_res_id = "uid://b3xmf4o5hflqd"
+
+[node name="SM_AmmoCrate_02" type="Node3D" parent="." instance=ExtResource("18_jblox")]
+transform = Transform3D(0.050428957, 0.09183001, 0.8837089, 0.0012451453, 0.9957279, -0.0822077, -0.60825485, 0.009651737, 0.073097885, 61.223152, 0.0795984, 54.71751)
+metadata/asset_placer_res_id = "uid://pf7h4djc7nmm"
+
+[node name="SM_AmmoCrate_01" type="Node3D" parent="." instance=ExtResource("17_1af6v")]
+transform = Transform3D(0.11515906, 0.047555175, 0.5095355, 0, 0.5222766, -0.04874441, -0.51175, 0.01070134, 0.114660755, 61.285522, 0.35079578, 54.73219)
+metadata/asset_placer_res_id = "uid://d04wmp81h4wqr"
+
+[node name="SM_BarbedWire02" type="Node3D" parent="." instance=ExtResource("30_e1rnw")]
+transform = Transform3D(0.9512187, -0.0056281094, -0.208899, 0.021463137, 0.9710327, 0.07157076, 0.2078697, -0.07450747, 0.94853914, 58.866302, 2.559758, 51.424984)
+metadata/asset_placer_res_id = "uid://d076xtiusa6a0"
+
+[node name="SM_BarbedWire02 (1)" type="Node3D" parent="." instance=ExtResource("30_e1rnw")]
+transform = Transform3D(-0.057270925, -0.005369385, 0.90568197, 0.08610808, 0.9033479, 0.010800602, -0.9015953, 0.08661654, -0.056498982, 58.961468, 2.5662682, 54.863758)
+metadata/asset_placer_res_id = "uid://d076xtiusa6a0"
+
+[node name="SM_BarbedWire02 (2)" type="Node3D" parent="." instance=ExtResource("30_e1rnw")]
+transform = Transform3D(-0.2807767, 0.037691563, -0.76017237, 0.01305938, 0.8103689, 0.03535685, 0.7609942, 0, -0.28108025, 63.67165, 2.642991, 58.71344)
+metadata/asset_placer_res_id = "uid://d076xtiusa6a0"
+
+[node name="SM_BarbedWire02 (3)" type="Node3D" parent="." instance=ExtResource("30_e1rnw")]
+transform = Transform3D(0.37420046, 0, -1.2005727, 0, 1.2575377, 0, 1.2005727, 0, 0.37420046, 65.828926, 2.7, 50.28117)
+metadata/asset_placer_res_id = "uid://d076xtiusa6a0"
+
+[node name="SM_BarbedWire03" type="Node3D" parent="." instance=ExtResource("31_m8uxl")]
+transform = Transform3D(-0.69466484, 0, 0.2570825, 0, 0.7407073, 0, -0.2570825, 0, -0.69466484, 65.97082, 2.5854642, 52.931164)
+metadata/asset_placer_res_id = "uid://lirbfoymrt8"
+
+[node name="SM_BarbedWire03 (1)" type="Node3D" parent="." instance=ExtResource("31_m8uxl")]
+transform = Transform3D(-1.1125824, -0.006837658, -0.31255293, -0.0065828557, 1.155647, -0.0018492928, 0.3125584, 0, -1.112602, 57.118813, 2.5315259, 48.626152)
+metadata/asset_placer_res_id = "uid://lirbfoymrt8"
+
+[node name="SM_BarbedWire_01" type="Node3D" parent="." instance=ExtResource("11_gjquf")]
+transform = Transform3D(1.0329005, 0, -0.14516476, 0, 1.0430511, 0, 0.14516476, 0, 1.0329005, 63.52583, 2.6, 41.896553)
+metadata/asset_placer_res_id = "uid://d4kgkmqebsgf5"
+
+[node name="SM_BarbedWire_01 (1)" type="Node3D" parent="." instance=ExtResource("11_gjquf")]
+transform = Transform3D(0.93693095, 0, 0.37854406, 0, 1.0105113, 0, -0.37854406, 0, 0.93693095, 60.21251, 2.6, 36.258896)
+metadata/asset_placer_res_id = "uid://d4kgkmqebsgf5"
+
+[node name="SM_BarbedWire01" type="Node3D" parent="." instance=ExtResource("32_pb2dl")]
+transform = Transform3D(0.89223456, 0, 0, 0, 0.89223456, 0, 0, 0, 0.89223456, 63.696217, 2.6, 40.565453)
+metadata/asset_placer_res_id = "uid://dohbnd3jfbki5"
+
+[node name="SM_BarbedWire01 (1)" type="Node3D" parent="." instance=ExtResource("32_pb2dl")]
+transform = Transform3D(0.22606237, 0, 0.6957477, 0, 0.73155177, 0, -0.6957477, 0, 0.22606237, 62.17602, 2.6, 37.309757)
+metadata/asset_placer_res_id = "uid://dohbnd3jfbki5"
+
+[node name="SM_BarbedWire03 (2)" type="Node3D" parent="." instance=ExtResource("31_m8uxl")]
+transform = Transform3D(0.9407314, 0, 0.065782145, 0, 0.94302595, 0, -0.065782145, 0, 0.9407314, 58.92783, 2.6, 28.481518)
+metadata/asset_placer_res_id = "uid://lirbfoymrt8"
+
+[node name="SM_BarbedWire03 (3)" type="Node3D" parent="." instance=ExtResource("31_m8uxl")]
+transform = Transform3D(1.14124, 0, 0.20123143, 0, 1.1588453, 0, -0.20123143, 0, 1.14124, 67.454895, 2.6, 26.995605)
+metadata/asset_placer_res_id = "uid://lirbfoymrt8"
+
+[node name="SM_BarbedWire01 (2)" type="Node3D" parent="." instance=ExtResource("32_pb2dl")]
+transform = Transform3D(0.58574784, 0, 1.2009606, 0, 1.3361882, 0, -1.2009606, 0, 0.58574784, 62.61387, 2.6, 38.42758)
+metadata/asset_placer_res_id = "uid://dohbnd3jfbki5"
+
+[node name="SM_WoodBoards_2x3_02 (4)" type="Node3D" parent="." instance=ExtResource("21_typlu")]
+transform = Transform3D(0.98480815, 0, -0.17364825, 0, 1, 0, 0.17364825, 0, 0.98480815, 60.893867, -0.048527718, 45.541214)
+metadata/asset_placer_res_id = "uid://deylx1xn0n7th"
+
+[node name="@Node3D@35466" type="Node3D" parent="." instance=ExtResource("20_87mgm")]
+transform = Transform3D(-0.8711373, 0, 0.4910411, 0, 1, 0, -0.4910411, 0, -0.8711373, 64.7891, 0.03478706, 44.142036)
+metadata/asset_placer_res_id = "uid://bf3tvg200jqta"
+
+[node name="SM_WoodBoards_2x2_02 (3)" type="Node3D" parent="." instance=ExtResource("20_87mgm")]
+transform = Transform3D(-1.1379056, 0, 0.8019683, 0, 1, 0, -1.1613017, 0, -0.7858113, 62.820484, 0.15706956, 45.794727)
+metadata/asset_placer_res_id = "uid://bf3tvg200jqta"
+
+[node name="SM_WoodBoards_2x2_02 (4)" type="Node3D" parent="." instance=ExtResource("20_87mgm")]
+transform = Transform3D(-1.1800709, 0, 0.3165029, 0, 1, 0, -0.27033758, 0, -1.3815907, 64.47703, 0.07806265, 46.651176)
+metadata/asset_placer_res_id = "uid://bf3tvg200jqta"
+
+[node name="SM_BarbedWire01 (3)" type="Node3D" parent="." instance=ExtResource("32_pb2dl")]
+transform = Transform3D(0.1977942, 0.9363245, -0.29012728, 9.16259e-09, 0.29597473, 0.9551958, 0.98024356, -0.18893233, 0.05854211, 60.84043, 2.573202, 36.187653)
+metadata/asset_placer_res_id = "uid://dohbnd3jfbki5"
