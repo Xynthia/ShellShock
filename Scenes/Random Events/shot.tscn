@@ -35,6 +35,7 @@ transform = Transform3D(-1.0000015, 0, 8.742292e-08, 0, 1.0000055, 0, -8.7423444
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/bullet Body"]
 transform = Transform3D(1.0000001, 0, 1.1368833e-12, 0, 1.0000119, 0, 1.1297778e-12, 0, 1.0000131, 0, 0, 0)
+bus = &"Explolsions"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/bullet Body"]
 transform = Transform3D(0.1, 0, 0, 0, -4.371139e-09, -0.1, 0, 0.1, -4.371139e-09, 0, 2.3841858e-07, 0)
@@ -46,7 +47,7 @@ mesh = SubResource("CapsuleMesh_34ual")
 
 [node name="TraumaCauser" parent="Path3D/PathFollow3D/bullet Body" instance=ExtResource("1_g5wfh")]
 transform = Transform3D(1.0000001, 0, 1.3500522e-12, 0, 1.0000142, 0, 1.3429467e-12, 0, 1.0000155, 0, 0, 0)
-trauma_amount = 1.0
+trauma_amount = 0.7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/bullet Body/TraumaCauser"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bho6d82n8m677"
+path="res://.godot/imported/take_the_trench_0.wav-5a146bd81bbf35ccfd225861ce5bcb78.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/a proud horse father/take_the_trench_0.wav"
+dest_files=["res://.godot/imported/take_the_trench_0.wav-5a146bd81bbf35ccfd225861ce5bcb78.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

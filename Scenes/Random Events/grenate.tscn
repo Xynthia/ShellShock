@@ -81,6 +81,7 @@ transform = Transform3D(-1.0000015, 0, 8.742292e-08, 0, 1.0000055, 0, -8.7423444
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Grenade Body"]
 transform = Transform3D(1.0000001, 0, 1.1368833e-12, 0, 1.0000119, 0, 1.1297778e-12, 0, 1.0000131, 0, 0, 0)
+bus = &"Explolsions"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Grenade Body"]
 transform = Transform3D(0.3, 0, 0, 0, 0.29999998, 0, 1.7763568e-15, 0, 0.3, 0, 2.3841858e-07, 0)
@@ -94,7 +95,7 @@ mesh = SubResource("ArrayMesh_tm13t")
 skeleton = NodePath("")
 
 [node name="TraumaCauser" parent="." instance=ExtResource("1_exuoo")]
-trauma_amount = 1.5
+trauma_amount = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

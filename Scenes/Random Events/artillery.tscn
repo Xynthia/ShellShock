@@ -39,13 +39,15 @@ mesh = SubResource("CapsuleMesh_enrot")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Arty Body"]
 transform = Transform3D(1.0000001, 0, 1.1368833e-12, 0, 1.0000119, 0, 1.1297778e-12, 0, 1.0000131, 0, 0, 0)
+volume_db = 12.0
+bus = &"Explolsions"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Arty Body"]
 transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, 0, 2.3841858e-07, 0)
 shape = SubResource("CapsuleShape3D_1dfdl")
 
 [node name="TraumaCauser" parent="." instance=ExtResource("1_0c8iy")]
-trauma_amount = 2.0
+trauma_amount = 1.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)

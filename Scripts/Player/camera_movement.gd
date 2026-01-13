@@ -59,7 +59,7 @@ func change_looking_direction_based_on_mouse_position(mouse_position : Vector2) 
 
 func find_dir_based_on_mouse_position(mouse_position : Vector2) -> dir:
 	if abs(mouse_position.y) > abs(mouse_position.x):
-		if mouse_position.y > 0:
+		if mouse_position.y < 0:
 			return dir.DOWN
 		else:
 			return dir.UP
@@ -69,6 +69,9 @@ func find_dir_based_on_mouse_position(mouse_position : Vector2) -> dir:
 		else:
 			return dir.LEFT
 	
+
+func move_to_middle() -> void:
+	move_to(look_position.CENTER)
 
 func set_dir_rotation(new_dir: dir) -> void:
 	match current_look_pos:

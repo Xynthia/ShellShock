@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhrifmuxk0y76"
+path="res://.godot/imported/los_0.wav-5697f9a924daeb02020d3851aa5b925b.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/a proud horse father/los_0.wav"
+dest_files=["res://.godot/imported/los_0.wav-5697f9a924daeb02020d3851aa5b925b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

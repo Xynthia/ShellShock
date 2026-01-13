@@ -52,7 +52,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
-process_mode = 3
 rotation_order = 0
 floor_block_on_wall = false
 script = ExtResource("1_v0iea")
@@ -98,9 +97,6 @@ bus = &"BG"
 [node name="SFX" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
 bus = &"SFX"
-
-[node name="VA" type="AudioStreamPlayer3D" parent="."]
-bus = &"VA Phenosi"
 
 [node name="eyelids" type="Node3D" parent="."]
 
