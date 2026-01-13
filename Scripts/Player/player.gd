@@ -109,9 +109,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		GameManager.ui.pause_menu()
 	
-	
-	print(state.keys()[current_state])
-	
 	# camera movement
 	if lastMouseMove < lastFrame:
 		screen_relative = Vector2.ZERO
@@ -141,7 +138,12 @@ func _input(event: InputEvent) -> void:
 func blink():
 	animation_player.play("blink")
 
+func close_eyes() -> void:
+	animation_player.play("close eyes")
+	animation_player.animation_finished.connect(closed_eyes)
 
+func closed_eyes() -> void:
+	animation_player.play("closed eyes")
 
 func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	#if skipping a position check walkinpoints array
