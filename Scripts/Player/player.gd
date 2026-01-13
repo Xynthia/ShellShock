@@ -58,8 +58,15 @@ var move_tween : Tween
 var turn_tween : Tween 
 var sound_tween : Tween 
 
+var able_to_turn : bool = true
+var able_to_move : bool = true
 var turn_once : bool = true
 var for_first_spawn : bool = true
+
+enum state {WAIT, MOVE, TURN}
+var current_state : state
+
+var trun_tween_timer : float 
 
 func _init() -> void:
 	id = 1
@@ -73,17 +80,24 @@ func _physics_process(delta: float) -> void:
 		do_this_once = false
 	
 	
-	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward"):
+	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
+		current_state = state.MOVE
 		set_new_position(looking_at_walk_point)
 	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward"):
+		current_state = state.MOVE
 		set_new_position(looking_at_walk_point)
 	
+	if turn_tween && turn_tween.is_running() && current_state == state.TURN:
+		trun_tween_timer = trun_tween_timer + delta
+		if turn_tween.get_total_elapsed_time() >= time_to_turn:
+			current_state = state.WAIT
 	
-	
-	if Input.is_action_just_pressed("TurnLeft"):
+	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT:
+		current_state = state.TURN
 		camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.RIGHT)
-	if Input.is_action_just_pressed("TurnRight"):
+	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT:
+		current_state = state.TURN
 		camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.LEFT)
 	
@@ -96,7 +110,7 @@ func _physics_process(delta: float) -> void:
 		GameManager.ui.pause_menu()
 	
 	
-	
+	print(state.keys()[current_state])
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -223,14 +237,13 @@ func turn_to_walk_point_once_moved() -> void:
 		
 
 func move_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
+	able_to_move = false
 	move_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	new_walk_point.global_position.y = self.position.y
 	
 	var distance : float = self.position.distance_to(new_walk_point.position)
 	
 	var time : float = distance / SPEED
-	
-	print(distance, " ", SPEED, " ", time)
 	
 	move_tween.tween_property(self, "position",  new_walk_point.global_position, time)
 	
@@ -244,6 +257,9 @@ func on_move_tween_finished() -> void:
 			look_to(new_looking_at_walk_point)
 	else:
 		turn_to_walk_point_once_moved()
+	
+	trun_tween_timer = 0
+	current_state = state.WAIT
 
 func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	turn_once = false
@@ -271,6 +287,7 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 func on_turn_tween_finished(walk_point) ->void:
 	turn_once = true
 	looking_at_walk_point = walk_point
+	current_state = state.WAIT
 	
 	if check_walkpoint_dead_end() == true && dead_end_check == true:
 		play_return_to_trenches()
