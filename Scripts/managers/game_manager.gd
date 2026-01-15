@@ -47,6 +47,9 @@ var grenade_time : Array[float] = [0.5, 5]
 var artillery_time : Array[float] = [0.5, 10] 
 var shot_time : Array[float] = [0.5, 7] 
 
+const CREDITS = preload("uid://bu3yukcg5kp0w")
+var credits : Node3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_main_menu()
@@ -92,8 +95,20 @@ func _process(delta: float) -> void:
 		
 
 func start_main_menu() -> void:
-	ui = UI.instantiate()
-	get_tree().get_first_node_in_group("Scene").add_child(ui)
+	if ui == null:
+		ui = UI.instantiate()
+		get_tree().get_first_node_in_group("Scene").add_child(ui)
+	
+	if player != null:
+		player.queue_free()
+	
+	Input.MOUSE_MODE_VISIBLE
+	
+	if ui.panel && ui.panel.visible == false:
+		ui.panel.visible = true
+	
+	if credits != null:
+		credits.queue_free()
 	
 	add_main_menu_level()
 	
@@ -105,8 +120,10 @@ func add_main_menu_level()-> void:
 	ui.add_child(main_menu_level)
 
 func start_game() -> void:
-	var new_player = PLAYER_CLASS.instantiate()
-	player = new_player
+	if player == null:
+		var new_player = PLAYER_CLASS.instantiate()
+		player = new_player
+	
 	player.mouse_sensitivity = mouse_sensitivity
 	
 	get_tree().get_first_node_in_group("Scene").add_child(player)
@@ -124,8 +141,14 @@ func start_game() -> void:
 	main_menu_level.queue_free()
 	
 	started_game = true
+	started_main_menu = false
 
-
+func start_credits() -> void:
+	credits = CREDITS.instantiate()
+	get_tree().get_first_node_in_group("Scene").add_child(credits)
+	
+	level.queue_free()
+	
 
 func get_main_menu_environment() -> WorldEnvironment:
 	for node in main_menu_level.get_children():

@@ -63,6 +63,9 @@ var able_to_move : bool = true
 var turn_once : bool = true
 var for_first_spawn : bool = true
 var can_be_hit_for_end_scene : bool = false
+var took_trauma : bool = false
+var started_ending : bool = false
+var amount_blink : int = 0
 
 enum state {WAIT, MOVE, TURN}
 var current_state : state
@@ -76,7 +79,7 @@ func _ready() -> void:
 	play_BG()
 
 func _physics_process(delta: float) -> void:
-	if position != current_walk_point.position && do_this_once:
+	if GameManager.started_game && position != current_walk_point.position && do_this_once:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
@@ -103,16 +106,17 @@ func _physics_process(delta: float) -> void:
 		turn_to_walk_point(look_dir_3.LEFT)
 	
 	if get_tree().paused == true:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Input.is_action_just_pressed("pause"):
 		GameManager.ui.pause_menu()
 	
-	if GameManager.player.can_be_hit_for_end_scene == true:
+	if can_be_hit_for_end_scene == true && took_trauma == true:
 		end_scene()
 		can_be_hit_for_end_scene = false
+		
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -150,12 +154,24 @@ func closed_eyes() -> void:
 	animation_player.play("closed_eyes")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == animation_player.current_animation.get_basename():
-		pass
+	if anim_name == "blink" && started_ending:
+		blink()
+		amount_blink += 1
+		if amount_blink == 3:
+			started_ending = false
+			close_eyes()
+	if anim_name == "close_eyes":
+		closed_eyes()
+	if anim_name == "closed_eyes":
+		GameManager.start_credits()
 
 func end_scene() -> void:
-	closed_eyes()
+	var i = 3
 	
+	started_ending = true
+	for amount in i:
+		blink()
+	GameManager.started_game = false
 
 
 func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
@@ -301,14 +317,15 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 
 
 func on_turn_tween_finished(walk_point) ->void:
-	turn_once = true
-	looking_at_walk_point = walk_point
-	current_state = state.WAIT
-	
-	if check_walkpoint_dead_end() == true && dead_end_check == true:
-		play_return_to_trenches()
+	if walk_point != null:
+		turn_once = true
+		looking_at_walk_point = walk_point
+		current_state = state.WAIT
 		
-		dead_end_check = false
+		if check_walkpoint_dead_end() == true && dead_end_check == true:
+			play_return_to_trenches()
+			
+			dead_end_check = false
 
 func play_BG() -> void:
 	bg_sound.stream = NIGHT_TIME_WIND_WHISTLING

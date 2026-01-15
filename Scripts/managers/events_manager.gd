@@ -24,7 +24,7 @@ var va_theyre_here : Array = [THEYRE_HERE_0, THEYRE_HERE_1, THEYRE_HERE_3]
 var va_sentences : Array = [va_los, va_take_the_trenches, va_theyre_here]
 
 var last_event_timer : float = 0
-var last_event_time : float = 3 * 60
+var last_event_time : float = 3 
 @export var play_this_once : bool = true
 
 # Called when the node enters the scene tree for the first time.

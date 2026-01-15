@@ -35,6 +35,9 @@ func _process(delta):
 	time += delta
 	trauma = max(trauma - delta * trauma_reduction_rate, 0.0)
 	
+	if trauma == 0:
+		GameManager.player.took_trauma = false
+	
 	camera_3d.rotation_degrees.x = initial_rotation.x + max_x * get_shake_intensity() * get_noise_from_seed(0)
 	camera_3d.rotation_degrees.y = initial_rotation.y + max_y * get_shake_intensity() * get_noise_from_seed(1)
 	camera_3d.rotation_degrees.z = initial_rotation.z + max_z * get_shake_intensity() * get_noise_from_seed(2)
@@ -44,6 +47,7 @@ func add_trauma(trauma_amount : float):
 	GameManager.player.blink()
 	GameManager.player.play_breathing()
 	GameManager.player.play_beep()
+	GameManager.player.took_trauma = true
 
 func get_shake_intensity() -> float:
 	return trauma * trauma

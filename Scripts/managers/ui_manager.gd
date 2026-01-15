@@ -19,8 +19,10 @@ func open_settings() -> void:
 
 func back() -> void:
 	if get_tree().paused == true:
+		panel.visible = true
 		pause_menu_ui.visible = true
 	else:
+		panel.visible = true
 		main_menu_ui.visible = true
 	
 	settings_ui.visible = false
