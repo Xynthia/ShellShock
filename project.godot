@@ -23,10 +23,6 @@ GameManager="*res://Scripts/managers/game_manager.gd"
 
 window/stretch/mode="viewport"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg")
-
 [global_group]
 
 Scene="The scene that will be playing"

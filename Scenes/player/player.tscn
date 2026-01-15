@@ -136,10 +136,6 @@ bus = &"BG"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
 bus = &"SFX"
 
-[node name="Breathing" type="AudioStreamPlayer3D" parent="pauseble"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
-bus = &"Breathing"
-
 [node name="VA" type="AudioStreamPlayer3D" parent="pauseble"]
 bus = &"VA Phenosi"
 
