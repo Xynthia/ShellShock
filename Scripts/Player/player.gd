@@ -18,8 +18,6 @@ var id : int
 
 @onready var animation_player: AnimationPlayer = $pauseble/eyelids/AnimationPlayer
 
-
-
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
 const TINNITUS = preload("uid://cwtpeduhorxbe")
@@ -64,6 +62,7 @@ var able_to_turn : bool = true
 var able_to_move : bool = true
 var turn_once : bool = true
 var for_first_spawn : bool = true
+var can_be_hit_for_end_scene : bool = false
 
 enum state {WAIT, MOVE, TURN}
 var current_state : state
@@ -111,8 +110,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		GameManager.ui.pause_menu()
 	
-	
-	print(state.keys()[current_state])
+	if GameManager.player.can_be_hit_for_end_scene == true:
+		end_scene()
+		can_be_hit_for_end_scene = false
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -143,6 +143,19 @@ func _input(event: InputEvent) -> void:
 func blink():
 	animation_player.play("blink")
 
+func close_eyes() -> void:
+	animation_player.play("close_eyes")
+
+func closed_eyes() -> void:
+	animation_player.play("closed_eyes")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == animation_player.current_animation.get_basename():
+		pass
+
+func end_scene() -> void:
+	closed_eyes()
+	
 
 
 func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:

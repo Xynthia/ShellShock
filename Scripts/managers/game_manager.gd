@@ -5,6 +5,7 @@ const PLAYER_CLASS = preload("uid://dd08kv410jg6r")
 
 var mouse_sensitivity : float = 50
 
+@export var events_manager : EventsManager
 @export var grenade_manager : GrenadeManager
 @export var artillery_manager : ArtilleryManager
 @export var shot_manager : ShotManager

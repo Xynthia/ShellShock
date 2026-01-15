@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://n8usaw7wote5"]
+[gd_scene load_steps=14 format=3 uid="uid://n8usaw7wote5"]
 
 [ext_resource type="PackedScene" uid="uid://bwjraowk62dyv" path="res://Scenes/walls and floors.tscn" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://bpn2dteq1h0qd" path="res://Scripts/managers/events_manager.gd" id="1_8c0lf"]
 [ext_resource type="Script" uid="uid://caot7h0nvew70" path="res://Scripts/level_walking_points.gd" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="3_wqkje"]
 [ext_resource type="Script" uid="uid://dsy3x3h2tuptx" path="res://Scripts/managers/artillery_manager.gd" id="4_0f350"]
@@ -49,6 +50,7 @@ size = Vector3(50, 10, 200)
 size = Vector3(25, 10, 200)
 
 [node name="Level" type="Node3D" groups=["Scene"]]
+script = ExtResource("1_8c0lf")
 
 [node name="WalkingPoints" type="Node3D" parent="."]
 script = ExtResource("2_81xng")
@@ -313,3 +315,8 @@ script = ExtResource("6_754fn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShotManager"]
 shape = SubResource("BoxShape3D_wqkje")
+
+[node name="VA" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.47112, 0, 0)
+unit_size = 50.0
+bus = &"VA Horse Father"
