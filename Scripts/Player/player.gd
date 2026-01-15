@@ -13,6 +13,8 @@ var id : int
 @onready var bg_sound: AudioStreamPlayer3D = $pauseble/BGSound
 @onready var sfx: AudioStreamPlayer3D = $pauseble/SFX
 @onready var va: AudioStreamPlayer3D = $pauseble/VA
+@onready var breathing: AudioStreamPlayer3D = $pauseble/Breathing
+
 
 @onready var animation_player: AnimationPlayer = $pauseble/eyelids/AnimationPlayer
 
@@ -87,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		current_state = state.MOVE
 		set_new_position(looking_at_walk_point)
 	
-	if turn_tween && turn_tween.is_running() && current_state == state.TURN:
+	if current_state == state.TURN:
 		trun_tween_timer = trun_tween_timer + delta
 		if turn_tween.get_total_elapsed_time() >= time_to_turn:
 			current_state = state.WAIT
@@ -256,6 +258,7 @@ func on_move_tween_finished() -> void:
 		dead_end_check = true
 		var new_looking_at_walk_point = GameManager.walking_points.check_look_at_point(current_walk_point)
 		if new_looking_at_walk_point != null:
+			current_state = state.TURN
 			look_to(new_looking_at_walk_point)
 	else:
 		turn_to_walk_point_once_moved()
@@ -309,16 +312,21 @@ func play_return_to_trenches() -> void:
 	va.stream = voice_line
 	va.play()
 
-
+func play_breathing() -> void:
+	breathing.stream = OUT_OF_BREATH_HEAVY_MALE
+	breathing.play()
 
 func play_beep() -> void:
 	sfx.stream = TINNITUS
 	
-	sfx.play()
-	var lowest_db = -80
-
-	var sound_duration = 1
+	var my_random_number = randf_range(0, 1)
 	
-	sound_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-	
-	sound_tween.tween_property(sfx, "volume_db", lowest_db, sound_duration)
+	if my_random_number <= 0.5:
+		sfx.play()
+		var lowest_db = -80
+		
+		var sound_duration = 1
+		
+		sound_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+		
+		sound_tween.tween_property(sfx, "volume_db", lowest_db, sound_duration)
