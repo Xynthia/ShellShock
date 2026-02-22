@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://eqq6woj0eqcg"]
 
 [ext_resource type="Script" uid="uid://ny0ptreffqjb" path="res://Scripts/managers/ui_manager.gd" id="1_nf4gj"]
-[ext_resource type="Texture2D" uid="uid://bx715u24w56hh" path="res://icon.svg" id="2_2246s"]
+[ext_resource type="Texture2D" uid="uid://csuhbbf003eg8" path="res://Assets/logo/Ver2@3000px.png" id="2_qdvrb"]
 
 [node name="UI" type="Node3D" groups=["Scene"]]
 process_mode = 3
@@ -29,18 +29,58 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
+[node name="DisclaimerUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(0, 448)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9520512, 0.11800676, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "DISCLAIMER"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 475)
+layout_mode = 2
+text = "This game is a fictional, interactive simulation inspired by themes of World War I and the psychological impact of combat, including trauma commonly associated with what is now understood as PTSD.
+
+It is not a historical reenactment, not a medical diagnosis, and not a replacement for professional mental health support. Events, characters, and experiences are dramatized to convey emotional weight, confusion, and distress as part of the gameplay experience.
+
+The game may include:
+- Intense combat scenarios
+- Psychological distress, hallucinations, or disorientation
+- Themes of loss, fear, and long-term mental strain
+
+These elements are presented to evoke empathy and reflection, not to glorify war or trivialize real suffering.
+
+If you find these themes distressing, consider taking breaks or choosing not to proceed. If you or someone you know is struggling with trauma or mental health challenges, seek help from a qualified professional.
+
+War leaves scars.
+Some are invisible.
+This game explores that reality."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+layout_mode = 2
+text = "press 'space' to continue"
+horizontal_alignment = 1
+
 [node name="MainMenuUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
-custom_minimum_size = Vector2(125, 125)
+custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI/CenterContainer"]
-texture = ExtResource("2_2246s")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qdvrb")
 centered = false
 
 [node name="StartButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
@@ -160,6 +200,21 @@ layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 28
 text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -148.0
+offset_right = 250.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/MainMenuUI/StartButton" to="." method="start_game"]
 [connection signal="pressed" from="CanvasLayer/Panel/MarginContainer/MainMenuUI/SettingsButton" to="." method="open_settings"]

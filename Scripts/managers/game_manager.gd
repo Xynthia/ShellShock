@@ -36,6 +36,7 @@ var level : Node3D
 var game_environment : WorldEnvironment
 
 var started_game : bool = false
+var finished_tutrial : bool = false
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0
@@ -76,7 +77,7 @@ func _process(delta: float) -> void:
 	
 
 	
-	if started_game && get_tree().paused == false:
+	if started_game && finished_tutrial && get_tree().paused == false:
 		if grenade_timer <= 0:
 			grenade_timer = rng.randf_range(grenade_time[0], grenade_time[1])
 			grenade_manager.spawn_grenade()

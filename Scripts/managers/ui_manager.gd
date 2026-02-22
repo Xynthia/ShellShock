@@ -4,9 +4,26 @@ extends Node3D
 @onready var main_menu_ui: VBoxContainer = $CanvasLayer/Panel/MarginContainer/MainMenuUI
 @onready var settings_ui: VBoxContainer = $CanvasLayer/Panel/MarginContainer/SettingsUI
 @onready var pause_menu_ui: VBoxContainer = $CanvasLayer/Panel/MarginContainer/PauseMenuUI
+@onready var disclaimer_ui: VBoxContainer = $CanvasLayer/Panel/MarginContainer/DisclaimerUI
 
 @onready var panel: Panel = $CanvasLayer/Panel
 
+@onready var tutorial_label: RichTextLabel = $CanvasLayer/RichTextLabel
+
+func _ready() -> void:
+	proceed_disclaimer()
+
+func proceed_disclaimer() -> void:
+	get_tree().create_timer(25).timeout.connect(make_main_menu_visible)
+	
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_accept") && disclaimer_ui.visible:
+		make_main_menu_visible()
+
+func make_main_menu_visible() -> void:
+	disclaimer_ui.visible = false
+	main_menu_ui.visible = true
 
 func start_game() -> void:
 	GameManager.start_game()

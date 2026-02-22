@@ -6,7 +6,7 @@ var id : int
 @export_subgroup("Mouse settings")
 @export_range(1, 100, 1) var mouse_sensitivity: int = 50
 
-@onready var camera_pivot: Area3D = $pauseble/CameraPivot
+@onready var camera_pivot: CameraMovement = $pauseble/CameraPivot
 @onready var look_at_before_turn: Node3D = $pauseble/LookAtBeforeTurn
 
 
@@ -72,6 +72,13 @@ var current_state : state
 
 var trun_tween_timer : float 
 
+var turned_right : bool = false
+var turned_left : bool = false
+var moved_foward : bool = false
+var pressed_escape : bool = false
+
+var closed_eyes_done : bool = false
+
 func _init() -> void:
 	id = 1
 
@@ -79,16 +86,20 @@ func _ready() -> void:
 	play_BG()
 
 func _physics_process(delta: float) -> void:
-	if GameManager.started_game && position != current_walk_point.position && do_this_once:
+	if GameManager.started_game && current_walk_point && position != current_walk_point.position && do_this_once:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
 	
 	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
 		current_state = state.MOVE
+		if GameManager.events_manager.controls_a_d && GameManager.events_manager.finished_fade_in:
+			moved_foward = true
 		set_new_position(looking_at_walk_point)
-	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward"):
+	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
 		current_state = state.MOVE
+		if GameManager.events_manager.controls_a_d  && GameManager.events_manager.finished_fade_in:
+			moved_foward = true
 		set_new_position(looking_at_walk_point)
 	
 	if current_state == state.TURN:
@@ -98,10 +109,14 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT:
 		current_state = state.TURN
+		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
+			turned_left = true
 		camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.RIGHT)
 	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT:
 		current_state = state.TURN
+		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
+			turned_right = true
 		camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.LEFT)
 	
@@ -111,6 +126,8 @@ func _physics_process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Input.is_action_just_pressed("pause"):
+		if GameManager.events_manager.controls_mouse && GameManager.events_manager.finished_fade_in:
+			pressed_escape = true
 		GameManager.ui.pause_menu()
 	
 	if can_be_hit_for_end_scene == true && took_trauma == true:
@@ -152,6 +169,7 @@ func close_eyes() -> void:
 
 func closed_eyes() -> void:
 	animation_player.play("closed_eyes")
+	closed_eyes_done = true
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "blink" && started_ending:
@@ -162,8 +180,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			close_eyes()
 	if anim_name == "close_eyes":
 		closed_eyes()
-	if anim_name == "closed_eyes":
-		GameManager.start_credits()
+		
 
 func end_scene() -> void:
 	var i = 3

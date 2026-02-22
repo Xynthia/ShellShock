@@ -316,6 +316,15 @@ script = ExtResource("6_754fn")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShotManager"]
 shape = SubResource("BoxShape3D_wqkje")
 
+[node name="frontline" type="Area3D" parent="."]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 79.80568, -0.74243784, -22.671959)
+script = ExtResource("6_754fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frontline"]
+shape = SubResource("BoxShape3D_wqkje")
+
 [node name="VA" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.47112, 0, 0)
 bus = &"VA Horse Father"
+
+[connection signal="body_entered" from="frontline" to="." method="_on_shot_manager_body_entered"]
