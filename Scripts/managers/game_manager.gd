@@ -36,6 +36,7 @@ var level : Node3D
 var game_environment : WorldEnvironment
 
 var started_game : bool = false
+var finished_tutrial : bool = false
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0
@@ -58,6 +59,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if started_main_menu:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
 		if grenade_timer <= 0:
 			grenade_timer = rng.randf_range(grenade_time_main_menu[0], grenade_time_main_menu[1])
 			grenade_manager.spawn_grenade()
@@ -76,7 +79,7 @@ func _process(delta: float) -> void:
 	
 
 	
-	if started_game && get_tree().paused == false:
+	if started_game && finished_tutrial && get_tree().paused == false:
 		if grenade_timer <= 0:
 			grenade_timer = rng.randf_range(grenade_time[0], grenade_time[1])
 			grenade_manager.spawn_grenade()
@@ -101,8 +104,6 @@ func start_main_menu() -> void:
 	
 	if player != null:
 		player.queue_free()
-	
-	Input.MOUSE_MODE_VISIBLE
 	
 	if ui.panel && ui.panel.visible == false:
 		ui.panel.visible = true

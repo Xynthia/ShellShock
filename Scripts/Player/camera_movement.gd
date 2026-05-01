@@ -1,3 +1,4 @@
+class_name CameraMovement
 extends Area3D
 #onready
 
@@ -26,6 +27,11 @@ enum look_position {CENTER, LEFT, RIGHT, UP, DOWN}
 var turn_time: float = 0.5
 var max_angle : float = 30
 var current_look_pos : look_position = look_position.CENTER
+
+var moved_up: bool = false
+var moved_down: bool = false
+var moved_left: bool = false
+var moved_right: bool = false
 
 func _ready() -> void:
 	GameManager.player.camera_move_time = turn_time
@@ -58,8 +64,9 @@ func get_noise_from_seed(_seed : int) -> float:
 
 
 func change_looking_direction_based_on_mouse_position(mouse_position : Vector2) -> void:
-	var dir = find_dir_based_on_mouse_position(mouse_position)
-	set_dir_rotation(dir)
+	if !GameManager.credits && !GameManager.started_main_menu:
+		var dir = find_dir_based_on_mouse_position(mouse_position)
+		set_dir_rotation(dir)
 
 func find_dir_based_on_mouse_position(mouse_position : Vector2) -> dir:
 	if abs(mouse_position.y) > abs(mouse_position.x):
@@ -82,12 +89,20 @@ func set_dir_rotation(new_dir: dir) -> void:
 		look_position.CENTER: 
 			match new_dir:
 				dir.LEFT: 
+					if GameManager.events_manager.controls_w  && GameManager.events_manager.finished_fade_in:
+						moved_left = true
 					move_to(look_position.LEFT)
 				dir.RIGHT: 
+					if GameManager.events_manager.controls_w && GameManager.events_manager.finished_fade_in:
+						moved_right = true
 					move_to(look_position.RIGHT)
 				dir.UP: 
+					if GameManager.events_manager.controls_w && GameManager.events_manager.finished_fade_in:
+						moved_up = true
 					move_to(look_position.UP)
 				dir.DOWN: 
+					if GameManager.events_manager.controls_w && GameManager.events_manager.finished_fade_in:
+						moved_down = true
 					move_to(look_position.DOWN)
 		look_position.LEFT: 
 			match new_dir:

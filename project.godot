@@ -8,12 +8,16 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="ShellShock"
 run/main_scene="uid://buqf4xsehkudl"
-config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="uid://5inavtxrbfi7"
 
 [autoload]
 
@@ -21,11 +25,12 @@ GameManager="*res://Scripts/managers/game_manager.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg")
+enabled=PackedStringArray()
 
 [global_group]
 

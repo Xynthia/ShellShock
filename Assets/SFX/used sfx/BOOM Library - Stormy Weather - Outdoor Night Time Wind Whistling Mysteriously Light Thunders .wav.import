@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwn5r0eekogkq"
+path="res://.godot/imported/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav-064c7146599bb28de0df0bb9f10d9020.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/used sfx/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav"
+dest_files=["res://.godot/imported/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav-064c7146599bb28de0df0bb9f10d9020.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=20000
+edit/loop_end=-20000
+compress/mode=1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cawikrapdwpto"
+path="res://.godot/imported/Vadi Sound - Retro Fighting - Whoosh Throwing An Object.wav-0a47491e95d73d5a5b36e5ee2bd3b997.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/used sfx/Vadi Sound - Retro Fighting - Whoosh Throwing An Object.wav"
+dest_files=["res://.godot/imported/Vadi Sound - Retro Fighting - Whoosh Throwing An Object.wav-0a47491e95d73d5a5b36e5ee2bd3b997.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

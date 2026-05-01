@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dx0hl2hagw1aq" path="res://Scripts/Player/player.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://pvpkr58o4845" path="res://Scripts/Player/camera_movement.gd" id="2_cvnsp"]
-[ext_resource type="AudioStream" uid="uid://bwn5r0eekogkq" path="res://Assets/SFX/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://bwn5r0eekogkq" path="res://Assets/SFX/used sfx/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q5pbmggc6vqa"
+path="res://.godot/imported/Fly Sound - MOSIN NAGANT 03 Mixed long distance shot.wav-83cca9ebfa4622cc850b1d0b101cedd6.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/used sfx/Fly Sound - MOSIN NAGANT 03 Mixed long distance shot.wav"
+dest_files=["res://.godot/imported/Fly Sound - MOSIN NAGANT 03 Mixed long distance shot.wav-83cca9ebfa4622cc850b1d0b101cedd6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
