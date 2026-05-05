@@ -1,15 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://eqq6woj0eqcg"]
+[gd_scene format=3 uid="uid://eqq6woj0eqcg"]
 
 [ext_resource type="Script" uid="uid://ny0ptreffqjb" path="res://Scripts/managers/ui_manager.gd" id="1_nf4gj"]
 [ext_resource type="Texture2D" uid="uid://csuhbbf003eg8" path="res://Assets/logo/Ver2@3000px.png" id="2_qdvrb"]
 
-[node name="UI" type="Node3D" groups=["Scene"]]
+[node name="UI" type="Node3D" unique_id=1656975834 groups=["Scene"]]
 process_mode = 3
 script = ExtResource("1_nf4gj")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=34469152]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=856353949]
 self_modulate = Color(1, 1, 1, 0.25882354)
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=912951516]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,18 +29,19 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="DisclaimerUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="DisclaimerUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=704267559]
 custom_minimum_size = Vector2(0, 448)
 layout_mode = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI" unique_id=1863851797]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9520512, 0.11800676, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "DISCLAIMER"
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI" unique_id=1945119933]
 clip_contents = false
 custom_minimum_size = Vector2(0, 475)
 layout_mode = 2
@@ -62,146 +63,146 @@ Some are invisible.
 This game explores that reality."
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI"]
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/DisclaimerUI" unique_id=205050753]
 layout_mode = 2
 text = "press 'space' to continue"
 horizontal_alignment = 1
 
-[node name="MainMenuUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="MainMenuUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=1887549222]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI" unique_id=1927457049]
 custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI/CenterContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI/CenterContainer" unique_id=566037624]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_qdvrb")
 centered = false
 
-[node name="StartButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
+[node name="StartButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI" unique_id=245630238]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 48
 text = "Start"
 
-[node name="SettingsButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
+[node name="SettingsButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI" unique_id=2101499302]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 38
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/MainMenuUI" unique_id=1188296371]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 28
 text = "Quit"
 
-[node name="PauseMenuUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="PauseMenuUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=2858073]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI" unique_id=1839381774]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SettingsButton2" type="Button" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI"]
+[node name="SettingsButton2" type="Button" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI" unique_id=69901981]
 z_index = 99
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 38
 text = "Settings"
 
-[node name="BackToGameButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI"]
+[node name="BackToGameButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/PauseMenuUI" unique_id=1496022678]
 z_index = 99
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 28
 text = "Back"
 
-[node name="SettingsUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="SettingsUI" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=935680526]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI" unique_id=449058591]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI" unique_id=2092190775]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer" unique_id=537590737]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="MouseSensitivityLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer"]
+[node name="MouseSensitivityLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer" unique_id=562003089]
 layout_mode = 2
 text = "Mouse Sensitivity:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="BrightnessLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer"]
+[node name="BrightnessLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer" unique_id=490929098]
 layout_mode = 2
 text = "Brightness:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="ContrastLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer"]
+[node name="ContrastLabel" type="Label" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer" unique_id=1916113888]
 layout_mode = 2
 text = "Contrast:"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer" unique_id=1800632310]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="MouseSensitivity" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2"]
+[node name="MouseSensitivity" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2" unique_id=19170760]
 layout_mode = 2
 min_value = 1.0
 max_value = 99.0
 value = 50.0
 
-[node name="Brightness" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2"]
+[node name="Brightness" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2" unique_id=1799916740]
 layout_mode = 2
 min_value = 0.01
 max_value = 1.99
 step = 0.01
 value = 1.0
 
-[node name="Contrast" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2"]
+[node name="Contrast" type="HSlider" parent="CanvasLayer/Panel/MarginContainer/SettingsUI/HBoxContainer/VBoxContainer2" unique_id=786665290]
 layout_mode = 2
 min_value = 0.01
 max_value = 1.99
 step = 0.01
 value = 1.0
 
-[node name="BackButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/SettingsUI"]
+[node name="BackButton" type="Button" parent="CanvasLayer/Panel/MarginContainer/SettingsUI" unique_id=1798932370]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
 theme_override_font_sizes/font_size = 28
 text = "Back"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=2128042345]
 custom_minimum_size = Vector2(500, 100)
 anchors_preset = 7
 anchor_left = 0.5

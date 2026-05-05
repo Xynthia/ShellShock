@@ -62,19 +62,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if !GameManager.player.turned_left && !GameManager.player.turned_right && started_tutorial && !controls_a_d:
+	if !GameManager.player.movement.turned_left && !GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
 		GameManager.ui.tutorial_label.text = tutorial_sentances[0]
 		fade_in()
 
-	if finished_fade_in && GameManager.player.turned_left && GameManager.player.turned_right && started_tutorial && !controls_a_d:
+	if finished_fade_in && GameManager.player.movement.turned_left && GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
 		controls_a_d = true
 		fade_out()
 	
-	if !GameManager.player.moved_foward && controls_a_d && finished_fade_out && !controls_w:
+	if !GameManager.player.movement.moved_foward && controls_a_d && finished_fade_out && !controls_w:
 		GameManager.ui.tutorial_label.text = tutorial_sentances[1]
 		fade_in()
 		
-	if GameManager.player.moved_foward && controls_a_d && finished_fade_in && !controls_w:
+	if GameManager.player.movement.moved_foward && controls_a_d && finished_fade_in && !controls_w:
 		controls_w = true
 		fade_out()
 	
@@ -107,9 +107,15 @@ func _process(delta: float) -> void:
 		GameManager.player.can_be_hit_for_end_scene = true
 		play_this_once = false
 	
-	if GameManager.player.closed_eyes_done:
+	
+	if GameManager.player.animations.closed_eyes_done && GameManager.player.started_ending:
+		GameManager.player.started_ending = false
 		GameManager.start_credits()
 	
+	if GameManager.player.animations.closed_eyes_done && GameManager.player.started_panic_attack:
+		GameManager.player.sound.make_quiet()
+		GameManager.player.interaction_panic_attack = true
+		GameManager.player.animations.closed_eyes_done = false
 
 func fade_in() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_LINEAR)

@@ -90,7 +90,7 @@ extends Node3D
 
 func _ready() -> void:
 	GameManager.walking_points = self
-	GameManager.player.current_walk_point = starting_point
+	GameManager.player.movement.current_walk_point = starting_point
 
 func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3D) -> Array:
 	var points_next_to_current_point : Array[VisibleOnScreenNotifier3D]
