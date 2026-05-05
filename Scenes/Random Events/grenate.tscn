@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bedtrjbqukbwj"]
+[gd_scene format=4 uid="uid://bedtrjbqukbwj"]
 
 [ext_resource type="PackedScene" uid="uid://hj4haspcrn3y" path="res://Scenes/trauma_causer.tscn" id="1_exuoo"]
 [ext_resource type="Script" uid="uid://dr3ybyqjtgvg1" path="res://Scripts/random events/grenate.gd" id="1_japri"]
@@ -66,42 +66,42 @@ shadow_mesh = SubResource("ArrayMesh_hqr7f")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_japri"]
 
-[node name="Grenade" type="Node3D" groups=["Grenade"]]
+[node name="Grenade" type="Node3D" unique_id=561185848 groups=["Grenade"]]
 script = ExtResource("1_japri")
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." unique_id=248417394]
 curve = SubResource("Curve3D_japri")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1747382328]
 transform = Transform3D(-0.9999984, 0, -8.742076e-08, 0, 0.9999804, 0, 8.7422634e-08, 0, -0.99997693, 0, 3.405, -8.355)
 loop = false
 
-[node name="Grenade Body" type="Area3D" parent="Path3D/PathFollow3D"]
+[node name="Grenade Body" type="Area3D" parent="Path3D/PathFollow3D" unique_id=2073309996]
 transform = Transform3D(-1.0000015, 0, 8.742292e-08, 0, 1.0000055, 0, -8.7423444e-08, 0, -1.0000076, 0, 0, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Grenade Body"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Grenade Body" unique_id=1322718299]
 transform = Transform3D(1.0000001, 0, 1.1368833e-12, 0, 1.0000119, 0, 1.1297778e-12, 0, 1.0000131, 0, 0, 0)
-bus = &"Explolsions"
+bus = &"Explosions"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Grenade Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Grenade Body" unique_id=1345902773]
 transform = Transform3D(0.3, 0, 0, 0, 0.29999998, 0, 1.7763568e-15, 0, 0.3, 0, 2.3841858e-07, 0)
 shape = SubResource("SphereShape3D_xunmi")
 
-[node name="polySurface92" type="Node3D" parent="Path3D/PathFollow3D/Grenade Body"]
+[node name="polySurface92" type="Node3D" parent="Path3D/PathFollow3D/Grenade Body" unique_id=1598418761]
 transform = Transform3D(0.03, 0, -3.3893332e-14, 0, 0.03, 0, 3.3893332e-14, 0, 0.03, 0, 0, 0)
 
-[node name="polySurface92_Kugel_0" type="MeshInstance3D" parent="Path3D/PathFollow3D/Grenade Body/polySurface92"]
+[node name="polySurface92_Kugel_0" type="MeshInstance3D" parent="Path3D/PathFollow3D/Grenade Body/polySurface92" unique_id=1492288901]
 mesh = SubResource("ArrayMesh_tm13t")
 skeleton = NodePath("")
 
-[node name="TraumaCauser" parent="." instance=ExtResource("1_exuoo")]
+[node name="TraumaCauser" parent="." unique_id=630143047 instance=ExtResource("1_exuoo")]
 trauma_amount = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser" unique_id=2103294926]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shape = SubResource("SphereShape3D_japri")
 
-[node name="Explosion" parent="." instance=ExtResource("3_6jhhn")]
+[node name="Explosion" parent="." unique_id=383912006 instance=ExtResource("3_6jhhn")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [connection signal="body_entered" from="TraumaCauser" to="." method="_on_body_entered"]

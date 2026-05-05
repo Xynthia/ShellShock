@@ -34,6 +34,7 @@ var started_panic_attack : bool = false
 var interaction_panic_attack : bool = false
 var amount_interaction_panic_atttack : float = 0.0
 var max_amount_interaction_panic_attack : float = 10
+var min_amount_interaction_panic_attack : float = -100
 var amount_interaction_added : float = 3
 
 var started_ending : bool = false
@@ -70,6 +71,8 @@ func _physics_process(delta: float) -> void:
 		
 		if amount_interaction_panic_atttack >= max_amount_interaction_panic_attack:
 			get_out_panic_attack()
+		if amount_interaction_panic_atttack <= min_amount_interaction_panic_attack:
+			die()
 	
 	# camera movement
 	if lastMouseMove < lastFrame:
@@ -108,13 +111,22 @@ func panic_attack() -> void:
 	animations.blink()
 	sound.play_breathing()
 	sound.play_beep()
+	sound.play_heartbeat()
 	took_trauma = true
 
 func get_out_panic_attack() -> void:
 	started_panic_attack = false
 	interaction_panic_attack = false
 	amount_interaction_panic_atttack = 0.0
-	sound.return_sound()
+	animations.open_eyes()
+	sound.play_beep()
+	sound.return_sound = true
+
+func die() -> void:
+	sound.complete_silence()
+	get_tree().reload_current_scene()
+	GameManager.started_game = false
+	GameManager.start_game()
 
 func end_scene() -> void:
 	var i = 3

@@ -16,6 +16,9 @@ var mouse_sensitivity : float = 50
 @export var grenade_danger_zone : Vector3 = Vector3(30, 0.1, 30)
 @export var shot_danger_zone : Vector3 = Vector3(30, 0.1, 30)
 
+const GAME = preload("uid://buqf4xsehkudl")
+var game
+
 const UI = preload("uid://eqq6woj0eqcg")
 var ui : UIManager
 
@@ -54,7 +57,6 @@ var credits : Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_main_menu()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -127,6 +129,10 @@ func start_game() -> void:
 	
 	player.mouse_sensitivity = mouse_sensitivity
 	
+	if !get_tree().get_first_node_in_group("Scene"):
+		var new_game = GAME.instantiate()
+		add_child(new_game)
+
 	get_tree().get_first_node_in_group("Scene").add_child(player)
 	
 	level = LEVEL.instantiate()
@@ -134,7 +140,7 @@ func start_game() -> void:
 	
 	game_environment = get_game_environment()
 	
-	if game_environment != null:
+	if game_environment != null && main_menu_environment:
 		game_environment.environment.adjustment_brightness = main_menu_environment.environment.adjustment_brightness
 		game_environment.environment.adjustment_contrast = main_menu_environment.environment.adjustment_contrast
 	
@@ -147,7 +153,7 @@ func start_game() -> void:
 func start_credits() -> void:
 	credits = CREDITS.instantiate()
 	get_tree().get_first_node_in_group("Scene").add_child(credits)
-	
+
 	level.queue_free()
 	
 

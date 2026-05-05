@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dempxvg1xn4nq"]
+[gd_scene format=3 uid="uid://dempxvg1xn4nq"]
 
 [ext_resource type="PackedScene" uid="uid://hj4haspcrn3y" path="res://Scenes/trauma_causer.tscn" id="1_0c8iy"]
 [ext_resource type="Script" uid="uid://sydq55wiwfpv" path="res://Scripts/random events/artillery.gd" id="1_2vyny"]
@@ -17,42 +17,43 @@ point_count = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0c8iy"]
 
-[node name="artillery" type="Node3D"]
+[node name="artillery" type="Node3D" unique_id=1722813618]
 script = ExtResource("1_2vyny")
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1786609102]
 transform = Transform3D(1, 0, 5.1870303e-13, 0, 1, 0, -5.1870303e-13, 0, 1, 0, 100, -100)
+bus = &"Explosions"
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." unique_id=855199750]
 curve = SubResource("Curve3D_btcnb")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1600553038]
 transform = Transform3D(-0.9999984, 0, -8.742045e-08, 0, 0.999976, 0, 8.7422634e-08, 0, -0.9999734, 0, 100, -100)
 loop = false
 
-[node name="Arty Body" type="Area3D" parent="Path3D/PathFollow3D"]
+[node name="Arty Body" type="Area3D" parent="Path3D/PathFollow3D" unique_id=1110796111]
 transform = Transform3D(-1.0000015, 0, 8.742292e-08, 0, 1.0000055, 0, -8.7423444e-08, 0, -1.0000076, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/Arty Body"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D/Arty Body" unique_id=1941501109]
 transform = Transform3D(0.5, 1.0842022e-19, 0, 0, -4.3711392e-08, -0.5, 0, 1, -2.1855696e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_enrot")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Arty Body"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Path3D/PathFollow3D/Arty Body" unique_id=1234032842]
 transform = Transform3D(1.0000001, 0, 1.1368833e-12, 0, 1.0000119, 0, 1.1297778e-12, 0, 1.0000131, 0, 0, 0)
 volume_db = 12.0
-bus = &"Explolsions"
+bus = &"Explosions"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Arty Body"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/Arty Body" unique_id=205096455]
 transform = Transform3D(0.5, 0, 0, 0, -4.371139e-08, -0.5, 0, 1, -2.1855694e-08, 0, 2.3841858e-07, 0)
 shape = SubResource("CapsuleShape3D_1dfdl")
 
-[node name="TraumaCauser" parent="." instance=ExtResource("1_0c8iy")]
+[node name="TraumaCauser" parent="." unique_id=1689794699 instance=ExtResource("1_0c8iy")]
 trauma_amount = 1.5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TraumaCauser" unique_id=1201014579]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 shape = SubResource("SphereShape3D_0c8iy")
 
-[node name="Explosion" parent="." instance=ExtResource("3_2vyny")]
+[node name="Explosion" parent="." unique_id=721627772 instance=ExtResource("3_2vyny")]
 
 [connection signal="body_entered" from="TraumaCauser" to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwoy0cxj3jivn"
+path="res://.godot/imported/kauasilbershlachparodes-heartbeat-sound-493999.mp3-1f5a8e1cbf764f244e902e372513c413.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/used sfx/kauasilbershlachparodes-heartbeat-sound-493999.mp3"
+dest_files=["res://.godot/imported/kauasilbershlachparodes-heartbeat-sound-493999.mp3-1f5a8e1cbf764f244e902e372513c413.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

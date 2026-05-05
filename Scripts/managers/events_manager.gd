@@ -113,7 +113,7 @@ func _process(delta: float) -> void:
 		GameManager.start_credits()
 	
 	if GameManager.player.animations.closed_eyes_done && GameManager.player.started_panic_attack:
-		GameManager.player.sound.make_quiet()
+		GameManager.player.sound.make_quiet = true
 		GameManager.player.interaction_panic_attack = true
 		GameManager.player.animations.closed_eyes_done = false
 

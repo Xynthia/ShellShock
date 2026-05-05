@@ -34,7 +34,8 @@ var moved_left: bool = false
 var moved_right: bool = false
 
 func _ready() -> void:
-	GameManager.player.camera_move_time = turn_time
+	if GameManager.player:
+		GameManager.player.camera_move_time = turn_time
 
 func _process(delta):
 	# camera shake
