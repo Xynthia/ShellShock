@@ -200,8 +200,8 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_26)
 		walking_point_28:
 			points_next_to_current_point.push_back(walking_point_86)
-			points_next_to_current_point.push_back(walking_point_84)
 			points_next_to_current_point.push_back(walking_point_85)
+			points_next_to_current_point.push_back(walking_point_84)
 		walking_point_29:
 			points_next_to_current_point.push_back(walking_point_30)
 			points_next_to_current_point.push_back(walking_point_86)

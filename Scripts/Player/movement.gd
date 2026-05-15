@@ -86,7 +86,6 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 	var closest_walking_point_left : VisibleOnScreenNotifier3D
 	var closest_walking_point_right : VisibleOnScreenNotifier3D
 	
-	
 	var last_degree_difference : float = 360
 	
 	if walk_points_next_to_current_walk_point.size() > 1:
@@ -129,20 +128,33 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 				closest_walking_point_right = walking_point
 			
 		
+		#voor rechts knop ingedrukt
 		if direction == look_dir_3.LEFT:
-			for walking_point in walking_points_directions:
-				if walking_point == look_dir_3.LEFT && closest_walking_point_left:
-					next_look_at_walking_point = closest_walking_point_left
+			if closest_walking_point_left:
+				for walking_point in walking_points_directions:
+					if walking_point == look_dir_3.LEFT && closest_walking_point_left:
+						next_look_at_walking_point = closest_walking_point_left 
+			# maar punt is dichter bij links
+			if closest_walking_point_right:
+				for walking_point in walking_points_directions:
+					if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
+						look_to(closest_walking_point_right, true)
+		#voor linkse knop ingedrukt
 		if direction == look_dir_3.RIGHT:
-			for walking_point in walking_points_directions:
-				if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
-					next_look_at_walking_point = closest_walking_point_right
-		
+			if closest_walking_point_right:
+				for walking_point in walking_points_directions:
+					if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
+						next_look_at_walking_point = closest_walking_point_right
+			
+			if closest_walking_point_left:
+				for walking_point in walking_points_directions:
+					if walking_point == look_dir_3.LEFT && closest_walking_point_left:
+						look_to(closest_walking_point_left, false)
 	else:
 		next_look_at_walking_point = walk_points_next_to_current_walk_point[0]
-		
+	
 	if next_look_at_walking_point:
-		look_to(next_look_at_walking_point)
+		look_to(next_look_at_walking_point, false)
 
 func check_walkpoint_dead_end() -> bool:
 	var walking_points = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
@@ -157,7 +169,7 @@ func turn_to_walk_point_once_moved() -> void:
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
 		if turn_once && walk_point != last_walk_point && looking_at_walk_point == current_walk_point || looking_at_walk_point == null:
-			look_to(walk_point)
+			look_to(walk_point, false)
 
 func move_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	able_to_move = false
@@ -178,7 +190,7 @@ func on_move_tween_finished() -> void:
 		var new_looking_at_walk_point = GameManager.walking_points.check_look_at_point(current_walk_point)
 		if new_looking_at_walk_point != null:
 			current_state = state.TURN
-			look_to(new_looking_at_walk_point)
+			look_to(new_looking_at_walk_point, false)
 	else:
 		turn_to_walk_point_once_moved()
 	
@@ -188,7 +200,7 @@ func on_move_tween_finished() -> void:
 	trun_tween_timer = 0
 	current_state = state.WAIT
 
-func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
+func look_to(new_walk_point : VisibleOnScreenNotifier3D, oposite: bool) -> void:
 	turn_once = false
 	turn_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
@@ -204,7 +216,10 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	var new_rotation_degrees :Vector3
 	var degrees = rad_to_deg(difference_in_degrees)
 	
-	new_rotation_degrees.y = rad_to_deg(vec1.y) + degrees 
+	if oposite:
+		new_rotation_degrees.y = rad_to_deg(vec1.y) - degrees 
+	else:
+		new_rotation_degrees.y = rad_to_deg(vec1.y) + degrees 
 	  
 	turn_tween.tween_property(GameManager.player, "rotation_degrees", new_rotation_degrees , time_to_turn)
 	
