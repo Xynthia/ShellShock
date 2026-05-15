@@ -25,7 +25,7 @@ enum dir {LEFT, RIGHT, UP, DOWN, NOTHING}
 enum look_position {CENTER, LEFT, RIGHT, UP, DOWN}
 
 var turn_time: float = 0.5
-var max_angle : float = 30
+var max_angle : float = 50 # was 30>45>50
 var current_look_pos : look_position = look_position.CENTER
 
 var moved_up: bool = false

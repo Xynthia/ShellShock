@@ -12,7 +12,7 @@ func _ready() -> void:
 	vignette.visible = false
 
 func _process(delta: float) -> void:
-	if GameManager.player.amount_interaction_panic_atttack < 0:
+	if GameManager.player.amount_interaction_panic_atttack < 0 && !GameManager.started_death:
 		vignette.visible = true
 		if !panic_attack_playing:
 			panic_attack()

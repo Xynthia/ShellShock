@@ -56,47 +56,45 @@ func _ready() -> void:
 	GameManager.events_manager = self
 	started_tutorial = true
 	GameManager.ui.tutorial_label.modulate = start_color
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	if !GameManager.player.movement.turned_left && !GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
-		GameManager.ui.tutorial_label.text = tutorial_sentances[0]
-		fade_in()
-
-	if finished_fade_in && GameManager.player.movement.turned_left && GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
-		controls_a_d = true
-		fade_out()
-	
-	if !GameManager.player.movement.moved_foward && controls_a_d && finished_fade_out && !controls_w:
-		GameManager.ui.tutorial_label.text = tutorial_sentances[1]
-		fade_in()
+	if !GameManager.finished_tutrial:
+		if !GameManager.player.movement.turned_left && !GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
+			GameManager.ui.tutorial_label.text = tutorial_sentances[0]
+			fade_in()
 		
-	if GameManager.player.movement.moved_foward && controls_a_d && finished_fade_in && !controls_w:
-		controls_w = true
-		fade_out()
-	
-	if !GameManager.player.camera_pivot.moved_down && !GameManager.player.camera_pivot.moved_up && controls_w && !GameManager.player.camera_pivot.moved_left && !GameManager.player.camera_pivot.moved_right && !controls_mouse && finished_fade_out:
-		GameManager.ui.tutorial_label.text = tutorial_sentances[2]
-		fade_in()
-	
-	if GameManager.player.camera_pivot.moved_down && GameManager.player.camera_pivot.moved_up && controls_w  && GameManager.player.camera_pivot.moved_left && GameManager.player.camera_pivot.moved_right && !controls_mouse && finished_fade_in:
-		controls_mouse = true
-		fade_out()
-	
-	if !GameManager.player.pressed_escape && controls_mouse && finished_fade_out && !controls_escape:
-		GameManager.ui.tutorial_label.text = tutorial_sentances[3]
-		fade_in()
-	
-	if GameManager.player.pressed_escape && controls_mouse && finished_fade_in && !controls_escape:
-		controls_escape = true
-		GameManager.finished_tutrial = true
-		fade_out()
-	
-	if GameManager.finished_tutrial == true:
-		last_event_timer += delta
+		if finished_fade_in && GameManager.player.movement.turned_left && GameManager.player.movement.turned_right && started_tutorial && !controls_a_d:
+			controls_a_d = true
+			fade_out()
+		
+		if !GameManager.player.movement.moved_foward && controls_a_d && finished_fade_out && !controls_w:
+			GameManager.ui.tutorial_label.text = tutorial_sentances[1]
+			fade_in()
+			
+		if GameManager.player.movement.moved_foward && controls_a_d && finished_fade_in && !controls_w:
+			controls_w = true
+			fade_out()
+		
+		if !GameManager.player.camera_pivot.moved_down && !GameManager.player.camera_pivot.moved_up && controls_w && !GameManager.player.camera_pivot.moved_left && !GameManager.player.camera_pivot.moved_right && !controls_mouse && finished_fade_out:
+			GameManager.ui.tutorial_label.text = tutorial_sentances[2]
+			fade_in()
+		
+		if GameManager.player.camera_pivot.moved_down && GameManager.player.camera_pivot.moved_up && controls_w  && GameManager.player.camera_pivot.moved_left && GameManager.player.camera_pivot.moved_right && !controls_mouse && finished_fade_in:
+			controls_mouse = true
+			fade_out()
+		
+		if !GameManager.player.pressed_escape && controls_mouse && finished_fade_out && !controls_escape:
+			GameManager.ui.tutorial_label.text = tutorial_sentances[3]
+			fade_in()
+		
+		if GameManager.player.pressed_escape && controls_mouse && finished_fade_in && !controls_escape:
+			controls_escape = true
+			GameManager.finished_tutrial = true
+			fade_out()
+		
+	#if GameManager.finished_tutrial:
+		#last_event_timer += delta
 	
 	if last_event_timer >= last_event_time && !player_va_sounds && do_this_once_2:
 		play_VA_sounds()
@@ -108,11 +106,11 @@ func _process(delta: float) -> void:
 		play_this_once = false
 	
 	
-	if GameManager.player.animations.closed_eyes_done && GameManager.player.started_ending:
+	if GameManager.player && GameManager.player.animations.closed_eyes_done && GameManager.player.started_ending:
 		GameManager.player.started_ending = false
 		GameManager.start_credits()
 	
-	if GameManager.player.animations.closed_eyes_done && GameManager.player.started_panic_attack:
+	if GameManager.player && GameManager.player.animations.closed_eyes_done && GameManager.player.started_panic_attack:
 		GameManager.player.sound.make_quiet = true
 		GameManager.player.interaction_panic_attack = true
 		GameManager.player.animations.closed_eyes_done = false

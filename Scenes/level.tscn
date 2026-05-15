@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://n8usaw7wote5"]
+[gd_scene format=3 uid="uid://n8usaw7wote5"]
 
 [ext_resource type="PackedScene" uid="uid://bwjraowk62dyv" path="res://Scenes/walls and floors.tscn" id="1_6phgx"]
 [ext_resource type="Script" uid="uid://bpn2dteq1h0qd" path="res://Scripts/managers/events_manager.gd" id="1_8c0lf"]
@@ -49,280 +49,280 @@ size = Vector3(50, 10, 200)
 [sub_resource type="BoxShape3D" id="BoxShape3D_wqkje"]
 size = Vector3(25, 10, 200)
 
-[node name="Level" type="Node3D" groups=["Scene"]]
+[node name="Level" type="Node3D" unique_id=443406053 groups=["Scene"]]
 script = ExtResource("1_8c0lf")
 
-[node name="WalkingPoints" type="Node3D" parent="."]
+[node name="WalkingPoints" type="Node3D" parent="." unique_id=903867872]
 script = ExtResource("2_81xng")
 
-[node name="WalkingPoint" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint" parent="WalkingPoints" unique_id=2035383983 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.307858, 0, 0.92436695)
 
-[node name="WalkingPoint56" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint56" parent="WalkingPoints" unique_id=182711270 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7202606, 0, 13.812381)
 
-[node name="WalkingPoint57" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint57" parent="WalkingPoints" unique_id=259925457 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6748295, 0, 16.288776)
 
-[node name="WalkingPoint58" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint58" parent="WalkingPoints" unique_id=1782682759 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6748295, 0, 25.396442)
 
-[node name="WalkingPoint59" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint59" parent="WalkingPoints" unique_id=1169572624 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6021624, 0, 27.970081)
 
-[node name="WalkingPoint60" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint60" parent="WalkingPoints" unique_id=1926622485 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6021624, 0, 36.742973)
 
-[node name="WalkingPoint61" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint61" parent="WalkingPoints" unique_id=1674198659 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.836093, 0, 39.187553)
 
-[node name="WalkingPoint2" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint2" parent="WalkingPoints" unique_id=1556196168 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.256386, 0, -1.4118073)
 
-[node name="WalkingPoint3" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint3" parent="WalkingPoints" unique_id=709701086 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15858, 0, -8.984392)
 
-[node name="WalkingPoint4" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint4" parent="WalkingPoints" unique_id=860941455 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9092488, 0, -12.84963)
 
-[node name="WalkingPoint5" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint5" parent="WalkingPoints" unique_id=1138101984 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9092488, 0, -26.10589)
 
-[node name="WalkingPoint6" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint6" parent="WalkingPoints" unique_id=1470785487 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2821593, 0, -29.286505)
 
-[node name="WalkingPoint7" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint7" parent="WalkingPoints" unique_id=126406187 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.444391, 0, -38.632523)
 
-[node name="WalkingPoint8" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint8" parent="WalkingPoints" unique_id=885051694 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7192855, 0, -41.367645)
 
-[node name="WalkingPoint9" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint9" parent="WalkingPoints" unique_id=1946888585 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8280334, 0, -50.209305)
 
-[node name="WalkingPoint10" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint10" parent="WalkingPoints" unique_id=611163389 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9989486, 0, -52.411)
 
-[node name="WalkingPoint11" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint11" parent="WalkingPoints" unique_id=109146153 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9989486, 0, -61.60471)
 
-[node name="WalkingPoint12" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint12" parent="WalkingPoints" unique_id=1122792793 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.770659, 0, -63.885635)
 
-[node name="WalkingPoint13" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint13" parent="WalkingPoints" unique_id=2036422679 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.770659, 0, -77.03979)
 
-[node name="WalkingPoint17" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint17" parent="WalkingPoints" unique_id=1860918514 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.505472, 0, -77.03979)
 
-[node name="WalkingPoint18" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint18" parent="WalkingPoints" unique_id=188620116 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.341936, 0, -74.90538)
 
-[node name="WalkingPoint19" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint19" parent="WalkingPoints" unique_id=339647444 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.864586, 0, -74.90538)
 
-[node name="WalkingPoint24" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint24" parent="WalkingPoints" unique_id=371224941 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.604862, 0, -61.84644)
 
-[node name="WalkingPoint25" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint25" parent="WalkingPoints" unique_id=482013585 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.926743, 0, -59.26312)
 
-[node name="WalkingPoint26" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint26" parent="WalkingPoints" unique_id=1906292141 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.310913, 0, -59.885017)
 
-[node name="WalkingPoint27" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint27" parent="WalkingPoints" unique_id=1339498850 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.527733, 0, -57.709522)
 
-[node name="WalkingPoint28" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint28" parent="WalkingPoints" unique_id=1133359331 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8791, 0, -57.709522)
 
-[node name="WalkingPoint33" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint33" parent="WalkingPoints" unique_id=69055796 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.113655, 0, -44.621544)
 
-[node name="WalkingPoint34" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint34" parent="WalkingPoints" unique_id=137704371 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.98894, 0, -42.056625)
 
-[node name="WalkingPoint35" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint35" parent="WalkingPoints" unique_id=1899146609 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.80265, 0, -33.015244)
 
-[node name="WalkingPoint36" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint36" parent="WalkingPoints" unique_id=608614078 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.02512, 0, -31.052002)
 
-[node name="WalkingPoint37" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint37" parent="WalkingPoints" unique_id=398932010 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.02512, 0, -8.265658)
 
-[node name="WalkingPoint38" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint38" parent="WalkingPoints" unique_id=1410586494 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.379135, 0, -6.453712)
 
-[node name="WalkingPoint39" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint39" parent="WalkingPoints" unique_id=331513380 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.11046, 0, -0.80026627)
 
-[node name="WalkingPoint40" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint40" parent="WalkingPoints" unique_id=1282410428 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.729202, 0, 1.6114345)
 
-[node name="WalkingPoint41" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint41" parent="WalkingPoints" unique_id=567270972 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.646816, 0, 20.042587)
 
-[node name="WalkingPoint46" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint46" parent="WalkingPoints" unique_id=1149053858 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.057568, 0, 20.042587)
 
-[node name="WalkingPoint47" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint47" parent="WalkingPoints" unique_id=300656335 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.945778, 0, 18.150108)
 
-[node name="WalkingPoint48" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint48" parent="WalkingPoints" unique_id=1048788666 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.94503, 0, 18.150108)
 
-[node name="WalkingPoint52" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint52" parent="WalkingPoints" unique_id=1860555832 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.196388, 0, 15.896738)
 
-[node name="WalkingPoint53" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint53" parent="WalkingPoints" unique_id=122799085 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.077208, 0, 5.039315)
 
-[node name="WalkingPoint62" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint62" parent="WalkingPoints" unique_id=1248138634 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.88982, 0, -0.48498774)
 
-[node name="WalkingPoint63" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint63" parent="WalkingPoints" unique_id=301296685 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.183865, 0, -2.9492202)
 
-[node name="WalkingPoint64" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint64" parent="WalkingPoints" unique_id=808087855 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.183865, 0, -12.172102)
 
-[node name="WalkingPoint65" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint65" parent="WalkingPoints" unique_id=235836343 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.494377, 0, -14.428776)
 
-[node name="WalkingPoint66" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint66" parent="WalkingPoints" unique_id=873642103 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.815502, 0, -25.259674)
 
-[node name="WalkingPoint67" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint67" parent="WalkingPoints" unique_id=553174065 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.12766, 0, -35.52326)
 
-[node name="WalkingPoint68" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint68" parent="WalkingPoints" unique_id=743109205 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.12766, 0, -52.31606)
 
-[node name="WalkingPoint69" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint69" parent="WalkingPoints" unique_id=1077290388 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.530212, 0, -53.768803)
 
-[node name="WalkingPoint54" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint54" parent="WalkingPoints" unique_id=1788211969 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.497955, 0, 2.6174655)
 
-[node name="WalkingPoint55" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint55" parent="WalkingPoints" unique_id=1423827720 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.430788, 0, 0.8171623)
 
-[node name="WalkingPoint49" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint49" parent="WalkingPoints" unique_id=1283943726 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.071316, 0, 24.038176)
 
-[node name="WalkingPoint50" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint50" parent="WalkingPoints" unique_id=363896905 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.826767, 0, 25.390396)
 
-[node name="WalkingPoint51" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint51" parent="WalkingPoints" unique_id=2123284662 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.502634, 0, 42.656296)
 
-[node name="WalkingPoint42" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint42" parent="WalkingPoints" unique_id=1412241234 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.626392, 0, 33.29981)
 
-[node name="WalkingPoint43" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint43" parent="WalkingPoints" unique_id=1371596025 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.4024, 0, 35.435486)
 
-[node name="WalkingPoint44" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint44" parent="WalkingPoints" unique_id=1945552858 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.19113, 0, 44.482616)
 
-[node name="WalkingPoint45" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint45" parent="WalkingPoints" unique_id=2063152282 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.413788, 0, 47.08086)
 
-[node name="WalkingPoint29" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint29" parent="WalkingPoints" unique_id=987278657 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.92765, 0, -76.15123)
 
-[node name="WalkingPoint30" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint30" parent="WalkingPoints" unique_id=538286131 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.101105, 0, -78.75134)
 
-[node name="WalkingPoint31" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint31" parent="WalkingPoints" unique_id=1646525510 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.101105, 0, -84.72631)
 
-[node name="WalkingPoint32" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint32" parent="WalkingPoints" unique_id=648263601 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.08506, 0, -86.67615)
 
-[node name="WalkingPoint20" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint20" parent="WalkingPoints" unique_id=1103784423 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.774723, 0, -78.4816)
 
-[node name="WalkingPoint21" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint21" parent="WalkingPoints" unique_id=1565345445 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7675, 0, -81.16424)
 
-[node name="WalkingPoint22" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint22" parent="WalkingPoints" unique_id=1658379194 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.7675, 0, -90.08782)
 
-[node name="WalkingPoint23" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint23" parent="WalkingPoints" unique_id=490739714 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.571396, 0, -92.37198)
 
-[node name="WalkingPoint14" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint14" parent="WalkingPoints" unique_id=78535670 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0571847, 0, -79.05947)
 
-[node name="WalkingPoint15" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint15" parent="WalkingPoints" unique_id=616249052 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0571847, 0, -87.46325)
 
-[node name="WalkingPoint16" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint16" parent="WalkingPoints" unique_id=1411628764 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.808405, 0, -89.66277)
 
-[node name="WalkingPoint70" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint70" parent="WalkingPoints" unique_id=1499804481 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.502152, 0, -100.79643)
 
-[node name="WalkingPoint71" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint71" parent="WalkingPoints" unique_id=1677108912 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.51812, 0, -102.32798)
 
-[node name="WalkingPoint72" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint72" parent="WalkingPoints" unique_id=713385804 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.42248, 0, -103.965385)
 
-[node name="WalkingPoint73" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint73" parent="WalkingPoints" unique_id=58194272 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.498074, 0, 55.98814)
 
-[node name="WalkingPoint74" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint74" parent="WalkingPoints" unique_id=451410839 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.744242, 0, 55.01357)
 
-[node name="WalkingPoint75" parent="WalkingPoints" instance=ExtResource("3_wqkje")]
+[node name="WalkingPoint75" parent="WalkingPoints" unique_id=1795552474 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.699435, 0, 46.43842)
 
-[node name="Environment" type="Node3D" parent="." groups=["Node_Environment"]]
+[node name="Environment" type="Node3D" parent="." unique_id=99489919 groups=["Node_Environment"]]
 
-[node name="walls and floors" parent="Environment" instance=ExtResource("1_6phgx")]
+[node name="walls and floors" parent="Environment" unique_id=665721219 instance=ExtResource("1_6phgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022201538, -0.032589912, -0.051441193)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" groups=["Environment"]]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1984945615 groups=["Environment"]]
 environment = SubResource("Environment_754fn")
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment"]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=2066072614]
 transform = Transform3D(1, 0, 0, 0, -0.23414108, 0.97220266, 0, -0.97220266, -0.23414108, 0, 0, 0)
 light_color = Color(0.19064468, 0.23365143, 0.26393116, 1)
 light_energy = 0.6
 shadow_enabled = true
 
-[node name="ArtilleryManager" type="Area3D" parent="."]
+[node name="ArtilleryManager" type="Area3D" parent="." unique_id=1092234143]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 31.790565, 7.9520864, -22.904366)
 script = ExtResource("4_0f350")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ArtilleryManager"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ArtilleryManager" unique_id=2026685960]
 shape = SubResource("BoxShape3D_6phgx")
 debug_color = Color(2.1658839e-06, 0.6337402, 0.44062135, 0.41960785)
 
-[node name="GrenadeManager" type="Area3D" parent="."]
+[node name="GrenadeManager" type="Area3D" parent="." unique_id=1468374007]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 58.670166, 5.0834694, -22.88187)
 script = ExtResource("5_8c0lf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrenadeManager"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrenadeManager" unique_id=501575751]
 shape = SubResource("BoxShape3D_81xng")
 
-[node name="ShotManager" type="Area3D" parent="."]
+[node name="ShotManager" type="Area3D" parent="." unique_id=2003020499]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 71.22744, 7.777608, -22.671959)
 script = ExtResource("6_754fn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ShotManager"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShotManager" unique_id=1269331121]
 shape = SubResource("BoxShape3D_wqkje")
 
-[node name="frontline" type="Area3D" parent="."]
+[node name="frontline" type="Area3D" parent="." unique_id=1313747973]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 71.97381, -0.74243784, -22.671959)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="frontline"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frontline" unique_id=764307683]
 shape = SubResource("BoxShape3D_wqkje")
 
-[node name="VA" type="AudioStreamPlayer3D" parent="."]
+[node name="VA" type="AudioStreamPlayer3D" parent="." unique_id=1900091891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.47112, 0, 0)
 unit_size = 15.0
 bus = &"VA Horse Father"

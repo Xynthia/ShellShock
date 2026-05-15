@@ -1,6 +1,6 @@
 extends Node
 
-@export var player : Player
+var player : Player
 const PLAYER_CLASS = preload("uid://dd08kv410jg6r")
 
 var mouse_sensitivity : float = 50
@@ -40,7 +40,8 @@ var game_environment : WorldEnvironment
 
 var started_game : bool = false
 var finished_tutrial : bool = false
-var started_death : bool = true
+var started_death : bool = false
+var reset_position_after_death_done : bool = false
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0
@@ -96,18 +97,18 @@ func _process(delta: float) -> void:
 		grenade_timer -= delta
 		artillery_timer -= delta
 		shot_timer -= delta
-		
+	
+	if reset_position_after_death_done && started_death:
+		restart_after_death()
 
-func restart_after_death() -> void:	
-	if player != null:
-		player.movement.do_this_once = true
-		player.queue_free()
+func restart_after_death() -> void:
+	player.animations.open_eyes()
+	player.sound.undo_complete_silence()
+	player.sound.return_sound = true
 	
-	if ui.panel && ui.panel.visible == false:
-		ui.panel.visible = true
-	
-	if credits != null:
-		credits.queue_free()
+	player.started_panic_attack = false
+	started_death = false
+	reset_position_after_death_done = false
 	
 	start_game()
 
@@ -135,29 +136,29 @@ func add_main_menu_level()-> void:
 	ui.add_child(main_menu_level)
 
 func start_game() -> void:
-	if player == null:
-		var new_player = PLAYER_CLASS.instantiate()
-		player = new_player
-	
-	player.mouse_sensitivity = mouse_sensitivity
-	
 	if !get_tree().get_first_node_in_group("Scene"):
 		var new_game = GAME.instantiate()
 		add_child(new_game)
-
-	get_tree().get_first_node_in_group("Scene").add_child(player)
+		
+	if player == null:
+		var new_player = PLAYER_CLASS.instantiate()
+		player = new_player
+		player.mouse_sensitivity = mouse_sensitivity
+		get_tree().get_first_node_in_group("Scene").add_child(player)
 	
-	level = LEVEL.instantiate()
-	get_tree().get_first_node_in_group("Scene").add_child(level)
+	if !level:
+		level = LEVEL.instantiate()
+		get_tree().get_first_node_in_group("Scene").add_child(level)
 	
 	game_environment = get_game_environment()
 	
-	if game_environment != null && main_menu_environment:
+	if game_environment && main_menu_environment:
 		game_environment.environment.adjustment_brightness = main_menu_environment.environment.adjustment_brightness
 		game_environment.environment.adjustment_contrast = main_menu_environment.environment.adjustment_contrast
 	
 	ui.panel.visible = false
-	main_menu_level.queue_free()
+	if main_menu_level:
+		main_menu_level.queue_free()
 	
 	started_game = true
 	started_main_menu = false
@@ -165,7 +166,7 @@ func start_game() -> void:
 func start_credits() -> void:
 	credits = CREDITS.instantiate()
 	get_tree().get_first_node_in_group("Scene").add_child(credits)
-
+	
 	level.queue_free()
 	
 

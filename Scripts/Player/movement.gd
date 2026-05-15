@@ -39,7 +39,6 @@ func _physics_process(delta: float) -> void:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
-	
 	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d && GameManager.events_manager.finished_fade_in:
@@ -182,6 +181,9 @@ func on_move_tween_finished() -> void:
 			look_to(new_looking_at_walk_point)
 	else:
 		turn_to_walk_point_once_moved()
+	
+	if GameManager.started_death:
+		GameManager.reset_position_after_death_done = true
 	
 	trun_tween_timer = 0
 	current_state = state.WAIT

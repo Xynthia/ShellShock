@@ -19,7 +19,7 @@ extends Node
 @onready var curent_explosions_DB = AudioServer.get_bus_volume_db(explosions_bus_index)
 
 var lowest_db : float = -80
-var fade_speed : float = 60
+var fade_speed : float = 10
 
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
@@ -38,7 +38,6 @@ var make_quiet : bool = false
 var return_sound : bool = false
 
 func _process(delta: float) -> void:
-	
 	if make_quiet:
 		if curent_BG_DB >= lowest_db:
 			curent_BG_DB -= fade_speed * delta
@@ -70,6 +69,10 @@ func play_BG() -> void:
 func complete_silence() -> void:
 	var bus_id = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_volume_db(bus_id, -80)
+
+func undo_complete_silence() -> void:
+	var bus_id = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus_id, 0)
 
 func play_return_to_trenches() -> void:
 	var random_line_id = randi_range(0, voice_lines_return_to_trenches.size() - 1)
