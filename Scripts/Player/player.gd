@@ -124,9 +124,7 @@ func get_out_panic_attack() -> void:
 
 func die() -> void:
 	sound.complete_silence()
-	get_tree().reload_current_scene()
-	GameManager.started_game = false
-	GameManager.start_game()
+	GameManager.restart_after_death()
 
 func end_scene() -> void:
 	var i = 3

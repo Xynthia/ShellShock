@@ -40,6 +40,7 @@ var game_environment : WorldEnvironment
 
 var started_game : bool = false
 var finished_tutrial : bool = false
+var started_death : bool = true
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0
@@ -79,9 +80,7 @@ func _process(delta: float) -> void:
 		artillery_timer -= delta
 		shot_timer -= delta
 	
-
-	
-	if started_game && finished_tutrial && get_tree().paused == false:
+	if !started_death && started_game && finished_tutrial && get_tree().paused == false:
 		if grenade_timer <= 0:
 			grenade_timer = rng.randf_range(grenade_time[0], grenade_time[1])
 			grenade_manager.spawn_grenade()
@@ -98,6 +97,19 @@ func _process(delta: float) -> void:
 		artillery_timer -= delta
 		shot_timer -= delta
 		
+
+func restart_after_death() -> void:	
+	if player != null:
+		player.movement.do_this_once = true
+		player.queue_free()
+	
+	if ui.panel && ui.panel.visible == false:
+		ui.panel.visible = true
+	
+	if credits != null:
+		credits.queue_free()
+	
+	start_game()
 
 func start_main_menu() -> void:
 	if ui == null:
