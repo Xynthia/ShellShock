@@ -56,7 +56,13 @@ script = ExtResource("1_8c0lf")
 script = ExtResource("2_81xng")
 
 [node name="WalkingPoint" parent="WalkingPoints" unique_id=2035383983 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.307858, 0, 0.92436695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924183, 0, -0.02528572)
+
+[node name="WalkingPoint77" parent="WalkingPoints" unique_id=1302079310 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4924183, 0, 5.381587)
+
+[node name="WalkingPoint76" parent="WalkingPoints" unique_id=823166247 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.634964, 0, -0.02528572)
 
 [node name="WalkingPoint56" parent="WalkingPoints" unique_id=182711270 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7202606, 0, 13.812381)
@@ -110,7 +116,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9989486, 0, -61.60471)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.770659, 0, -63.885635)
 
 [node name="WalkingPoint13" parent="WalkingPoints" unique_id=2036422679 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.770659, 0, -77.03979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1020107, 0, -78.29866)
+
+[node name="WalkingPoint91" parent="WalkingPoints" unique_id=1366966413 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.265973, 0, -78.29866)
+
+[node name="WalkingPoint90" parent="WalkingPoints" unique_id=1331813571 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1020107, 0, -74.04613)
 
 [node name="WalkingPoint17" parent="WalkingPoints" unique_id=1860918514 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.505472, 0, -77.03979)
@@ -119,13 +131,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.505472, 0, -77.03979)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.341936, 0, -74.90538)
 
 [node name="WalkingPoint19" parent="WalkingPoints" unique_id=339647444 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.864586, 0, -74.90538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.711315, 0, -74.29851)
+
+[node name="WalkingPoint89" parent="WalkingPoints" unique_id=2105653792 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.452534, 0, -74.29851)
+
+[node name="WalkingPoint88" parent="WalkingPoints" unique_id=887915946 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.711315, 0, -70.10354)
 
 [node name="WalkingPoint24" parent="WalkingPoints" unique_id=371224941 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.604862, 0, -61.84644)
 
 [node name="WalkingPoint25" parent="WalkingPoints" unique_id=482013585 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.926743, 0, -59.26312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.31187, 0, -60.976547)
+
+[node name="WalkingPoint87" parent="WalkingPoints" unique_id=1028068317 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.894093, 0, -60.976547)
 
 [node name="WalkingPoint26" parent="WalkingPoints" unique_id=1906292141 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.310913, 0, -59.885017)
@@ -134,7 +155,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.310913, 0, -59.885017)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.527733, 0, -57.709522)
 
 [node name="WalkingPoint28" parent="WalkingPoints" unique_id=1133359331 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.8791, 0, -57.709522)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.07806, 0, -56.829334)
+
+[node name="WalkingPoint86" parent="WalkingPoints" unique_id=127241803 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.07806, 0, -61.80825)
+
+[node name="WalkingPoint85" parent="WalkingPoints" unique_id=100205693 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.88703, 0, -56.829334)
+
+[node name="WalkingPoint84" parent="WalkingPoints" unique_id=1830689029 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.07806, 0, -52.25359)
 
 [node name="WalkingPoint33" parent="WalkingPoints" unique_id=69055796 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.113655, 0, -44.621544)
@@ -161,7 +191,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.11046, 0, -0.80026627)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.729202, 0, 1.6114345)
 
 [node name="WalkingPoint41" parent="WalkingPoints" unique_id=567270972 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.646816, 0, 20.042587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.862347, 0, 21.055944)
+
+[node name="WalkingPoint83" parent="WalkingPoints" unique_id=779214921 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.862347, 0, 15.113041)
+
+[node name="WalkingPoint82" parent="WalkingPoints" unique_id=936029937 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6716, 0, 21.055944)
+
+[node name="WalkingPoint81" parent="WalkingPoints" unique_id=339345466 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.862347, 0, 25.89843)
 
 [node name="WalkingPoint46" parent="WalkingPoints" unique_id=1149053858 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.057568, 0, 20.042587)
@@ -170,13 +209,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.057568, 0, 20.042587)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.945778, 0, 18.150108)
 
 [node name="WalkingPoint48" parent="WalkingPoints" unique_id=1048788666 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.94503, 0, 18.150108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.73024, 0, 16.871662)
+
+[node name="WalkingPoint80" parent="WalkingPoints" unique_id=320529667 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2628, 0, 16.871662)
 
 [node name="WalkingPoint52" parent="WalkingPoints" unique_id=1860555832 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.196388, 0, 15.896738)
 
 [node name="WalkingPoint53" parent="WalkingPoints" unique_id=122799085 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.077208, 0, 5.039315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.010092, 0, 3.7282438)
+
+[node name="WalkingPoint79" parent="WalkingPoints" unique_id=1447151221 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.010092, 0, 8.410595)
+
+[node name="WalkingPoint78" parent="WalkingPoints" unique_id=285721877 instance=ExtResource("3_wqkje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.557043, 0, 3.7282438)
 
 [node name="WalkingPoint62" parent="WalkingPoints" unique_id=1248138634 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.88982, 0, -0.48498774)
@@ -200,7 +248,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.12766, 0, -35.52326)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.12766, 0, -52.31606)
 
 [node name="WalkingPoint69" parent="WalkingPoints" unique_id=1077290388 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.530212, 0, -53.768803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.245007, 0, -53.768803)
 
 [node name="WalkingPoint54" parent="WalkingPoints" unique_id=1788211969 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.497955, 0, 2.6174655)
@@ -209,7 +257,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.497955, 0, 2.6174655)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.430788, 0, 0.8171623)
 
 [node name="WalkingPoint49" parent="WalkingPoints" unique_id=1283943726 instance=ExtResource("3_wqkje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.071316, 0, 24.038176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.735626, 0, 24.038176)
 
 [node name="WalkingPoint50" parent="WalkingPoints" unique_id=363896905 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.826767, 0, 25.390396)
@@ -283,16 +331,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.699435, 0, 46.43842)
 [node name="Environment" type="Node3D" parent="." unique_id=99489919 groups=["Node_Environment"]]
 
 [node name="walls and floors" parent="Environment" unique_id=665721219 instance=ExtResource("1_6phgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022201538, -0.032589912, -0.051441193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06682587, -0.03259182, 0.04308319)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1984945615 groups=["Environment"]]
 environment = SubResource("Environment_754fn")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=2066072614]
 transform = Transform3D(1, 0, 0, 0, -0.23414108, 0.97220266, 0, -0.97220266, -0.23414108, 0, 0, 0)
+visible = false
 light_color = Color(0.19064468, 0.23365143, 0.26393116, 1)
 light_energy = 0.6
 shadow_enabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=992180261]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 
 [node name="ArtilleryManager" type="Area3D" parent="." unique_id=1092234143]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 31.790565, 7.9520864, -22.904366)

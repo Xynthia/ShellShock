@@ -84,6 +84,24 @@ extends Node3D
 @onready var walking_point_73: VisibleOnScreenNotifier3D = $WalkingPoint73
 @onready var walking_point_74: VisibleOnScreenNotifier3D = $WalkingPoint74
 @onready var walking_point_75: VisibleOnScreenNotifier3D = $WalkingPoint75
+@onready var walking_point_76: VisibleOnScreenNotifier3D = $WalkingPoint76
+@onready var walking_point_77: VisibleOnScreenNotifier3D = $WalkingPoint77
+@onready var walking_point_78: VisibleOnScreenNotifier3D = $WalkingPoint78
+@onready var walking_point_79: VisibleOnScreenNotifier3D = $WalkingPoint79
+
+@onready var walking_point_80: VisibleOnScreenNotifier3D = $WalkingPoint80
+@onready var walking_point_81: VisibleOnScreenNotifier3D = $WalkingPoint81
+@onready var walking_point_82: VisibleOnScreenNotifier3D = $WalkingPoint82
+@onready var walking_point_83: VisibleOnScreenNotifier3D = $WalkingPoint83
+@onready var walking_point_84: VisibleOnScreenNotifier3D = $WalkingPoint84
+@onready var walking_point_85: VisibleOnScreenNotifier3D = $WalkingPoint85
+@onready var walking_point_86: VisibleOnScreenNotifier3D = $WalkingPoint86
+@onready var walking_point_87: VisibleOnScreenNotifier3D = $WalkingPoint87
+@onready var walking_point_88: VisibleOnScreenNotifier3D = $WalkingPoint88
+@onready var walking_point_89: VisibleOnScreenNotifier3D = $WalkingPoint89
+
+@onready var walking_point_90: VisibleOnScreenNotifier3D = $WalkingPoint90
+@onready var walking_point_91: VisibleOnScreenNotifier3D = $WalkingPoint91
 
 
 @onready var starting_point : VisibleOnScreenNotifier3D = walking_point
@@ -98,9 +116,9 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 	# points next to current point, in order of left, middle, right if 3. otherwise , left and right
 	match current_point:
 		walking_point:
-			points_next_to_current_point.push_back(walking_point_56)
+			points_next_to_current_point.push_back(walking_point_77)
 			points_next_to_current_point.push_back(walking_point_2)
-			points_next_to_current_point.push_back(walking_point_55)
+			points_next_to_current_point.push_back(walking_point_76)
 		walking_point_2:
 			points_next_to_current_point.push_back(walking_point_3)
 			points_next_to_current_point.push_back(walking_point)
@@ -132,12 +150,12 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_12)
 			points_next_to_current_point.push_back(walking_point_10)
 		walking_point_12:
-			points_next_to_current_point.push_back(walking_point_13)
+			points_next_to_current_point.push_back(walking_point_90)
 			points_next_to_current_point.push_back(walking_point_11)
 		walking_point_13:
 			points_next_to_current_point.push_back(walking_point_14)
-			points_next_to_current_point.push_back(walking_point_17)
-			points_next_to_current_point.push_back(walking_point_12)
+			points_next_to_current_point.push_back(walking_point_91)
+			points_next_to_current_point.push_back(walking_point_90)
 		walking_point_14:
 			points_next_to_current_point.push_back(walking_point_15)
 			points_next_to_current_point.push_back(walking_point_13)
@@ -148,14 +166,14 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_15)
 		walking_point_17:
 			points_next_to_current_point.push_back(walking_point_18)
-			points_next_to_current_point.push_back(walking_point_13)
+			points_next_to_current_point.push_back(walking_point_91)
 		walking_point_18:
-			points_next_to_current_point.push_back(walking_point_19)
+			points_next_to_current_point.push_back(walking_point_89)
 			points_next_to_current_point.push_back(walking_point_17)
 		walking_point_19:
 			points_next_to_current_point.push_back(walking_point_20)
-			points_next_to_current_point.push_back(walking_point_24)
-			points_next_to_current_point.push_back(walking_point_18)
+			points_next_to_current_point.push_back(walking_point_88)
+			points_next_to_current_point.push_back(walking_point_89)
 		walking_point_20:
 			points_next_to_current_point.push_back(walking_point_21)
 			points_next_to_current_point.push_back(walking_point_19)
@@ -169,24 +187,24 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_22)
 		walking_point_24:
 			points_next_to_current_point.push_back(walking_point_25)
-			points_next_to_current_point.push_back(walking_point_19)
+			points_next_to_current_point.push_back(walking_point_88)
 		walking_point_25:
-			points_next_to_current_point.push_back(walking_point_26)
+			points_next_to_current_point.push_back(walking_point_87)
 			points_next_to_current_point.push_back(walking_point_69)
 			points_next_to_current_point.push_back(walking_point_24)
 		walking_point_26:
 			points_next_to_current_point.push_back(walking_point_27)
-			points_next_to_current_point.push_back(walking_point_25)
+			points_next_to_current_point.push_back(walking_point_87)
 		walking_point_27:
-			points_next_to_current_point.push_back(walking_point_28)
+			points_next_to_current_point.push_back(walking_point_85)
 			points_next_to_current_point.push_back(walking_point_26)
 		walking_point_28:
-			points_next_to_current_point.push_back(walking_point_29)
-			points_next_to_current_point.push_back(walking_point_33)
-			points_next_to_current_point.push_back(walking_point_27)
+			points_next_to_current_point.push_back(walking_point_86)
+			points_next_to_current_point.push_back(walking_point_84)
+			points_next_to_current_point.push_back(walking_point_85)
 		walking_point_29:
 			points_next_to_current_point.push_back(walking_point_30)
-			points_next_to_current_point.push_back(walking_point_28)
+			points_next_to_current_point.push_back(walking_point_86)
 		walking_point_30:
 			points_next_to_current_point.push_back(walking_point_31)
 			points_next_to_current_point.push_back(walking_point_29)
@@ -197,7 +215,7 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_31)
 		walking_point_33:
 			points_next_to_current_point.push_back(walking_point_34)
-			points_next_to_current_point.push_back(walking_point_28)
+			points_next_to_current_point.push_back(walking_point_84)
 		walking_point_34:
 			points_next_to_current_point.push_back(walking_point_35)
 			points_next_to_current_point.push_back(walking_point_33)
@@ -217,15 +235,15 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_40)
 			points_next_to_current_point.push_back(walking_point_38)
 		walking_point_40:
-			points_next_to_current_point.push_back(walking_point_41)
+			points_next_to_current_point.push_back(walking_point_83)
 			points_next_to_current_point.push_back(walking_point_39)
 		walking_point_41:
-			points_next_to_current_point.push_back(walking_point_42)
-			points_next_to_current_point.push_back(walking_point_46)
-			points_next_to_current_point.push_back(walking_point_40)
+			points_next_to_current_point.push_back(walking_point_81)
+			points_next_to_current_point.push_back(walking_point_82)
+			points_next_to_current_point.push_back(walking_point_83)
 		walking_point_42:
 			points_next_to_current_point.push_back(walking_point_43)
-			points_next_to_current_point.push_back(walking_point_41)
+			points_next_to_current_point.push_back(walking_point_81)
 		walking_point_43:
 			points_next_to_current_point.push_back(walking_point_44)
 			points_next_to_current_point.push_back(walking_point_42)
@@ -236,14 +254,14 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_44)
 		walking_point_46:
 			points_next_to_current_point.push_back(walking_point_47)
-			points_next_to_current_point.push_back(walking_point_41)
+			points_next_to_current_point.push_back(walking_point_82)
 		walking_point_47:
-			points_next_to_current_point.push_back(walking_point_48)
+			points_next_to_current_point.push_back(walking_point_80)
 			points_next_to_current_point.push_back(walking_point_46)
 		walking_point_48:
 			points_next_to_current_point.push_back(walking_point_49)
 			points_next_to_current_point.push_back(walking_point_52)
-			points_next_to_current_point.push_back(walking_point_47)
+			points_next_to_current_point.push_back(walking_point_80)
 		walking_point_49:
 			points_next_to_current_point.push_back(walking_point_50)
 			points_next_to_current_point.push_back(walking_point_48)
@@ -253,21 +271,21 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 		walking_point_51:
 			points_next_to_current_point.push_back(walking_point_50)
 		walking_point_52:
-			points_next_to_current_point.push_back(walking_point_53)
+			points_next_to_current_point.push_back(walking_point_79)
 			points_next_to_current_point.push_back(walking_point_48)
 		walking_point_53:
-			points_next_to_current_point.push_back(walking_point_54)
+			points_next_to_current_point.push_back(walking_point_78)
 			points_next_to_current_point.push_back(walking_point_62)
-			points_next_to_current_point.push_back(walking_point_52)
+			points_next_to_current_point.push_back(walking_point_79)
 		walking_point_54:
 			points_next_to_current_point.push_back(walking_point_55)
-			points_next_to_current_point.push_back(walking_point_53)
+			points_next_to_current_point.push_back(walking_point_78)
 		walking_point_55:
-			points_next_to_current_point.push_back(walking_point)
+			points_next_to_current_point.push_back(walking_point_76)
 			points_next_to_current_point.push_back(walking_point_54)
 		walking_point_56:
 			points_next_to_current_point.push_back(walking_point_57)
-			points_next_to_current_point.push_back(walking_point)
+			points_next_to_current_point.push_back(walking_point_77)
 		walking_point_57:
 			points_next_to_current_point.push_back(walking_point_58)
 			points_next_to_current_point.push_back(walking_point_56)
@@ -307,6 +325,54 @@ func check_points_next_to_current_point(current_point : VisibleOnScreenNotifier3
 			points_next_to_current_point.push_back(walking_point_25)
 			points_next_to_current_point.push_back(walking_point_68)
 	
+		walking_point_76:
+			points_next_to_current_point.push_back(walking_point_55)
+			points_next_to_current_point.push_back(walking_point)
+		walking_point_77:
+			points_next_to_current_point.push_back(walking_point)
+			points_next_to_current_point.push_back(walking_point_56)
+		walking_point_78:
+			points_next_to_current_point.push_back(walking_point_53)
+			points_next_to_current_point.push_back(walking_point_54)
+		walking_point_79:
+			points_next_to_current_point.push_back(walking_point_52)
+			points_next_to_current_point.push_back(walking_point_53)
+		walking_point_80:
+			points_next_to_current_point.push_back(walking_point_48)
+			points_next_to_current_point.push_back(walking_point_47)
+		walking_point_81:
+			points_next_to_current_point.push_back(walking_point_42)
+			points_next_to_current_point.push_back(walking_point_41)
+		walking_point_82:
+			points_next_to_current_point.push_back(walking_point_46)
+			points_next_to_current_point.push_back(walking_point_41)
+		walking_point_83:
+			points_next_to_current_point.push_back(walking_point_40)
+			points_next_to_current_point.push_back(walking_point_41)
+		walking_point_84:
+			points_next_to_current_point.push_back(walking_point_33)
+			points_next_to_current_point.push_back(walking_point_28)
+		walking_point_85:
+			points_next_to_current_point.push_back(walking_point_27)
+			points_next_to_current_point.push_back(walking_point_28)
+		walking_point_86:
+			points_next_to_current_point.push_back(walking_point_29)
+			points_next_to_current_point.push_back(walking_point_28)
+		walking_point_87:
+			points_next_to_current_point.push_back(walking_point_26)
+			points_next_to_current_point.push_back(walking_point_25)
+		walking_point_88:
+			points_next_to_current_point.push_back(walking_point_24)
+			points_next_to_current_point.push_back(walking_point_19)
+		walking_point_89:
+			points_next_to_current_point.push_back(walking_point_18)
+			points_next_to_current_point.push_back(walking_point_19)
+		walking_point_90:
+			points_next_to_current_point.push_back(walking_point_13)
+			points_next_to_current_point.push_back(walking_point_12)
+		walking_point_91:
+			points_next_to_current_point.push_back(walking_point_17)
+			points_next_to_current_point.push_back(walking_point_13)
 	return points_next_to_current_point
 
 func check_look_at_point(current_point : VisibleOnScreenNotifier3D) -> VisibleOnScreenNotifier3D:
