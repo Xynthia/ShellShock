@@ -32,10 +32,12 @@ var took_trauma : bool = false
 
 var started_panic_attack : bool = false
 var interaction_panic_attack : bool = false
-var amount_interaction_panic_atttack : float = 0.0
-var max_amount_interaction_panic_attack : float = 10
-var min_amount_interaction_panic_attack : float = -100
-var amount_interaction_added : float = 3
+var amount_interaction_panic_atttack : float = 1.0
+var max_amount_interaction_panic_attack : float = 2.0
+var min_amount_interaction_panic_attack : float = 0.0
+var amount_interaction_added : float = 0.05
+var amount_interaction_removed : float = 0.001
+var starting_amount_interaction_panic_atttack : float = 1.0
 
 var started_ending : bool = false
 var amount_blink : int = 0
@@ -68,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("Interact"):
 				amount_interaction_panic_atttack += amount_interaction_added
 			else:
-				amount_interaction_panic_atttack -= 0.1
+				amount_interaction_panic_atttack -= amount_interaction_removed
 			
 			if amount_interaction_panic_atttack >= max_amount_interaction_panic_attack:
 				get_out_panic_attack()
@@ -101,7 +103,7 @@ func _input(event: InputEvent) -> void:
 			screen_relative *= degrees_per_unit
 
 func trauma_response() -> void:
-	if !started_panic_attack:
+	if !started_panic_attack && !GameManager.started_death:
 		animations.blink()
 		sound.play_breathing()
 		sound.play_beep()
@@ -109,25 +111,51 @@ func trauma_response() -> void:
 
 func panic_attack() -> void:
 	started_panic_attack = true
+	took_trauma = true
+	sound.play_beep()
+	fase_one_panic_attack()
+
+func fase_one_panic_attack() -> void:
+	animations.rapid_blur()
+
+func fase_two_panic_attack() -> void:
+	animations.stop_blur()
+	animations.long_blur()
+	
+	fase_three_panic_attack()
+
+func fase_three_panic_attack() -> void:
 	animations.blink()
 	sound.play_breathing()
-	sound.play_beep()
 	sound.play_heartbeat()
-	took_trauma = true
+	interaction_panic_attack = true
+
+func fase_four_panic_attack() -> void:
+	sound.make_quiet = true
+	animations.play_vignette()
+	animations.stop_blur()
 
 func get_out_panic_attack() -> void:
 	started_panic_attack = false
 	interaction_panic_attack = false
-	amount_interaction_panic_atttack = 0.0
+	amount_interaction_panic_atttack = starting_amount_interaction_panic_atttack
+	animations.closed_eyes_done = false
+	animations.stop_vignette()
+	animations.stop_blur()
 	animations.open_eyes()
-	sound.play_beep()
+	sound.stop_heartbeat()
 	sound.return_sound = true
 
 func die() -> void:
 	GameManager.started_death = true
 	interaction_panic_attack = false
+	amount_interaction_panic_atttack = starting_amount_interaction_panic_atttack
+	animations.stop_vignette()
+	sound.stop_heartbeat()
 	sound.complete_silence()
 	animations.closed_eyes()
+	
+	animations.closed_eyes_done = false
 	
 	#move back to startpoint
 	movement.current_walk_point = GameManager.walking_points.starting_point

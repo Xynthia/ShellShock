@@ -39,12 +39,12 @@ func _physics_process(delta: float) -> void:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
-	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
+	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
 		set_new_position(looking_at_walk_point)
-	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT:
+	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d  && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
@@ -55,13 +55,13 @@ func _physics_process(delta: float) -> void:
 		if turn_tween.get_total_elapsed_time() >= time_to_turn:
 			current_state = state.WAIT
 	
-	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT:
+	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT && !GameManager.started_death:
 		current_state = state.TURN
 		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
 			turned_left = true
 		GameManager.player.camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.RIGHT)
-	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT:
+	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT && !GameManager.started_death:
 		current_state = state.TURN
 		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
 			turned_right = true
@@ -75,7 +75,6 @@ func set_new_position(new_position: VisibleOnScreenNotifier3D) -> void:
 	
 	GameManager.player.camera_pivot.move_to_middle()
 	move_to(new_position)
-	
 
 func turn_to_walk_point(direction: look_dir_3) -> void:
 	var walk_points_next_to_current_walk_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)

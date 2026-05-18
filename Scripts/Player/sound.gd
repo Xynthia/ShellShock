@@ -5,6 +5,7 @@ extends Node
 @onready var sfx: AudioStreamPlayer3D = $"../pauseble/SFX"
 @onready var breathing: AudioStreamPlayer3D = $"../pauseble/Breathing"
 @onready var va: AudioStreamPlayer3D = $"../pauseble/VA"
+@onready var heart_beat: AudioStreamPlayer3D = $"../pauseble/HeartBeat"
 
 @onready var bg_sound_bus_index = AudioServer.get_bus_index(bg_sound.bus)
 @onready var sfx_bus_index = AudioServer.get_bus_index(sfx.bus)
@@ -19,7 +20,7 @@ extends Node
 @onready var curent_explosions_DB = AudioServer.get_bus_volume_db(explosions_bus_index)
 
 var lowest_db : float = -80
-var fade_speed : float = 10
+var fade_speed : float = 20
 
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")
@@ -36,6 +37,15 @@ var voice_lines_return_to_trenches : Array = [TURN_BACK_0, TURN_BACK_1, TURN_BAC
 
 var make_quiet : bool = false
 var return_sound : bool = false
+
+func _ready() -> void:
+	var bus_id = AudioServer.get_bus_index("Master")
+	var volume = AudioServer.get_bus_volume_db(bus_id)
+	print(
+		curent_explosions_DB, "\n",
+		highest_explosions_DB, "\n",
+		volume
+	)
 
 func _process(delta: float) -> void:
 	if make_quiet:
@@ -56,7 +66,6 @@ func _process(delta: float) -> void:
 		if curent_explosions_DB <= highest_explosions_DB:
 			curent_explosions_DB += fade_speed * delta
 			AudioServer.set_bus_volume_db(explosions_bus_index, curent_explosions_DB)
-		
 		
 		if curent_BG_DB >= highest_BG_DB and curent_explosions_DB >= highest_explosions_DB:
 			return_sound = false
@@ -93,9 +102,12 @@ func play_beep() -> void:
 		sfx.play()
 
 func play_heartbeat() -> void:
-	sfx.stream = HEARTBEAT_SOUND
+	heart_beat.stream = HEARTBEAT_SOUND
 	
-	sfx.play()
+	heart_beat.play()
+
+func stop_heartbeat() -> void:
+	heart_beat.stream = null
 
 func _on_breathing_finished() -> void:
 	if GameManager.player.started_panic_attack == true:

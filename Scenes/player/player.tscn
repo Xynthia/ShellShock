@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://df54t2psocnt0" path="res://Scripts/Player/movement.gd" id="3_xxarj"]
 [ext_resource type="Script" uid="uid://u3tlt3wl3b20" path="res://Scripts/Player/sound.gd" id="4_6k3cy"]
 [ext_resource type="Shader" uid="uid://dts2ygb5775ah" path="res://Assets/shaders/vignette.gdshader" id="7_xxarj"]
+[ext_resource type="Shader" uid="uid://c67jl5qaxsj71" path="res://Assets/shaders/blur.gdshader" id="8_6k3cy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 
@@ -25,6 +26,13 @@ shader_parameter/softness = 0.8410000399475001
 shader_parameter/intensity = 0.61600002926
 shader_parameter/contrast = 4.0
 shader_parameter/vignette_color = Color(0.34117648, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3oqc"]
+shader = ExtResource("8_6k3cy")
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_amount = 2.9450001398875
+shader_parameter/blur_inner = 0.0
+shader_parameter/blur_outer = 0.6010000285475
 
 [sub_resource type="Animation" id="Animation_e41v5"]
 length = 0.001
@@ -193,6 +201,10 @@ bus = &"Explosions"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
 bus = &"Breathing"
 
+[node name="HeartBeat" type="AudioStreamPlayer3D" parent="pauseble" unique_id=775084042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5290005, 0)
+bus = &"HeartBeat"
+
 [node name="VA" type="AudioStreamPlayer3D" parent="pauseble" unique_id=1271322056]
 bus = &"VA Phenosi"
 
@@ -218,6 +230,14 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.7368177, 0.18848705, 3.6771893e-05, 1)
+
+[node name="blur" type="ColorRect" parent="pauseble/eyelids" unique_id=546611251]
+material = SubResource("ShaderMaterial_t3oqc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pauseble/eyelids" unique_id=1725352746]
 root_node = NodePath("../../..")

@@ -42,6 +42,8 @@ var started_game : bool = false
 var finished_tutrial : bool = false
 var started_death : bool = false
 var reset_position_after_death_done : bool = false
+var death_timer : float = 0.0
+var death_time : float = 5.0
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0
@@ -81,7 +83,7 @@ func _process(delta: float) -> void:
 		artillery_timer -= delta
 		shot_timer -= delta
 	
-	if !started_death && started_game && finished_tutrial && get_tree().paused == false:
+	if started_game && finished_tutrial && get_tree().paused == false && !started_death && !player.started_panic_attack:
 		if grenade_timer <= 0:
 			grenade_timer = rng.randf_range(grenade_time[0], grenade_time[1])
 			grenade_manager.spawn_grenade()
@@ -98,8 +100,10 @@ func _process(delta: float) -> void:
 		artillery_timer -= delta
 		shot_timer -= delta
 	
-	if reset_position_after_death_done && started_death:
-		restart_after_death()
+	if reset_position_after_death_done && started_death && player.started_panic_attack:
+		death_timer += delta
+		if death_timer >= death_time:
+			restart_after_death()
 
 func restart_after_death() -> void:
 	player.animations.open_eyes()
@@ -109,8 +113,6 @@ func restart_after_death() -> void:
 	player.started_panic_attack = false
 	started_death = false
 	reset_position_after_death_done = false
-	
-	start_game()
 
 func start_main_menu() -> void:
 	if ui == null:

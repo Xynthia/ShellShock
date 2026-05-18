@@ -1,7 +1,6 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://dvxdexb17s4y2"]
 
 [resource]
-bus/0/volume_db = -0.13049698
 bus/1/name = &"BG"
 bus/1/solo = false
 bus/1/mute = false
@@ -38,3 +37,9 @@ bus/6/mute = false
 bus/6/bypass_fx = false
 bus/6/volume_db = 0.0
 bus/6/send = &"Master"
+bus/7/name = &"HeartBeat"
+bus/7/solo = false
+bus/7/mute = false
+bus/7/bypass_fx = false
+bus/7/volume_db = -6.2510104
+bus/7/send = &"Master"
