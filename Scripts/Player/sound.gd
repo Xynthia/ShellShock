@@ -20,7 +20,7 @@ extends Node
 @onready var curent_explosions_DB = AudioServer.get_bus_volume_db(explosions_bus_index)
 
 var lowest_db : float = -80
-var fade_speed : float = 20
+var fade_speed : float = 50
 
 const NIGHT_TIME_WIND_WHISTLING = preload("uid://bwn5r0eekogkq")
 const OUT_OF_BREATH_HEAVY_MALE = preload("uid://cfpfpg1s06gni")

@@ -28,11 +28,14 @@ var max_angle_left_right : float = 50 # was 30>45>50
 var max_angle_up_down : float = 30
 var max_z_rotation_left_right : float = 5
 var current_look_pos : look_position = look_position.CENTER
-
+var last_look_position : look_position 
+	
 var moved_up: bool = false
 var moved_down: bool = false
 var moved_left: bool = false
 var moved_right: bool = false
+
+
 
 func _ready() -> void:
 	if GameManager.player:
@@ -54,7 +57,7 @@ func add_trauma(trauma_amount : float):
 	trauma = clamp(trauma + trauma_amount, 0.0, 2.0)
 	var panic_attack : float = randf() * 100
 	
-	if panic_attack >= 70:
+	if panic_attack >= 70 and !GameManager.player.can_be_hit_for_end_scene:
 		GameManager.player.panic_attack()
 	else:
 		GameManager.player.trauma_response()
@@ -91,6 +94,7 @@ func move_to_middle() -> void:
 func set_dir_rotation(new_dir: dir) -> void:
 	match current_look_pos:
 		look_position.CENTER: 
+			last_look_position = look_position.CENTER
 			match new_dir:
 				dir.LEFT: 
 					if GameManager.events_manager.controls_w  && GameManager.events_manager.finished_fade_in:
@@ -109,18 +113,22 @@ func set_dir_rotation(new_dir: dir) -> void:
 						moved_down = true
 					move_to(look_position.DOWN)
 		look_position.LEFT: 
+			last_look_position = look_position.LEFT
 			match new_dir:
 				dir.RIGHT: 
 					move_to(look_position.CENTER)
 		look_position.RIGHT: 
+			last_look_position = look_position.RIGHT
 			match new_dir:
 				dir.LEFT: 
 					move_to(look_position.CENTER)
 		look_position.UP: 
+			last_look_position = look_position.UP
 			match new_dir:
 				dir.DOWN: 
 					move_to(look_position.CENTER)
 		look_position.DOWN: 
+			last_look_position = look_position.DOWN
 			match new_dir:
 				dir.UP: 
 					move_to(look_position.CENTER)
@@ -132,6 +140,8 @@ func move_to(new_look_position : look_position):
 		look_position.CENTER: 
 			tween.tween_property(self, "rotation_degrees", Vector3(0,0,0),turn_time)
 			current_look_pos = look_position.CENTER
+			if GameManager.player.dogtags.current_arm_position == GameManager.player.dogtags.arm_positions.UP:
+				GameManager.player.stop_check_dogtags()
 		look_position.LEFT: 
 			tween.tween_property(self, "rotation_degrees", Vector3(max_z_rotation_left_right,max_angle_left_right,-max_z_rotation_left_right),turn_time)
 			current_look_pos = look_position.LEFT
@@ -141,7 +151,8 @@ func move_to(new_look_position : look_position):
 		look_position.UP: 
 			tween.tween_property(self, "rotation_degrees", Vector3(max_angle_up_down,0,0),turn_time)
 			current_look_pos = look_position.UP
-			GameManager.player.check_dogtags()
+			if last_look_position == look_position.CENTER:
+				GameManager.player.check_dogtags()
 		look_position.DOWN: 
 			tween.tween_property(self, "rotation_degrees", Vector3(-max_angle_up_down,0,0),turn_time)
 			current_look_pos = look_position.DOWN

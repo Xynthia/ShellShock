@@ -104,7 +104,13 @@ extends Node3D
 @onready var walking_point_91: VisibleOnScreenNotifier3D = $WalkingPoint91
 
 
-@onready var starting_point : VisibleOnScreenNotifier3D = walking_point
+@onready var starting_point : VisibleOnScreenNotifier3D = walking_point_77
+
+@onready var dogtag_pickup_point: DogtagPickupPoint = $"../DogtagPoints/DogtagPickupPoint"
+@onready var dogtag_pickup_point_2: DogtagPickupPoint = $"../DogtagPoints/DogtagPickupPoint2"
+@onready var dogtag_pickup_point_3: DogtagPickupPoint = $"../DogtagPoints/DogtagPickupPoint3"
+@onready var dogtag_pickup_point_4: DogtagPickupPoint = $"../DogtagPoints/DogtagPickupPoint4"
+@onready var dogtag_pickup_point_5: DogtagPickupPoint = $"../DogtagPoints/DogtagPickupPoint5"
 
 func _ready() -> void:
 	GameManager.walking_points = self
@@ -392,5 +398,22 @@ func check_look_at_point(current_point : VisibleOnScreenNotifier3D) -> VisibleOn
 		walking_point_61:
 			look_at_point = walking_point_75
 	
+	
+	return look_at_point
+
+func check_helmet_point(current_point : VisibleOnScreenNotifier3D) -> DogtagPickupPoint:
+	var look_at_point : DogtagPickupPoint
+	
+	match current_point:
+		walking_point_2:
+			look_at_point = dogtag_pickup_point
+		walking_point_83:
+			look_at_point = dogtag_pickup_point_2
+		walking_point_31:
+			look_at_point = dogtag_pickup_point_3
+		walking_point_67:
+			look_at_point = dogtag_pickup_point_4
+		walking_point_52:
+			look_at_point = dogtag_pickup_point_5
 	
 	return look_at_point

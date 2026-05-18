@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d24vhqx32bpj7"]
+
+[ext_resource type="PackedScene" uid="uid://b3xmf4o5hflqd" path="res://Assets/helmet assets/SM_HelmetBritish01.glb" id="1_crgk7"]
+[ext_resource type="Script" uid="uid://ljt8mexw2pv3" path="res://Scripts/dogtag_pickup_point.gd" id="1_ffs2o"]
+[ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="3_j3i8k"]
+
+[node name="DogtagPickupPoint" type="Node3D" unique_id=1628941576]
+script = ExtResource("1_ffs2o")
+
+[node name="SM_HelmetBritish01" parent="." unique_id=742308609 instance=ExtResource("1_crgk7")]
+
+[node name="WalkingPoint" parent="." unique_id=293563400 instance=ExtResource("3_j3i8k")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1998578370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0937106, 0)
+light_color = Color(0.9566466, 0.7500997, 0.2801744, 1)
+omni_range = 1.0
+
+[connection signal="screen_entered" from="WalkingPoint" to="." method="_on_walking_point_screen_entered"]
+[connection signal="screen_exited" from="WalkingPoint" to="." method="_on_walking_point_screen_exited"]

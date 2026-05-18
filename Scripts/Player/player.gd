@@ -14,6 +14,8 @@ var id : int
 @onready var animations : PlayerAnimations = $Animations
 @onready var movement : PlayerMovement = $Movement
 @onready var sound : PlayerSound = $Sound
+@onready var dogtags: DogtagManager = $Dogtags
+
 
 var do_this_once_per_change : bool = true;
 var screen_relative : Vector2
@@ -65,6 +67,14 @@ func _physics_process(delta: float) -> void:
 		if can_be_hit_for_end_scene == true && took_trauma == true:
 			end_scene()
 			can_be_hit_for_end_scene = false
+		
+		if movement.check_helmet_point_near_current_point():
+			var helmetpoint : DogtagPickupPoint = GameManager.walking_points.check_helmet_point(movement.current_walk_point) 
+			
+			if helmetpoint.looking_at and Input.is_action_just_pressed("Interact"):
+				if helmetpoint.sm_helmet_british_01.visible && !helmetpoint.picked_up_dogtag:
+					helmetpoint.picked_up()
+					check_dogtags()
 		
 		if interaction_panic_attack:
 			if Input.is_action_just_pressed("Interact"):
@@ -162,8 +172,10 @@ func die() -> void:
 	movement.set_new_position(movement.current_walk_point)
 
 func check_dogtags() -> void:
-	print("amount of dogtags")
+	dogtags.checking_dogtags()
 
+func stop_check_dogtags() -> void:
+	dogtags.stop_checking_dogtags()
 
 func end_scene() -> void:
 	var i = 3

@@ -43,11 +43,13 @@ func _physics_process(delta: float) -> void:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
+		GameManager.player.camera_pivot.last_look_position = GameManager.player.camera_pivot.look_position.LEFT
 		set_new_position(looking_at_walk_point)
 	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death && !GameManager.player.started_panic_attack:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d  && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
+		GameManager.player.camera_pivot.last_look_position = GameManager.player.camera_pivot.look_position.LEFT
 		set_new_position(looking_at_walk_point)
 	
 	if current_state == state.TURN:
@@ -55,13 +57,13 @@ func _physics_process(delta: float) -> void:
 		if turn_tween.get_total_elapsed_time() >= time_to_turn:
 			current_state = state.WAIT
 	
-	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT && !GameManager.started_death:
+	if Input.is_action_just_pressed("TurnLeft") && current_state == state.WAIT && !GameManager.started_death && !GameManager.player.started_panic_attack:
 		current_state = state.TURN
 		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
 			turned_left = true
 		GameManager.player.camera_pivot.move_to_middle()
 		turn_to_walk_point(look_dir_3.RIGHT)
-	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT && !GameManager.started_death:
+	elif Input.is_action_just_pressed("TurnRight") && current_state == state.WAIT && !GameManager.started_death && !GameManager.player.started_panic_attack:
 		current_state = state.TURN
 		if GameManager.events_manager.started_tutorial && GameManager.events_manager.finished_fade_in:
 			turned_right = true
@@ -137,7 +139,7 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 			elif closest_walking_point_right:
 				for walking_point in walking_points_directions:
 					if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
-						look_to(closest_walking_point_right, true, look_dir_3.RIGHT)
+						look_to(closest_walking_point_right, true, look_dir_3.RIGHT, false)
 		#voor linkse knop ingedrukt
 		if direction == look_dir_3.RIGHT:
 			if closest_walking_point_right:
@@ -148,12 +150,12 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 			elif closest_walking_point_left:
 				for walking_point in walking_points_directions:
 					if walking_point == look_dir_3.LEFT && closest_walking_point_left:
-						look_to(closest_walking_point_left, true, look_dir_3.LEFT)
+						look_to(closest_walking_point_left, true, look_dir_3.LEFT, false)
 	else:
 		next_look_at_walking_point = walk_points_next_to_current_walk_point[0]
 	
 	if next_look_at_walking_point:
-		look_to(next_look_at_walking_point, false, look_dir_3.RIGHT)
+		look_to(next_look_at_walking_point, false, look_dir_3.RIGHT, false)
 
 func check_walkpoint_dead_end() -> bool:
 	var walking_points = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
@@ -163,12 +165,18 @@ func check_walkpoint_dead_end() -> bool:
 	
 	return false
 
+func check_helmet_point_near_current_point() -> bool:
+	var helmet_points = GameManager.walking_points.check_helmet_point(current_walk_point)
+	if helmet_points != null:
+		return true
+	return false
+
 func turn_to_walk_point_once_moved() -> void:
 	var points_next_to_current_point : Array = GameManager.walking_points.check_points_next_to_current_point(current_walk_point)
 	
 	for walk_point : VisibleOnScreenNotifier3D in points_next_to_current_point:
 		if turn_once && walk_point != last_walk_point && looking_at_walk_point == current_walk_point || looking_at_walk_point == null:
-			look_to(walk_point, false, look_dir_3.RIGHT)
+			look_to(walk_point, false, look_dir_3.RIGHT, false)
 
 func move_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	able_to_move = false
@@ -184,12 +192,17 @@ func move_to(new_walk_point : VisibleOnScreenNotifier3D) -> void:
 	move_tween.finished.connect(on_move_tween_finished)
 
 func on_move_tween_finished() -> void:
+	if check_helmet_point_near_current_point() == true:
+		var helmet_points = GameManager.walking_points.check_helmet_point(current_walk_point)
+		if helmet_points != null && helmet_points.sm_helmet_british_01.visible:
+			current_state = state.TURN
+			look_to(helmet_points.walking_point, false, look_dir_3.RIGHT, true)
 	if check_walkpoint_dead_end() == true:
 		dead_end_check = true
 		var new_looking_at_walk_point = GameManager.walking_points.check_look_at_point(current_walk_point)
 		if new_looking_at_walk_point != null:
 			current_state = state.TURN
-			look_to(new_looking_at_walk_point, false, look_dir_3.RIGHT)
+			look_to(new_looking_at_walk_point, false, look_dir_3.RIGHT, false)
 	else:
 		turn_to_walk_point_once_moved()
 	
@@ -199,7 +212,7 @@ func on_move_tween_finished() -> void:
 	trun_tween_timer = 0
 	current_state = state.WAIT
 
-func look_to(new_walk_point : VisibleOnScreenNotifier3D, oposite: bool, direction: look_dir_3) -> void:
+func look_to(new_walk_point : VisibleOnScreenNotifier3D, oposite: bool, direction: look_dir_3, helmet_point : bool) -> void:
 	turn_once = false
 	turn_tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	
@@ -226,7 +239,8 @@ func look_to(new_walk_point : VisibleOnScreenNotifier3D, oposite: bool, directio
 	  
 	turn_tween.tween_property(GameManager.player, "rotation_degrees", new_rotation_degrees , time_to_turn)
 	
-	turn_tween.finished.connect(on_turn_tween_finished.bind(new_walk_point))
+	if !helmet_point:
+		turn_tween.finished.connect(on_turn_tween_finished.bind(new_walk_point))
 
 func on_turn_tween_finished(walk_point) ->void:
 	if walk_point != null:

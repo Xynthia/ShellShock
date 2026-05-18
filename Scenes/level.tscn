@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://caot7h0nvew70" path="res://Scripts/level_walking_points.gd" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://j80i225aqiqj" path="res://Scenes/player/walking_point.tscn" id="3_wqkje"]
 [ext_resource type="Script" uid="uid://dsy3x3h2tuptx" path="res://Scripts/managers/artillery_manager.gd" id="4_0f350"]
+[ext_resource type="PackedScene" uid="uid://d24vhqx32bpj7" path="res://Scenes/dogtags/dogtag_pickup_point.tscn" id="4_754fn"]
 [ext_resource type="Script" uid="uid://ckbca3y7532cv" path="res://Scripts/managers/grenate_manager.gd" id="5_8c0lf"]
 [ext_resource type="Script" uid="uid://cllmiw8r74xxs" path="res://Scripts/managers/shot_manager.gd" id="6_754fn"]
 
@@ -328,10 +329,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.744242, 0, 55.01357)
 [node name="WalkingPoint75" parent="WalkingPoints" unique_id=1795552474 instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.699435, 0, 46.43842)
 
+[node name="DogtagPoints" type="Node3D" parent="." unique_id=1079305638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.723999, 1.1210833, -0.32187223)
+
+[node name="DogtagPickupPoint" parent="DogtagPoints" unique_id=1628941576 instance=ExtResource("4_754fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25096953, 0)
+
+[node name="DogtagPickupPoint2" parent="DogtagPoints" unique_id=1956113552 instance=ExtResource("4_754fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.15289, -0.17141497, 9.310904)
+
+[node name="DogtagPickupPoint3" parent="DogtagPoints" unique_id=821743108 instance=ExtResource("4_754fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.42235, -0.1501658, -84.72631)
+
+[node name="DogtagPickupPoint4" parent="DogtagPoints" unique_id=1128484794 instance=ExtResource("4_754fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.180122, -0.47466874, -37.702923)
+
+[node name="DogtagPickupPoint5" parent="DogtagPoints" unique_id=102457891 instance=ExtResource("4_754fn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.267822, 0, 18.595861)
+
 [node name="Environment" type="Node3D" parent="." unique_id=99489919 groups=["Node_Environment"]]
 
 [node name="walls and floors" parent="Environment" unique_id=665721219 instance=ExtResource("1_6phgx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06682587, -0.03259182, 0.04308319)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.094106674, -0.032592773, 0.04648018)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1984945615 groups=["Environment"]]
 environment = SubResource("Environment_754fn")

@@ -9,6 +9,7 @@ var mouse_sensitivity : float = 50
 @export var grenade_manager : GrenadeManager
 @export var artillery_manager : ArtilleryManager
 @export var shot_manager : ShotManager
+@export var dogtag_manager : DogtagManager
 
 @export var walking_points : WalkingPoints
 
@@ -44,6 +45,7 @@ var started_death : bool = false
 var reset_position_after_death_done : bool = false
 var death_timer : float = 0.0
 var death_time : float = 5.0
+
 
 var grenade_timer : float = 0
 var artillery_timer : float = 0

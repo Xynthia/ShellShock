@@ -6,8 +6,11 @@
 [ext_resource type="AudioStream" uid="uid://bwn5r0eekogkq" path="res://Assets/SFX/used sfx/BOOM Library - Stormy Weather - Outdoor Night Time Wind Whistling Mysteriously Light Thunders .wav" id="3_6t5aa"]
 [ext_resource type="Script" uid="uid://df54t2psocnt0" path="res://Scripts/Player/movement.gd" id="3_xxarj"]
 [ext_resource type="Script" uid="uid://u3tlt3wl3b20" path="res://Scripts/Player/sound.gd" id="4_6k3cy"]
+[ext_resource type="Script" uid="uid://y285cy2s0wi6" path="res://Scripts/managers/dogtag_manager.gd" id="5_kd672"]
 [ext_resource type="Shader" uid="uid://dts2ygb5775ah" path="res://Assets/shaders/vignette.gdshader" id="7_xxarj"]
 [ext_resource type="Shader" uid="uid://c67jl5qaxsj71" path="res://Assets/shaders/blur.gdshader" id="8_6k3cy"]
+[ext_resource type="PackedScene" uid="uid://d0xwxn3kj6inx" path="res://Scenes/dogtags/xyn_arm_l.tscn" id="10_t3oqc"]
+[ext_resource type="PackedScene" uid="uid://uymbs3o762tu" path="res://Scenes/dogtags/dog_tag.tscn" id="11_p8lfk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 
@@ -134,6 +137,94 @@ _data = {
 &"panic attack": SubResource("Animation_xxarj")
 }
 
+[sub_resource type="Animation" id="Animation_p8lfk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Xyn_ArmL2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.26005405, -0.7661995, 0.3490658)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Xyn_ArmL2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_uawwb"]
+resource_name = "arm_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Xyn_ArmL2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.26005405, -0.7661995, 0.3490658), Vector3(-0.61833864, -0.9655313, 1.2890176)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Xyn_ArmL2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ag54m"]
+resource_name = "arm_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Xyn_ArmL2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.61833864, -0.9655313, 1.2890176), Vector3(0.26005405, -0.7661995, 0.3490658)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Xyn_ArmL2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g7b1g"]
+_data = {
+&"RESET": SubResource("Animation_p8lfk"),
+&"arm_down": SubResource("Animation_uawwb"),
+&"arm_up": SubResource("Animation_ag54m")
+}
+
 [node name="Player" type="CharacterBody3D" unique_id=953833942 groups=["Player"]]
 process_mode = 3
 rotation_order = 0
@@ -149,6 +240,9 @@ script = ExtResource("3_xxarj")
 [node name="Sound" type="Node" parent="." unique_id=1513848391]
 script = ExtResource("4_6k3cy")
 
+[node name="Dogtags" type="Node" parent="." unique_id=1083530908]
+script = ExtResource("5_kd672")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1302748713]
 transform = Transform3D(1.7, 0, 0, 0, -1.7, 1.4861872e-07, 0, -1.4861872e-07, -1.7, 0, 1.7, 0)
 rotation_order = 0
@@ -159,7 +253,7 @@ debug_color = Color(0.8522863, 0.0008484489, 0.89589584, 0.41960785)
 process_mode = 1
 
 [node name="CameraPivot" type="Area3D" parent="pauseble" unique_id=900591862]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5336509, 0)
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 2.5336509, 0)
 script = ExtResource("2_cvnsp")
 trauma_reduction_rate = 0.1
 noise = SubResource("FastNoiseLite_cvnsp")
@@ -169,6 +263,7 @@ noise = SubResource("FastNoiseLite_cvnsp")
 [node name="Node3D" type="Node3D" parent="pauseble/CameraPivot/Camera3D" unique_id=575285206]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="pauseble/CameraPivot/Camera3D/Node3D" unique_id=998455016]
+transform = Transform3D(0.98471975, -0.087073304, 0.15081538, 0.0870733, 0.99617994, 0.0066165626, -0.15081537, 0.006616533, 0.98853976, 0.9168353, 0, 0)
 light_color = Color(0.96999353, 0.8794211, 0.6672549, 1)
 light_energy = 3.5
 light_volumetric_fog_energy = 0.1
@@ -244,6 +339,31 @@ grow_vertical = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="pauseble/eyelids" unique_id=1725352746]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_ca0mu")
+
+[node name="ArmAndDogtags" type="Node3D" parent="pauseble" unique_id=1851714390]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5310308, 0, 0)
+
+[node name="Xyn_ArmL2" parent="pauseble/ArmAndDogtags" unique_id=1766327418 instance=ExtResource("10_t3oqc")]
+transform = Transform3D(0.6161156, -0.41398668, -0.67008686, 0.33052, 0.90809625, -0.25713277, 0.71495306, -0.06305361, 0.69632334, 0, 2.088, 1.3838257)
+visible = false
+
+[node name="DogTag" parent="pauseble/ArmAndDogtags/Xyn_ArmL2" unique_id=605150538 instance=ExtResource("11_p8lfk")]
+transform = Transform3D(0.0030805788, -0.0016313058, 0.0035845335, -0.0020699343, 0.0032009303, 0.0032356489, -0.0033504344, -0.003477483, 0.001296804, -1.7792168, 0.024722457, -1.7015452)
+
+[node name="DogTag2" parent="pauseble/ArmAndDogtags/Xyn_ArmL2" unique_id=1035790596 instance=ExtResource("11_p8lfk")]
+transform = Transform3D(0.0030805788, -0.0016313058, 0.0035845335, -0.0020699343, 0.0032009303, 0.0032356489, -0.0033504344, -0.003477483, 0.001296804, -1.7555137, 0.09475362, -1.5791198)
+
+[node name="DogTag3" parent="pauseble/ArmAndDogtags/Xyn_ArmL2" unique_id=2142178901 instance=ExtResource("11_p8lfk")]
+transform = Transform3D(0.0030805788, -0.0016313058, 0.0035845335, -0.0020699343, 0.0032009303, 0.0032356489, -0.0033504344, -0.003477483, 0.001296804, -1.6759648, -0.027320385, -1.53723)
+
+[node name="DogTag4" parent="pauseble/ArmAndDogtags/Xyn_ArmL2" unique_id=1139795789 instance=ExtResource("11_p8lfk")]
+transform = Transform3D(0.0030805788, -0.0016313058, 0.0035845335, -0.0020699343, 0.0032009303, 0.0032356489, -0.0033504344, -0.003477483, 0.001296804, -1.6949573, -0.034442425, -1.3874424)
+
+[node name="DogTag5" parent="pauseble/ArmAndDogtags/Xyn_ArmL2" unique_id=76819824 instance=ExtResource("11_p8lfk")]
+transform = Transform3D(0.0030805788, -0.0016313058, 0.0035845335, -0.0020699343, 0.0032009303, 0.0032356489, -0.0033504344, -0.003477483, 0.001296804, -1.7150517, 0.041203976, -1.4735461)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="pauseble/ArmAndDogtags" unique_id=2040249002]
+libraries/ = SubResource("AnimationLibrary_g7b1g")
 
 [connection signal="finished" from="pauseble/BGSound" to="." method="_on_bg_sound_finished"]
 [connection signal="finished" from="pauseble/Breathing" to="Sound" method="_on_breathing_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bu3yukcg5kp0w"]
+[gd_scene format=4 uid="uid://bu3yukcg5kp0w"]
 
 [ext_resource type="Script" uid="uid://da15p4cslaed8" path="res://Scripts/managers/credits_manager.gd" id="1_r18jl"]
 
@@ -91,6 +91,15 @@ font_weight = 600
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
 cache/0/16/0/ascent = 18.0
 cache/0/16/0/descent = 5.0
 cache/0/16/0/underline_position = 1.609375
@@ -2301,26 +2310,26 @@ variation_embolden = 1.2
 [sub_resource type="Theme" id="Theme_j6nef"]
 default_font = SubResource("FontVariation_1wbrc")
 
-[node name="Credits" type="Node3D"]
+[node name="Credits" type="Node3D" unique_id=217125738]
 script = ExtResource("1_r18jl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1751073014]
 layer = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=645090984]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel" unique_id=647089044]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 550.0
-offset_bottom = 939.0
+offset_top = 960.0
+offset_bottom = 1349.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 100
@@ -2328,25 +2337,25 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer" unique_id=755490380]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Label3" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1941022877]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "CREDITS"
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label5" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=937276303]
 layout_mode = 2
 text = "Game Design & Game Dev"
 horizontal_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1998202766]
 custom_minimum_size = Vector2(300, 25)
 layout_mode = 2
 bbcode_enabled = true
@@ -2354,18 +2363,18 @@ text = "Xynthia Klomp"
 horizontal_alignment = 1
 justification_flags = 162
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1997056253]
 layout_mode = 2
 text = "ASSETS"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1913464747]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 25
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=909093288]
 custom_minimum_size = Vector2(300, 0.845)
 layout_mode = 2
 theme = SubResource("Theme_j6nef")
@@ -2377,7 +2386,7 @@ Thomas Vansteelandt
 Kyan Schrievers"
 horizontal_alignment = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561638126]
 custom_minimum_size = Vector2(300, 150)
 layout_mode = 2
 bbcode_enabled = true
@@ -2389,17 +2398,17 @@ WW1 Grenades
 Logo
 "
 
-[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=549058475]
 layout_mode = 2
 text = "VOICE ACTING"
 horizontal_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=2135092456]
 custom_minimum_size = Vector2(500, 100)
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=76561813]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme = SubResource("Theme_j6nef")
@@ -2410,7 +2419,7 @@ text = "Kyan Schrievers
 horizontal_alignment = 2
 justification_flags = 162
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1583791708]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 bbcode_enabled = true
@@ -2418,12 +2427,12 @@ text = "Main Charachter
 
 German Soldier"
 
-[node name="Label4" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label4" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=362519075]
 layout_mode = 2
 text = "SFX"
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer" unique_id=1850006631]
 custom_minimum_size = Vector2(300, 225)
 layout_mode = 2
 bbcode_enabled = true

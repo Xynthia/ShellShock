@@ -92,15 +92,12 @@ func _process(delta: float) -> void:
 			controls_escape = true
 			GameManager.finished_tutrial = true
 			fade_out()
-		
-	#if GameManager.finished_tutrial:
-		#last_event_timer += delta
 	
-	if last_event_timer >= last_event_time && !player_va_sounds && do_this_once_2:
+	if GameManager.player.dogtags.dogtags_picked_up == 5 && GameManager.player.dogtags.dogtags_in_world == 0 && !player_va_sounds && do_this_once_2:
 		play_VA_sounds()
 		do_this_once_2 = false
 	
-	if last_event_timer >= last_event_time && player_in_front_line && player_va_sounds && play_this_once:
+	if GameManager.player.dogtags.dogtags_picked_up == 5 && GameManager.player.dogtags.dogtags_in_world == 0 && player_in_front_line && player_va_sounds && play_this_once:
 		play_VA_sounds()
 		GameManager.player.can_be_hit_for_end_scene = true
 		play_this_once = false

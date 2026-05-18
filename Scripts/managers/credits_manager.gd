@@ -44,7 +44,7 @@ func fade_out() -> void:
 
 func start_timer() -> void:
 	started_timer = true
-	var end_pos_y : float = -920.0
+	var end_pos_y : float = -1150.0
 	var end_pos : Vector2 = Vector2(position.x , end_pos_y)
 	
 	var tween = create_tween().set_trans(Tween.TRANS_LINEAR)

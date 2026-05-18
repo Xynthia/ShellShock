@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://uymbs3o762tu"]
+
+[ext_resource type="PackedScene" uid="uid://brespy8vvom2g" path="res://Assets/dogtags/DogTag.glb" id="1_p516q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x40ve"]
+albedo_color = Color(0.76082164, 0.77688307, 0.7905641, 1)
+metallic = 0.5
+roughness = 0.22
+
+[node name="DogTag" unique_id=605150538 instance=ExtResource("1_p516q")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
+
+[node name="Object_002" parent="." index="0" unique_id=1394507661]
+surface_material_override/0 = SubResource("StandardMaterial3D_x40ve")
