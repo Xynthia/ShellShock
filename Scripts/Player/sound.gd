@@ -38,15 +38,6 @@ var voice_lines_return_to_trenches : Array = [TURN_BACK_0, TURN_BACK_1, TURN_BAC
 var make_quiet : bool = false
 var return_sound : bool = false
 
-func _ready() -> void:
-	var bus_id = AudioServer.get_bus_index("Master")
-	var volume = AudioServer.get_bus_volume_db(bus_id)
-	print(
-		curent_explosions_DB, "\n",
-		highest_explosions_DB, "\n",
-		volume
-	)
-
 func _process(delta: float) -> void:
 	if make_quiet:
 		if curent_BG_DB >= lowest_db:

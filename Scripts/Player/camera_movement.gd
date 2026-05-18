@@ -20,12 +20,13 @@ extends Area3D
 var trauma := 0.0
 var time := 0.0
 
-
 enum dir {LEFT, RIGHT, UP, DOWN, NOTHING}
 enum look_position {CENTER, LEFT, RIGHT, UP, DOWN}
 
 var turn_time: float = 0.5
-var max_angle : float = 50 # was 30>45>50
+var max_angle_left_right : float = 50 # was 30>45>50
+var max_angle_up_down : float = 30
+var max_z_rotation_left_right : float = 5
 var current_look_pos : look_position = look_position.CENTER
 
 var moved_up: bool = false
@@ -132,14 +133,15 @@ func move_to(new_look_position : look_position):
 			tween.tween_property(self, "rotation_degrees", Vector3(0,0,0),turn_time)
 			current_look_pos = look_position.CENTER
 		look_position.LEFT: 
-			tween.tween_property(self, "rotation_degrees", Vector3(0,max_angle,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(max_z_rotation_left_right,max_angle_left_right,-max_z_rotation_left_right),turn_time)
 			current_look_pos = look_position.LEFT
 		look_position.RIGHT: 
-			tween.tween_property(self, "rotation_degrees", Vector3(0,-max_angle,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(max_z_rotation_left_right,-max_angle_left_right,max_z_rotation_left_right),turn_time)
 			current_look_pos = look_position.RIGHT
 		look_position.UP: 
-			tween.tween_property(self, "rotation_degrees", Vector3(max_angle,0,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(max_angle_up_down,0,0),turn_time)
 			current_look_pos = look_position.UP
+			GameManager.player.check_dogtags()
 		look_position.DOWN: 
-			tween.tween_property(self, "rotation_degrees", Vector3(-max_angle,0,0),turn_time)
+			tween.tween_property(self, "rotation_degrees", Vector3(-max_angle_up_down,0,0),turn_time)
 			current_look_pos = look_position.DOWN

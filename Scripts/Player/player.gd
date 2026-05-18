@@ -161,6 +161,9 @@ func die() -> void:
 	movement.current_walk_point = GameManager.walking_points.starting_point
 	movement.set_new_position(movement.current_walk_point)
 
+func check_dogtags() -> void:
+	print("amount of dogtags")
+
 
 func end_scene() -> void:
 	var i = 3
