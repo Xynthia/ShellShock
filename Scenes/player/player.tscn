@@ -21,7 +21,7 @@ fractal_ping_pong_strength = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kd672"]
 shader = ExtResource("7_xxarj")
-shader_parameter/radius = 0.6
+shader_parameter/radius = 0.210000009975
 shader_parameter/softness = 0.8410000399475001
 shader_parameter/intensity = 0.61600002926
 shader_parameter/contrast = 4.0
@@ -51,14 +51,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("pauseble/eyelids/vignette:material:shader_parameter/radius")
+tracks/1/path = NodePath("pauseble/eyelids/blur:material:shader_parameter/blur_radius")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.6]
+"values": [1.0]
 }
 
 [sub_resource type="Animation" id="Animation_mxepk"]
@@ -111,17 +111,18 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xxarj"]
 resource_name = "panic attack"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("pauseble/eyelids/vignette:material:shader_parameter/radius")
+tracks/0/path = NodePath("pauseble/eyelids/blur:material:shader_parameter/blur_radius")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3041413, 0.40432906, 0.6, 0.9016896, 0.99472106),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.099999994, 0.20000005),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.210000009975, 0.1350000064125, 0.1950000092625, 0.210000009975, 0.1350000064125, 0.1950000092625]
+"values": [0.0, 1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ca0mu"]
@@ -232,6 +233,7 @@ size_flags_vertical = 4
 color = Color(0.7368177, 0.18848705, 3.6771893e-05, 1)
 
 [node name="blur" type="ColorRect" parent="pauseble/eyelids" unique_id=546611251]
+visible = false
 material = SubResource("ShaderMaterial_t3oqc")
 anchors_preset = 15
 anchor_right = 1.0

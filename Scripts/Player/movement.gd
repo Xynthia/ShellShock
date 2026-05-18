@@ -39,12 +39,12 @@ func _physics_process(delta: float) -> void:
 		set_new_position(current_walk_point)
 		do_this_once = false
 	
-	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death:
+	if looking_at_walk_point && looking_at_walk_point != current_walk_point && check_walkpoint_dead_end() == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death && !GameManager.player.started_panic_attack:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
 		set_new_position(looking_at_walk_point)
-	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death:
+	elif looking_at_walk_point && looking_at_walk_point == last_walk_point && check_walkpoint_dead_end() == true && dead_end_check == false && Input.is_action_just_pressed("MoveFoward") && current_state == state.WAIT && !GameManager.started_death && !GameManager.player.started_panic_attack:
 		current_state = state.MOVE
 		if GameManager.events_manager.controls_a_d  && GameManager.events_manager.finished_fade_in:
 			moved_foward = true
@@ -134,7 +134,7 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 					if walking_point == look_dir_3.LEFT && closest_walking_point_left:
 						next_look_at_walking_point = closest_walking_point_left 
 			# maar punt is dichter bij links
-			if closest_walking_point_right:
+			elif closest_walking_point_right:
 				for walking_point in walking_points_directions:
 					if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
 						look_to(closest_walking_point_right, true, look_dir_3.RIGHT)
@@ -144,8 +144,8 @@ func turn_to_walk_point(direction: look_dir_3) -> void:
 				for walking_point in walking_points_directions:
 					if walking_point == look_dir_3.RIGHT && closest_walking_point_right:
 						next_look_at_walking_point = closest_walking_point_right
-			
-			if closest_walking_point_left:
+			# maar punt is dichter bij rechts
+			elif closest_walking_point_left:
 				for walking_point in walking_points_directions:
 					if walking_point == look_dir_3.LEFT && closest_walking_point_left:
 						look_to(closest_walking_point_left, true, look_dir_3.LEFT)

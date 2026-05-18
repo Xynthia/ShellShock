@@ -33,7 +33,8 @@ func _process(delta: float) -> void:
 
 
 func rapid_blur() -> void:
-	blur.visible = !blur.visible
+	blur.visible = true
+	panic_attack()
 	rapid_blur_timer = 0.0
 	started_rapid_blur = true
 
@@ -52,7 +53,6 @@ func stop_vignette() -> void:
 	vignette.visible = false
 
 func panic_attack() -> void:
-	panic_attack_playing = true
 	animation_player.play("panic attack")
 
 func blink():

@@ -35,7 +35,7 @@ var interaction_panic_attack : bool = false
 var amount_interaction_panic_atttack : float = 1.0
 var max_amount_interaction_panic_attack : float = 2.0
 var min_amount_interaction_panic_attack : float = 0.0
-var amount_interaction_added : float = 0.05
+var amount_interaction_added : float = 0.07
 var amount_interaction_removed : float = 0.001
 var starting_amount_interaction_panic_atttack : float = 1.0
 
