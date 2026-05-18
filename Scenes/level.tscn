@@ -338,13 +338,13 @@ environment = SubResource("Environment_754fn")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment" unique_id=2066072614]
 transform = Transform3D(1, 0, 0, 0, -0.23414108, 0.97220266, 0, -0.97220266, -0.23414108, 0, 0, 0)
-visible = false
 light_color = Color(0.19064468, 0.23365143, 0.26393116, 1)
 light_energy = 0.6
 shadow_enabled = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=992180261]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 
